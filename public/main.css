@@ -1,0 +1,66 @@
+body {
+    background-color: #1c2530;
+}
+
+/* ========================================================= //
+// ========================================================= //
+// FONTS /////
+// ========================================================= //
+// ========================================================= */
+
+/* BASIER SQUARE REGULAR */
+@font-face {
+    font-family: 'Basier Square Regular';
+    src: url('fonts/basier-square-regular.eot');
+    src: url('fonts/basier-square-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-regular.woff2') format('woff2'),
+         url('fonts/basier-square-regular.woff') format('woff'),
+         url('fonts/basier-square-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE MEDIUM */
+@font-face {
+    font-family: 'Basier Square Medium';
+    src: url('fonts/basier-square-medium.eot');
+    src: url('fonts/basier-square-medium.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-medium.woff2') format('woff2'),
+         url('fonts/basier-square-medium.woff') format('woff'),
+         url('fonts/basier-square-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE SEMIBOLD */
+@font-face {
+    font-family: 'Basier Square Semibold';
+    src: url('fonts/basier-square-semibold.eot');
+    src: url('fonts/basier-square-semibold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-semibold.woff2') format('woff2'),
+         url('fonts/basier-square-semibold.woff') format('woff'),
+         url('fonts/basier-square-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE BOLD */
+@font-face {
+    font-family: 'Basier Square Bold';
+    src: url('fonts/basier-square-bold.eot');
+    src: url('fonts/basier-square-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-bold.woff2') format('woff2'),
+         url('fonts/basier-square-bold.woff') format('woff'),
+         url('fonts/basier-square-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+h1, h2 {
+    font-family: "Basier Square Regular";
+    color: #e9e9e9;
+}
+
+h3, h4 {
+    margin-bottom: -5px;
+    font-family: "Basier Square Semibold";
+    text-transform: lowercase;
+    color: #000000;
+}
