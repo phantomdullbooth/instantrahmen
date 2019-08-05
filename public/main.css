@@ -1,7 +1,7 @@
 body {
     background-image: url('images/ramen.png');
     background-size: 50px 50px;
-    background-color: #0e0d0d;
+    background-color: #141414;
 }
 
 /* ========================================================= //
@@ -58,7 +58,7 @@ body {
 header {
     width: 100%;
     background-color: #141414;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     border-bottom: 10px solid #ff0000;
     display: flex;
@@ -79,12 +79,55 @@ h1 {
     color: #dddddd;
 }
 
+h2 {
+    font-family: "Basier Square Semibold";
+    font-size: 4rem;
+    color: #dddddd;
+}
+
+h3 {
+    font-family: "Basier Square Semibold";
+    font-size: 2rem;
+    color: #dddddd;
+    line-height: 5rem;
+    margin: 0 40px;
+}
+
 h4 {
-    font-family: "Basier Square Bold";
+    font-family: "Basier Square Medium";
     font-size: 2rem;
     color: #dddddd;
     line-height: 3rem;
     margin: 0 40px;
+}
+
+.main-title {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+    .code-recipe {
+        border-top: 5px solid #5c5c5c;
+        border-bottom: 5px solid #5c5c5c;
+        width: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #484848;
 }
 
 footer {
@@ -92,7 +135,7 @@ footer {
     position: fixed;
     bottom: 0;
     padding: 20px 0;
-    background-color: #0a0a0a;
+    background-color: #0f0f0f;
     font-family: "Basier Square Regular";
     font-size: 1rem;
     line-height: 2rem;

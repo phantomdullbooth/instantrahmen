@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head.ejs %>
+</head>
+<body>
+    <header>
+        <div class="header-button">
+            <a href="/">
+            <h4>ラーメン</h4>
+            <h4>goHome</h4>
+            </a>
+        </div>
+
+        <div>
+            <h1>レシピ seeRecipe</h1>
+        </div>
+
+        <div class="header-button">
+            <h4>安藤</h4>
+            <h4>topRahmen</h4>
+        </div>
+    </header>
+
+
+        <main>
+            <% for (let i = 0; i < recipe.length; i++) { %>
+            <div class="code-recipe">
+                    <h3><%=recipe.title%>
+                    <p><%=recipe.description%></p>
+                    <br /><%=recipe.recipe%>
+            </div>
+            <% } %>
+        </main>
+
+    <footer>
+        <% include ./partials/footer.ejs %>
+    </footer>
+</body>
+</html>

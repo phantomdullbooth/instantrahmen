@@ -47,9 +47,9 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // ———————————————————————————————— //
 // ROUTES ///// LOCALHOST:3000
 // ———————————————————————————————— //
-app.get('/' , (req, res) => {
-  res.render('index.ejs');
-});
+
+const recipeController = require('./controllers/recipes.js');
+app.use('/', recipeController);
 
 //___________________
 //Listener

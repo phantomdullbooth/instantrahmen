@@ -6,22 +6,36 @@
 <body>
         <header>
             <div class="header-button">
-                <h4>安藤</h4>
-                <h4>seeFavorites</h4>
-            </div>
-
-            <div>
-            <h1>ラーメン instantRahmen</h1>
-            </div>
-            
-            <div class="header-button">
                 <h4>レシピ</h4>
                 <h4>addRecipe</h4>
             </div>
+
+            <div>
+                <h1>ラーメン instantRahmen</h1>
+            </div>
+
+            <div class="header-button">
+                <h4>安藤</h4>
+                <h4>topRahmen</h4>
+            </div>
         </header>
 
+        <div class="main-title"><h2>メニュー Menu</h2></div>
+
+
+        <main>
+            <% for (let i = 0; i < recipes.length; i++) { %>
+            <div class="code-recipe">
+                    <h3>
+                        <a href="/<%=recipes[i].id%>"><%=recipes[i].title%></a>
+                    <p><%=recipes[i].description%></p>
+                    <br /><%=recipes[i].recipe%>
+            </div>
+            <% } %>
+        </main>
+
     <footer>
-        this app was made determination and a mac. guten tag from アトランタ.
+        <% include ./partials/footer.ejs %>
     </footer>
 </body>
 </html>

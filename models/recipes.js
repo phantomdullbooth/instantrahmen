@@ -1,10 +1,11 @@
-const express = require('express'); // requires express
-const router = express.Router(); // defines router
-const Recipes = require('../models/plants.js'); // requires gifts file
-const ingredients = require('../models/ingredients.js');
+const mongoose = require('mongoose'); // require mongoose package
 
-// router.get('/seed', (req, res) => {
-//     Plants.create(seedPlants, (err, data) => {
-//         res.redirect('/')
-//     });
-// });
+const recipeSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  recipe: String
+})
+
+const Recipes = mongoose.model('Recipes', recipeSchema) // will be stored in 'plants' collection
+
+module.exports = Recipes;
