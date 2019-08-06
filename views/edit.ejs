@@ -4,11 +4,12 @@
     <% include ./partials/head.ejs %>
 </head>
 <body>
+
     <header>
         <div id="header-focus">
             <h1>
                 <span id="header-center-jp">レシピ</span>
-                <span id="header-center-den">seeRecipe</span>
+                <span id="header-center-den">editRecipe</span>
             </h1>
         </div>
 
@@ -31,21 +32,17 @@
         </div>
     </header>
 
+    <main>
+        <form action="/<%=recipe.id%>?_method=PUT" method="POST">
+            <input type="text" name="title" value="<%=recipe.name%>" placeholder="title" /><br/>
+            <input type="text" name="description" value="<%=recipe.description%>" placeholder="description" /><br/>
+            <input type="text" name="recipe" value="<%=recipe.recipe%>" placeholder="enter code" id="edit-code" /><br/>
+                <input type="submit" value="editThisRecipe" />
+        </form>
 
-        <main>
-            <div class="recipe-card">
-                    <h3><%=recipe.title%>
-                    <p><%=recipe.description%></p><br />
-                    <span class="recipe-code"><%=recipe.recipe%></span>
-            </div>
-
-            <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                        <input type="submit" value="deleteRecipe" />
-            </form>
-
-            <div class="recipe-card-button"><a href="/<%=recipe.id%>/edit-recipe">editRecipe</div>
-
-        </main>
+        <form action="/<%=recipe.id%>">
+        <input type="submit" value="cancelEdit" /></form>
+    </main>
 
     <footer>
         <% include ./partials/footer.ejs %>

@@ -21,8 +21,11 @@
   },
   "homepage": "https://github.com/winslowdev/instantrahmen#readme",
   "dependencies": {
+    "@material/button": "^3.1.0",
+    "@material/form-field": "^3.1.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "material-components-web": "^3.1.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.6.7"
   }

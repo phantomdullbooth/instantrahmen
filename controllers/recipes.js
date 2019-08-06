@@ -16,7 +16,7 @@ router.delete('/:id', (req, res) => {
 });
 
 // —————————— EDIT /:ID/ADJUST-RECIPE –––––––––– //
-router.get('/:id/adjust-recipe', (req, res) => {
+router.get('/:id/edit-recipe', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
         res.render(
             'edit.ejs',

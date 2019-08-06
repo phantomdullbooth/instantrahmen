@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include ./partials/head.ejs %>
-</head>
-<body>
+    <head>
+        <% include ./partials/head.ejs %>
+    </head>
+    
+    <body>
         <header>
-            <div class="header-button">
-                <h4>レシピ</h4>
-                <h4>addRecipe</h4>
+            <div id="header-focus">
+                <h1>
+                    <span id="header-focus-japanese">ラーメン</span>
+                    <span id="header-center-den">instantRahmen</span>
+                </h1>
             </div>
 
-            <div>
-                <h1>ラーメン instantRahmen</h1>
+            <div id="header-first">
+                <h4>
+                        <a href="/add-recipe">
+                    <span class="japanese">レシピ</span>
+                    <span class="header-ordinal">addRecipe</span>
+                        </a>
+                </h4>
             </div>
 
-            <div class="header-button">
-                <h4>安藤</h4>
-                <h4>topRahmen</h4>
+            <div id="header-second">
+                <h4>
+                        <a href="/">
+                    <span class="japanese">安藤</span>
+                    <span class="header-ordinal">topRahmen</span>
+                        </a>
+                </h4>
             </div>
         </header>
 
-        <div class="main-title"><h2>メニュー Menu</h2></div>
-
-
         <main>
             <% for (let i = 0; i < recipes.length; i++) { %>
-            <div class="code-recipe">
-                    <h3>
-                        <a href="/<%=recipes[i].id%>"><%=recipes[i].title%></a>
-                    <p><%=recipes[i].description%></p>
-                    <br /><%=recipes[i].recipe%>
+            <div class="recipe-card">
+                <h3><%=recipes[i].title%></h3>
+                
+                <p><%=recipes[i].description%></p>
+
+
+
+                    
+
+                <div class="recipe-card-button"><a href="/<%=recipes[i].id%>">seeRecipe</div>
             </div>
             <% } %>
         </main>
