@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    
+    <body>
+
+      <%# LEFT CONTAINER %>
+      <div id="welcome">
+          <div id="page-title">
+              <h1>
+                  <span class="welcome-jp">ラーメン</span>
+                  <span class="standard-text">instantRahmen</span>
+              </h1>
+          </div>
+
+          <div id="page-description">
+            <h5>Welcome, Chef @<%=currentUser.username%>!</h5>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" class="mixed-button" value="Log Out">
+            </form>
+          </div>
+      </div>
+</body>
+</html>

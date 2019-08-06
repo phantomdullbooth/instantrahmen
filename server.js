@@ -1,9 +1,11 @@
-//___________________
-//Dependencies
-//___________________
+// ———————————————————————————————— //
+// DEPENDENCIES /////
+// ———————————————————————————————— //
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const session = require('express-session')
+require('dotenv').config()
 const app = express ();
 const db = mongoose.connection;
 
@@ -42,7 +44,11 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+  }))
 
 // ———————————————————————————————— //
 // ROUTES ///// LOCALHOST:3000
@@ -50,6 +56,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 const recipeController = require('./controllers/recipes.js');
 app.use('/', recipeController);
+
+const userController = require('./controllers/users.js')
+app.use('/users', userController);
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController);
 
 //___________________
 //Listener

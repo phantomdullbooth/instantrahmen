@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <% include ./partials/head.ejs %>
+        <% include ../partials/head.ejs %>
     </head>
     
     <body>
-
       <%# LEFT CONTAINER %>
       <div id="welcome">
           <div id="page-title">
@@ -23,11 +22,13 @@
       <%# RIGHT CONTAINER %>
       <div id="main">
         <div id="landing-register">
-          <h2>Let's get cooking</h2>
-            <div id="landing-register-buttons">
-              <a href="/users/new" class="strong-button">Sign up</a>
-              <a href="/sessions/new" class="weak-button">Log in</a>
-            </div>
+          <h2>Log in</h2>
+              <div>
+          <form action="/sessions" method="POST">
+                <input type="text" class="validate" name="username" placeholder="username" required>
+                <input type="password" class="validate" name="password" placeholder="password" required>
+                <input type="submit" class="strong-button" value="Log in">
+          </form>
         </div>
       </div>
 </body>
