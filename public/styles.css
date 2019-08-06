@@ -1,0 +1,149 @@
+/* BASIER SQUARE REGULAR */
+@font-face {
+    font-family: 'Basier Square Regular';
+    src: url('fonts/basier-square-regular.eot');
+    src: url('fonts/basier-square-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-regular.woff2') format('woff2'),
+         url('fonts/basier-square-regular.woff') format('woff'),
+         url('fonts/basier-square-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE MEDIUM */
+@font-face {
+    font-family: 'Basier Square Medium';
+    src: url('fonts/basier-square-medium.eot');
+    src: url('fonts/basier-square-medium.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-medium.woff2') format('woff2'),
+         url('fonts/basier-square-medium.woff') format('woff'),
+         url('fonts/basier-square-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE SEMIBOLD */
+@font-face {
+    font-family: 'Basier Square Semibold';
+    src: url('fonts/basier-square-semibold.eot');
+    src: url('fonts/basier-square-semibold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-semibold.woff2') format('woff2'),
+         url('fonts/basier-square-semibold.woff') format('woff'),
+         url('fonts/basier-square-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* BASIER SQUARE BOLD */
+@font-face {
+    font-family: 'Basier Square Bold';
+    src: url('fonts/basier-square-bold.eot');
+    src: url('fonts/basier-square-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square-bold.woff2') format('woff2'),
+         url('fonts/basier-square-bold.woff') format('woff'),
+         url('fonts/basier-square-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* * {
+    border: 1px solid blue;
+} */
+
+body {
+    background: #1C1C26;
+    color: #ffffff;
+}
+
+/* header {
+    /* width: 100%;
+    top: 0;
+    background-color: #0a0a0d;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0px 5px 5px 0 rgba(5, 5, 5, 0.753); */
+/* } */
+
+    #title {
+        margin: 0 20px;
+    }
+
+        .japanese {
+            color: #d97904;
+        }
+
+        .add-recipe-button {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+            border: 1px solid #a3a3a3;
+            background: #ffffff;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .add-recipe-button-hor {
+            z-index: 1;
+            background-color: #000000;
+            width: 75%;
+            height: 10px;
+            align-self: center;
+        }
+
+        .add-recipe-button-ver {
+            z-index: 2;
+            background-color: #000000;
+            width: 10px;
+            height: 75%;
+            align-self: center;            
+        }
+
+        
+
+/* 
+
+
+.container-left {
+    width: 30%;
+    height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header-focus {
+    width: 95%;
+    margin: 0 10px;
+    height: 10px;
+}
+
+#header-focus-japanese {
+    color: #d97904;
+    margin-right: 10px;
+}
+
+
+
+.container-right {
+    width: 40%;
+}
+ */
+
+
+
+
+        h2, h3 {
+            font-family: "Basier Square Semibold"
+        }
+        
+        h1 {
+            font-family: "Basier Square Semibold";
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+        }
