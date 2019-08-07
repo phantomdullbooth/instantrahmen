@@ -4,8 +4,8 @@ const session = require('express-session')
 const Recipes = require('../models/recipes.js'); // requires gifts file
 
 // —————————— NEW /ADD-RECIPE –––––––––– //
-router.get('/add-recipe', (req, res) => {
-    res.render('new.ejs');
+router.get('/app/add-recipe', (req, res) => {
+    res.render('app/new.ejs');
 });
 // ——————————–––––––––– //
 
@@ -30,7 +30,7 @@ router.get('/:id/edit-recipe', (req, res) => {
 
 router.put('/:id', (req, res) => {
     Recipes.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
-        res.redirect('/');
+        res.redirect('/app');
     })
 });
 // ——————————–––––––––– //
@@ -44,27 +44,21 @@ router.get('/', (req, res) => {
 
 router.get('/app', (req, res) => {
     if (req.session.currentUser) {
-        res.render('app/index.ejs', {
-        currentUser: req.session.currentUser
-    })
+        Recipes.find({}, (err, allRecipes) => {
+            res.render('app/index.ejs',{
+                recipes: allRecipes,
+                currentUser: req.session.currentUser
+            });
+        })
     } else {
         res.redirect('/sessions/new')
     }
 })
 
-// router.get('/', (req, res) => {
-//     Recipes.find({}, (err, allRecipes) => {
-//         res.render('index.ejs',{
-//             recipes: allRecipes
-//         });
-//     })
-// });
-// ——————————–––––––––– //
-
 // —————————— SHOW /:ID –––––––––– //
 router.get('/:id', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
-        res.render('show.ejs', {
+        res.render('app/show.ejs', {
             recipe: foundRecipe
         });
     });
@@ -73,7 +67,7 @@ router.get('/:id', (req, res) => {
 
 
 // ********** CREATE RECIPE ********** //
-router.post('/', (req, res) => {
+router.post('/app', (req, res) => {
     Recipes.create(req.body, (err, createdRecipe) => {
         res.redirect('/');
     });

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    
+    <body>
+
+      <%#WELCOME %>
+      <div class="welcome">
+          <div class="page-title">
+              <h1><a href="/app">
+                  <span class="welcome-jp">ラーメン</span>
+                  <span class="standard-text">instantRahmen</span>
+              </h1></a>
+          </div>
+      </div>
+
+      <div class="main">
+            <div class="recipe-card">
+                <h3><%=recipe.title%></h3>
+                <p><%=recipe.description%><p>
+
+                <p>
+                <% for (let i = 0; i < recipe.code.length; i++) { %>
+                    <%=recipe.code[i]%><br />
+                <% } %>
+                </p>
+
+                
+
+
+                <div class="card-view-button"><a href="/<%=recipe.id%>"><img src="../images/search.png"><a></div>
+            </div>
+
+          <%# <div class="main-within">
+            <form action="/sessions?_method=DELETE" method="POST" class="just">
+              <input type="submit" class="weak-button" name="action" value="Log out">
+            </form>
+          </div> %>
+      </div>
+
+      <footer><% include ../partials/footer.ejs %></footer>
+</body>
+</html>

@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <% include ./partials/head.ejs %>
+    <% include ./partials/head.ejs %>
     </head>
-    
+
     <body>
+        <header>
+            <h1><a href="/">
+                <span class="welcome-jp">ラーメン</span>
+                <span class="standard-text">instantRahmen</span>
+            </a></h1>
+        </header>
 
-      <%# LEFT CONTAINER %>
-      <div id="welcome">
-          <div id="page-title">
-              <h1>
-                  <span class="welcome-jp">ラーメン</span>
-                  <span class="standard-text">instantRahmen</span>
-              </h1>
-          </div>
+        <main>
+            <% if (currentUser) { %>
+                <h2>Welcome back,<br />
+                Chef @<%= currentUser.username %>!</h2>
 
-          <div id="page-description">
-              <h5>create your favorite code snippets and save them as recipes</h5>
-          </div>
-      </div>
+                <a href="/app" class="strong-button">View recipes</a>
+                
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" class="main-attraction" name="action" value="Log out">
+                </form>
+            <% } else { %>
+                <div class="main-within">
+                    <h2>Let's get cooking</h2>
+                    <div class="main-within-buttons">
+                        <a href="/sessions/new" class="weak-button">Log in</a>
+                        <a href="/users/new" class="strong-button">Sign up</a>
+                    </div>
+                </div>
+            <% } %>
+        </main>
 
-      <%# RIGHT CONTAINER %>
-      <div id="main">
-        <div id="landing-register">
-          <h2>Let's get cooking</h2>
-            <div id="landing-register-buttons">
-              <a href="/users/new" class="strong-button">Sign up</a>
-              <a href="/sessions/new" class="weak-button">Log in</a>
-            </div>
-        </div>
-      </div>
-</body>
-</html>
+        <footer><% include ./partials/footer.ejs %></footer>
+    </body>
+<html>

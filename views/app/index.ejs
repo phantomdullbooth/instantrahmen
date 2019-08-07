@@ -5,22 +5,37 @@
     </head>
     
     <body>
+      <header>
+        <h1><a href="/app">
+          <span class="welcome-jp">ラーメン</span>
+          <span class="standard-text">instantRahmen</span>
+        </a></h1>
 
-      <%# LEFT CONTAINER %>
-      <div id="welcome">
-          <div id="page-title">
-              <h1>
-                  <span class="welcome-jp">ラーメン</span>
-                  <span class="standard-text">instantRahmen</span>
-              </h1>
-          </div>
 
-          <div id="page-description">
-            <h5>Welcome, Chef @<%=currentUser.username%>!</h5>
-            <form action="/sessions?_method=DELETE" method="POST">
-              <input type="submit" class="mixed-button" value="Log Out">
+          <h5>Welcome, Chef @<%=currentUser.username%>!</h5>
+          <a href="/app/add-recipe" class="add-button">Add recipe</a>
+      <header>
+
+      <div class="main">
+          <% for (let i = 0; i < recipes.length; i++) { %>
+            <div class="recipe-card">
+                <h3><%=recipes[i].title%></h3>
+                <p><%=recipes[i].description%></p>
+
+
+                <div class="card-view-button"><a href="/<%=recipes[i].id%>"><img src="../images/search.png"><a></div>
+            </div>
+            <% } %>
+
+          <div class="main-within">
+            <form action="/sessions?_method=DELETE" method="POST" class="just">
+              <input type="submit" class="weak-button" name="action" value="Log out">
             </form>
           </div>
       </div>
+
+      <footer><% include ../partials/footer.ejs %></footer>
 </body>
 </html>
+
+<p>create your favorite code snippets and save them as recipes</p>

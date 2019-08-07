@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    
+    <body>
+
+      <%#WELCOME %>
+      <div class="welcome">
+          <div class="page-title">
+              <h1><a href="/app">
+                  <span class="welcome-jp">ラーメン</span>
+                  <span class="standard-text">instantRahmen</span>
+              </h1></a>
+          </div>
+      </div>
+
+      <div class="main">
+        <form action="/app" method="POST">
+            <input type="text" name="title" placeholder="title" /><br />
+            <input type="text" name="description" placeholder="description" /><br />
+            <textarea rows="10" cols="30" type="text" name="recipe" placeholder="enter code" wrap="hard"></textarea><br />
+            <input type="submit" class="strong-button stop" value="addThisRecipe" />
+        </form>
+    <div>
+
+    <footer><% include ../partials/footer.ejs %></footer>
+</body>
+</html>

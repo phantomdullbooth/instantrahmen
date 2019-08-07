@@ -5,31 +5,30 @@
     </head>
     
     <body>
-      <%# LEFT CONTAINER %>
-      <div id="welcome">
-          <div id="page-title">
-              <h1>
+      <%#WELCOME %>
+      <div class="welcome">
+          <div class="page-title">
+              <h1><a href="/">
                   <span class="welcome-jp">ラーメン</span>
                   <span class="standard-text">instantRahmen</span>
-              </h1>
+              </h1></a>
           </div>
 
-          <div id="page-description">
-              <h5>create your favorite code snippets and save them as recipes</h5>
-          </div>
+          <p>create your favorite code snippets and save them as recipes</p>
       </div>
 
       <%# RIGHT CONTAINER %>
-      <div id="main">
-        <div id="landing-register">
+      <div class="main">
+        <div class="main-within">
           <h2>Log in</h2>
-              <div>
-          <form action="/sessions" method="POST">
+            <form action="/sessions" method="POST">
                 <input type="text" class="validate" name="username" placeholder="username" required>
                 <input type="password" class="validate" name="password" placeholder="password" required>
-                <input type="submit" class="strong-button" value="Log in">
-          </form>
+                <input type="submit" class="strong-button stop" name="action" value="Log in">
+            </form>
         </div>
       </div>
+
+      <footer><% include ../partials/footer.ejs %></footer>
 </body>
 </html>
