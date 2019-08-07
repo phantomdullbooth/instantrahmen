@@ -9,7 +9,7 @@ sessions.get('/new', (req, res) => {
 })
 
 // UPON SUBMITTING LOGIN FORM
-sessions.post('/app', (req, res) => {
+sessions.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (err, foundUser) => { // FIND USERNAME
     // Database error
     if (err) {

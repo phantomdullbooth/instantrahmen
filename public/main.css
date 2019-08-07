@@ -60,6 +60,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-right: 0;
 }
 
 h1, h2 {
@@ -131,7 +132,7 @@ header {
 /* ///// ————— ///// ————— ///// —————  NECK ————— ///// ————— ///// —————///// //
 // ///////////////////////////////////////////////////////////////////////////// */
 
-    #neck {
+    .neck {
         width: 100%;
         height: 699px;
         background: url('images/ramen-bowl.jpg') no-repeat;
@@ -163,9 +164,6 @@ main {
         justify-content: flex-start;
     }
 
-
-    
-
 /* ///// ————— ///// ————— ///// —————  FORM ————— ///// ————— ///// —————///// //
 // ///////////////////////////////////////////////////////////////////////////// */
 form {
@@ -174,8 +172,9 @@ form {
     justify-content: center;
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="password"], textarea {
     margin: 20px 0;
+    width: 100%;
     height: 75px;
     border: none;
     border-bottom: 3px solid #ffffff;
@@ -197,13 +196,9 @@ textarea {
 
     ::placeholder {
         font-family: "Basier Square Regular";
-        font-size: 2rem;
+        font-size: 1.75rem;
         letter-spacing: -1px;
         color: rgba(255, 255, 255, 0.521);
-    }
-
-    .stop {
-        border: none;
     }
 
     .recipe-card {

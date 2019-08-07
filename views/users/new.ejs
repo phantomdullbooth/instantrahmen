@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <% include ../partials/head.ejs %>
-    </head>
-    
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+
     <body>
-      <header>
-        <% include ../partials/header.ejs %>
-      </header>
+        <header>
+            <% include ../partials/header.ejs %>
+        </header>
 
-          <p>create your favorite code snippets and save them as recipes</p>
-      </div>
+        <div class="neck">
+            <h1>Create code snippets and save them as recipes.</h1>
+        </div>
 
-      <%# RIGHT CONTAINER %>
-      <div class="main">
-        <div class="main-within">
+        <main>
+        <div class="main-start">
           <h2>Sign up</h2>
             <form action="/users" method="POST">
                 <input type="text" class="validate" name="username" placeholder="username" required>
-                <input type="password" class="validate" name="password" minlength="8" maxlength="32" placeholder="password" required>
-                <input type="submit" class="strong-button stop" name="action" value="Sign up">
+                <input type="password" class="validate" name="password" minlength="8" maxlength="32" placeholder="password (8-32 char.)" required>
+                <input type="submit" class="button-first" name="action" value="Sign up">
             </form>
         </div>
-      </div>
+      </main>
+
+      <footer><% include ../partials/footer.ejs %></footer>
 </body>
 </html>

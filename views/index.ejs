@@ -9,7 +9,7 @@
             <% include ./partials/header.ejs %>
         </header>
 
-        <div id="neck">
+        <div class="neck">
             <h1>Create code snippets and save them as recipes.</h1>
         </div>
 
@@ -20,7 +20,7 @@
 
                 <a href="/app" class="button-first">View Recipes</a>
                 
-                <form action="/sessions?_method=DELETE" method="POST">
+                <form action="/sessions/app?_method=DELETE" method="POST">
                     <input type="submit" class="button-second-short" name="action" value="Log Out">
                 </form>
             <% } else { %>
