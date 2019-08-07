@@ -4,6 +4,7 @@ const recipeSchema = new mongoose.Schema({
   title: String,
   description: String,
   code: Array,
+  image: String
 })
 
 const Recipes = mongoose.model('Recipes', recipeSchema) // will be stored in 'plants' collection

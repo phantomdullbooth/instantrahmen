@@ -9,30 +9,35 @@
             <% include ./partials/header.ejs %>
         </header>
 
-        <div class="neck">
-            <h1>Create code snippets and save them as recipes.</h1>
-        </div>
-
-        <main>
             <% if (currentUser) { %>
-                <h2>Welcome back,<br />
-                Chef @<%= currentUser.username %>!</h2>
+                <div class="neck">
+                    <h2>Welcome back,<br />
+                    Chef @<%= currentUser.username %>!</h2>
 
-                <a href="/app" class="button-first">View Recipes</a>
-                
-                <form action="/sessions/app?_method=DELETE" method="POST">
-                    <input type="submit" class="button-second-short" name="action" value="Log Out">
-                </form>
-            <% } else { %>
-                <div id="main-start">
-                    <h2>Let's get cooking</h2>
-                    <div class="main-start-buttons">
-                        <a href="/sessions/new" class="button-first">Log in</a>
-                        <a href="/users/new" class="button-third">Sign up</a>
-                    </div>
+                    <a href="/app" class="button-first">View Recipes</a>
                 </div>
-            <% } %>
-        </main>
+                
+                <main>
+                    <h3>You don't actually have to log out. You can just leave. And come right back.</h3>
+                    <form action="/sessions/app?_method=DELETE" method="POST">
+                        <input type="submit" class="button-second-short" name="action" value="Log Out">
+                    </form>
+                </main>
+            <% } else { %>
+                <div class="neck">
+                    <h1>Create code snippets and save them as recipes.</h1>
+                </div>
+
+                <main>
+                    <div id="main-start">
+                        <h2>Let's get cooking</h2>
+                        <div class="main-start-buttons">
+                            <a href="/sessions/new" class="button-first">Log in</a>
+                            <a href="/users/new" class="button-third">Sign up</a>
+                        </div>
+                    </div>
+                </main>
+                <% } %>
 
         <footer><% include ./partials/footer.ejs %></footer>
     </body>

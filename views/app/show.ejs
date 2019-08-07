@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <% include ../partials/head.ejs %>
-    </head>
-    
-    <body>
+<head>
+    <% include ../partials/head.ejs %>
+</head>
 
-      <%#WELCOME %>
-      <div class="welcome">
-          <div class="page-title">
-              <h1><a href="/app">
-                  <span class="welcome-jp">ラーメン</span>
-                  <span class="standard-text">instantRahmen</span>
-              </h1></a>
-          </div>
-      </div>
+    <body>
+        <header>
+            <% include ../partials/header.ejs %>
+        </header>
+
+        <div class="neck">
+            <h1>Ahh, the <span id="highlight"><%=recipe.title%></span>. Excellent choice.</h1>
+
+            <a href="/<%=recipe.id%>" class="button-second">Return to cards<a><br />
+            <a href="/<%=recipe.id%>/edit-recipe" class="button-first">Edit recipe<a>
+
+            
+        </div>
 
       <div class="main">
             <div class="recipe-card">
@@ -28,16 +30,20 @@
                 </p>
                 
                 <div class="tools">
-                    <div class="card-view-button"><a href="/<%=recipe.id%>/edit-recipe"><img src="../images/edit.png"><a></div>
+                    
                 </div>
             </div>
 
+            <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
+                <button class="button-second" type="submit" value="Delete Recipe">Delete Recipe</button>
+            </form>
 
-          <%# <div class="main-within">
+
+          <div class="main-within">
             <form action="/sessions?_method=DELETE" method="POST" class="just">
               <input type="submit" class="weak-button" name="action" value="Log out">
             </form>
-          </div> %>
+          </div>
       </div>
 
       <footer><% include ../partials/footer.ejs %></footer>
