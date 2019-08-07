@@ -20,7 +20,7 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit-recipe', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
         res.render(
-            'edit.ejs',
+            'app/edit.ejs',
             {
                 recipe: foundRecipe
             }

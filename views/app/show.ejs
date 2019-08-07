@@ -26,12 +26,12 @@
                     <%=recipe.code[i]%><br />
                 <% } %>
                 </p>
-
                 
-
-
-                <div class="card-view-button"><a href="/<%=recipe.id%>"><img src="../images/search.png"><a></div>
+                <div class="tools">
+                    <div class="card-view-button"><a href="/<%=recipe.id%>/edit-recipe"><img src="../images/edit.png"><a></div>
+                </div>
             </div>
+
 
           <%# <div class="main-within">
             <form action="/sessions?_method=DELETE" method="POST" class="just">

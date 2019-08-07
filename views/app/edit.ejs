@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include ./partials/head.ejs %>
-</head>
-<body>
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    
+    <body>
 
-    <header>
-        <div id="header-focus">
-            <h1>
-                <span id="header-center-jp">レシピ</span>
-                <span id="header-center-den">editRecipe</span>
-            </h1>
-        </div>
+      <%#WELCOME %>
+      <div class="welcome">
+          <div class="page-title">
+              <h1><a href="/app">
+                  <span class="welcome-jp">ラーメン</span>
+                  <span class="standard-text">instantRahmen</span>
+              </h1></a>
+          </div>
+      </div>
 
-        <div class="header-first">
-            <h4>
-                    <a href="/">
-                <span class="header-side-jp">ラーメン</span>
-                <span class="header-side-den">goHome</span>
-                    </a>
-            </h4>
-        </div>
-
-        <div class="header-right">
-            <h4>
-                    <a href="/">
-                <span class="header-side-jp">安藤</span>
-                <span class="header-side-den">topRahmen</span>
-                    </a>
-            </h4>
-        </div>
-    </header>
-
-    <main>
+      <div class="main">
         <form action="/<%=recipe.id%>?_method=PUT" method="POST">
             <input type="text" name="title" value="<%=recipe.name%>" placeholder="title" /><br/>
             <input type="text" name="description" value="<%=recipe.description%>" placeholder="description" /><br/>
-            <input type="text" name="recipe" value="<%=recipe.recipe%>" placeholder="enter code" id="edit-code" /><br/>
-                <input type="submit" value="editThisRecipe" />
+            <input type="text" name="recipe" value="<%=recipe.code%>" placeholder="enter code" id="edit-code" /><br/>
+                <input type="submit" class="button-first" value="Edit Recipe" />
         </form>
 
         <form action="/<%=recipe.id%>">
-        <input type="submit" value="cancelEdit" /></form>
-    </main>
+        <input type="submit" class="button-second" value="Cancel Edit" /></form>
+    <div>
 
-    <footer>
-        <% include ./partials/footer.ejs %>
-    </footer>
+    <footer><% include ../partials/footer.ejs %></footer>
 </body>
 </html>

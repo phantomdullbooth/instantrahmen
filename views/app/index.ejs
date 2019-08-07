@@ -6,15 +6,13 @@
     
     <body>
       <header>
-        <h1><a href="/app">
-          <span class="welcome-jp">ラーメン</span>
-          <span class="standard-text">instantRahmen</span>
-        </a></h1>
+        <h5><a href="/">
+          <span id="header-primary">ラーメン</span>
+          <span id="header-secondary">instantRahmen</span>
+        </a></h5>
+      </header>
 
-
-          <h5>Welcome, Chef @<%=currentUser.username%>!</h5>
-          <a href="/app/add-recipe" class="add-button">Add recipe</a>
-      <header>
+      
 
       <div class="main">
           <% for (let i = 0; i < recipes.length; i++) { %>
@@ -23,13 +21,24 @@
                 <p><%=recipes[i].description%></p>
 
 
-                <div class="card-view-button"><a href="/<%=recipes[i].id%>"><img src="../images/search.png"><a></div>
+            <div class="tools">
+                <a href="/<%=recipes[i].id%>" class="button-first mini">See Recipe</a>
+
+                <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
+                    <button class="button-third mini" type="submit" value="Delete Recipe">Delete Recipe</button>
+                </form>
+            </div>
+
+            <a href="/app/add-recipe" class="button-third">Add Recipe</a>
+
+
+
             </div>
             <% } %>
 
           <div class="main-within">
             <form action="/sessions?_method=DELETE" method="POST" class="just">
-              <input type="submit" class="weak-button" name="action" value="Log out">
+              <input type="submit" class="button-second" name="action" value="Log out">
             </form>
           </div>
       </div>
@@ -37,5 +46,3 @@
       <footer><% include ../partials/footer.ejs %></footer>
 </body>
 </html>
-
-<p>create your favorite code snippets and save them as recipes</p>
