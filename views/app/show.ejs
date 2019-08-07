@@ -6,7 +6,10 @@
 
     <body>
         <header>
-            <% include ../partials/header.ejs %>
+            <h5><a href="/app">
+                <span id="header-primary">ラーメン</span>
+                <span id="header-secondary">instantRahmen</span>
+            </a></h5>
         </header>
 
         <div class="neck">
@@ -17,32 +20,26 @@
             
         </div>
 
-      <div class="main">
+    <div class="main-xl">
+        <div id="main-start">
                 <h3><%=recipe.title%></h3>
                 <p><%=recipe.description%><p>
+                    <p><%=recipe.line_1%></p>
+                    <p><%=recipe.line_2%></p>
+                    <p><%=recipe.line_3%></p>
+                    <p><%=recipe.line_4%></p>
+                    <p><%=recipe.line_5%></p>
+                    <p><%=recipe.line_6%></p>
 
-                <p>
-                <% for (let i = 0; i < recipe.code.length; i++) { %>
-                    <%=recipe.code[i]%><br />
-                <% } %>
-                </p>
-                
-                <div class="tools">
-                    
-                </div>
-            </div>
+                <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
+                    <button class="button-third-short" type="submit" value="Delete Recipe">Delete Recipe</button>
+                </form>
 
-            <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                <button class="button-third" type="submit" value="Delete Recipe">Delete Recipe</button>
-            </form>
-
-
-          <div class="main-within">
-            <form action="/sessions?_method=DELETE" method="POST" class="just">
-              <input type="submit" class="button-second" name="action" value="Log out">
-            </form>
-          </div>
-      </div>
+                <form action="/sessions?_method=DELETE" method="POST" class="just">
+                    <input type="submit" class="button-second-short" name="action" value="Log out" />
+                </form>
+        </div>
+    </div>
 
       <footer><% include ../partials/footer.ejs %></footer>
 </body>

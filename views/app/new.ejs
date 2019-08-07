@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <% include ../partials/head.ejs %>
-    </head>
-    
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+
     <body>
+        <header>
+            <h5><a href="/app">
+                <span id="header-primary">ラーメン</span>
+                <span id="header-secondary">instantRahmen</span>
+            </a></h5>
+        </header>
 
-      <%#WELCOME %>
-      <div class="welcome">
-          <div class="page-title">
-              <h1><a href="/app">
-                  <span class="welcome-jp">ラーメン</span>
-                  <span class="standard-text">instantRahmen</span>
-              </h1></a>
-          </div>
-      </div>
+        <div class="neck">
+            <h1>Add a new code recipe. Maybe spice things up this time?</h1>
+        </div>
 
-      <div class="main">
-        <form action="/app" method="POST">
-            <input type="text" name="title" placeholder="title" /><br />
-            <input type="text" name="description" placeholder="description" /><br />
-            <textarea rows="10" cols="30" type="text" name="recipe" placeholder="enter code" wrap="hard"></textarea><br />
-            <input type="submit" class="strong-button stop" value="addThisRecipe" />
-        </form>
-    <div>
-
-    <footer><% include ../partials/footer.ejs %></footer>
+        <div class="main-xl">
+            <form action="/app" method="POST">
+                <input type="text" name="title" placeholder="title" /><br />
+                <input type="text" name="description" placeholder="description" /><br />
+                <input type="url" name="image" placeholder="image link" /><br />
+                <input type="text" name="line_1" placeholder="line 1 (required)" /><br />
+                <input type="text" name="line_2" placeholder="line 2" /><br />
+                <input type="text" name="line_3" placeholder="line 3" /><br />
+                <input type="text" name="line_4" placeholder="line 4" /><br />
+                <input type="text" name="line_5" placeholder="line 5" /><br />
+                <input type="text" name="line_6" placeholder="line 6" /><br />
+                <input type="submit" class="button-first" value="Add Recipe" />
+            </form>
+        <div>
 </body>
 </html>

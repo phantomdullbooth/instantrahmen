@@ -30,12 +30,12 @@
           <% } %>
         </div>
 
-          <div class="main-start">
-            <form action="/sessions/app?_method=DELETE" method="POST" class="just">
-              <input type="submit" class="button-second" name="action" value="Log out">
+        <main>
+          <h3>You don't actually have to log out. You can just leave. And come right back.</h3>
+            <form action="/sessions/app?_method=DELETE" method="POST">
+                <input type="submit" class="button-second-short" name="action" value="Log Out">
             </form>
-          </div>
-      </div>
+        </main>
 
       <footer><% include ../partials/footer.ejs %></footer>
 </body>
