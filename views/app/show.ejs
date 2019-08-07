@@ -12,14 +12,12 @@
         <div class="neck">
             <h1>Ahh, the <span id="highlight"><%=recipe.title%></span>. Excellent choice.</h1>
 
-            <a href="/<%=recipe.id%>" class="button-second">Return to cards<a><br />
             <a href="/<%=recipe.id%>/edit-recipe" class="button-first">Edit recipe<a>
 
             
         </div>
 
       <div class="main">
-            <div class="recipe-card">
                 <h3><%=recipe.title%></h3>
                 <p><%=recipe.description%><p>
 
@@ -35,13 +33,13 @@
             </div>
 
             <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                <button class="button-second" type="submit" value="Delete Recipe">Delete Recipe</button>
+                <button class="button-third" type="submit" value="Delete Recipe">Delete Recipe</button>
             </form>
 
 
           <div class="main-within">
             <form action="/sessions?_method=DELETE" method="POST" class="just">
-              <input type="submit" class="weak-button" name="action" value="Log out">
+              <input type="submit" class="button-second" name="action" value="Log out">
             </form>
           </div>
       </div>
