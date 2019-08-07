@@ -8,31 +8,28 @@ sessions.get('/new', (req, res) => {
     res.render('sessions/new.ejs')
 })
 
-// on sessions form submit (log in)
-sessions.post('/', (req, res) => {
-  // Step 1 Look for the username
-  User.findOne({username: req.body.username}, (err, foundUser) => {
+// UPON SUBMITTING LOGIN FORM
+sessions.post('/app', (req, res) => {
+  User.findOne({username: req.body.username}, (err, foundUser) => { // FIND USERNAME
     // Database error
     if (err) {
       console.log(err)
-      res.send('oops the db had a problem')
+      res.send('*hiccup* there\'s a problem with the database')
     } else if (!foundUser){ // if found user is undefined/null not found etc
       res.send('<a  href="/">Sorry, no user found </a>')
     } else { // user is found yay!
-      // now let's check if passwords match
+      // DO PASSWORDS MATCH?
       if(bcrypt.compareSync(req.body.password, foundUser.password)) {
-        // add the user to our session
-        req.session.currentUser = foundUser
-        // redirect back to our home page
-        res.redirect('/app')
-      } else { // passwords do not match
-        res.send('<a href="/"> password does not match </a>')
+        req.session.currentUser = foundUser // EVERYTHING OKAY — ADD SESSION AND...
+        res.redirect('/app') // REDIRECT TO HOMEPAGE AFTER LOGIN
+      } else {
+        res.send('<a href="/"> password does not match </a>') // IF PASSWORDS DO NOT MATCH, SEND THIS
       }
     }
   })
 })
 
-sessions.delete('/', (req, res) => {
+sessions.delete('/app', (req, res) => {
   req.session.destroy(()=> {
     res.redirect('/')
   })

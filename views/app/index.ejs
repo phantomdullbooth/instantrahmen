@@ -9,9 +9,7 @@
         <% include ../partials/header.ejs %>
       </header>
 
-      
-
-      <div class="main">
+      <main>
           <% for (let i = 0; i < recipes.length; i++) { %>
             <div class="recipe-card">
                 <h3><%=recipes[i].title%></h3>
@@ -38,7 +36,7 @@
               <input type="submit" class="button-second" name="action" value="Log out">
             </form>
           </div>
-      </div>
+      </main>
 
       <footer><% include ../partials/footer.ejs %></footer>
 </body>

@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <% include ./partials/head.ejs %>
-    </head>
+</head>
 
     <body>
         <header>
-        <% include ./partials/header.ejs %>
-      </header>
+            <% include ./partials/header.ejs %>
+        </header>
+
+        <div class="neck-container">
+            <h1>Create code snippets and save them as recipes. Sorry, no food here.</h1>
+        </div>
 
         <main>
             <% if (currentUser) { %>
                 <h2>Welcome back,<br />
                 Chef @<%= currentUser.username %>!</h2>
 
-                <a href="/app" class="strong-button">View recipes</a>
+                <a href="/app" class="button-first">View Recipes</a>
                 
                 <form action="/sessions?_method=DELETE" method="POST">
-                    <input type="submit" class="button-second-short" name="action" value="Log out">
+                    <input type="submit" class="button-second-short" name="action" value="Log Out">
                 </form>
             <% } else { %>
-                <div class="main-within">
+                <div id="main-start">
                     <h2>Let's get cooking</h2>
-                    <div class="main-within-buttons">
-                        <a href="/sessions/new" class="weak-button">Log in</a>
-                        <a href="/users/new" class="strong-button">Sign up</a>
+                    <div class="main-start-buttons">
+                        <a href="/sessions/new" class="button-first">Log in</a>
+                        <a href="/users/new" class="button-third">Sign up</a>
                     </div>
                 </div>
             <% } %>
         </main>
+
+        
 
         <footer><% include ./partials/footer.ejs %></footer>
     </body>
