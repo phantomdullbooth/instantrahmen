@@ -4,26 +4,23 @@
     <% include ../partials/head.ejs %>
 </head>
 
-    <body>
+<body>
+    <aside>
         <header>
-            <h5><a href="/app">
-                <span id="header-primary">ラーメン</span>
-                <span id="header-secondary">instantRahmen</span>
+            <h5><a href="/">
+            <span id="highlight">ラーメン</span>
+            <span id="header-connector">instantRahmen</span>
             </a></h5>
         </header>
 
-        <div class="neck">
-            <h1>Ahh, the <span id="highlight"><%=recipe.title%></span>. Excellent choice.</h1>
+        <h3>Ahh, the <span id="title-highlight"><%=recipe.title%></span>.<br />
+        <%=recipe.description%>.</h3>
+        <a href="/app">
+            <button type="button" name="add-recipe" class="text-button first">Favorite</button></a>
+    </aside>
 
-            <a href="/<%=recipe.id%>/edit-recipe" class="button-first">Edit recipe<a>
-
-            
-        </div>
-
-    <div class="main-xl">
-        <div id="main-start">
-                <h3><%=recipe.title%></h3>
-                <p><%=recipe.description%><p>
+    <main>
+        <h2><%=recipe.title%></h2>
                     <p><%=recipe.line_1%></p>
                     <p><%=recipe.line_2%></p>
                     <p><%=recipe.line_3%></p>
@@ -31,15 +28,24 @@
                     <p><%=recipe.line_5%></p>
                     <p><%=recipe.line_6%></p>
 
-                <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                    <button class="button-third-short" type="submit" value="Delete Recipe">Delete Recipe</button>
-                </form>
 
-                <form action="/sessions?_method=DELETE" method="POST" class="just">
-                    <input type="submit" class="button-second-short" name="action" value="Log out" />
-                </form>
-        </div>
-    </div>
+                <div class="tool-buttons">
+                    <a href="/<%=recipe.id%>/edit-recipe"><button type="button" name="edit-recipe" class="icon-button">
+                        <img src="../images/buttons/edit.png" />
+                    </button></a>
+
+                    <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
+                        <button type="submit" name="delete-recipe" class="icon-button">
+                            <img src="../images/buttons/delete.png" />
+                        </button>
+                    </form>
+                </div>
+
+                <form action="/sessions?_method=DELETE" method="POST">
+                <button type="button" name="log-out" class="text-button third" id="danger">Log out</button>
+            </form>
+            
+    </main>
 
       <footer><% include ../partials/footer.ejs %></footer>
 </body>

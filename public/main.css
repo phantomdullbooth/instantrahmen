@@ -1,9 +1,12 @@
 /* * {
-    border: 1px solid gold;
+    border: 0.5px solid gold;
 } */
 
-/* ///// ————— ///// ————— ///// —————  DEFINITIONS ————— ///// ————— ///// —————///// //
-// ////////////////////////////////////////////////////////////////////////////////// */
+/* —————————————————————————————— //
+/////////////////////////
+UNIVERSAL FONT DEFINITIONS
+/////////////////////////
+// —————————————————————————————— */
 
 /* BASIER SQUARE REGULAR */
 @font-face {
@@ -50,554 +53,262 @@
     font-style: normal;
 }
 
-/* // BODY // ————— // BODY // ————— // BODY // —————  // BODY // ————— // BODY // //
-// ////////////////////////////////////////////////////////////////////////////// */
+/* —————————————————————————————— //
+/////////////////////////
+TEXT DEFINITIONS 1 — 700
+/////////////////////////
+// —————————————————————————————— */
+
+/* MAIN SECTION TITLE */
+h2 {
+    color: #ffffff;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin: 0 0 30px 0;
+}
+
+/* ASIDE MAIN TEXT */
+h3 {
+    color: #ffffff;
+    margin: 5%;
+    font-family: "Basier Square Semibold", sans-serif;
+    font-size: 2.75rem;
+    line-height: 3.5rem;
+}
+
+h4 {
+    color: #ffffff;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.5rem;
+    line-height: 1rem;
+    text-align: center;
+    margin-top: 0;
+    padding: 40px 0;
+}
+
+/* WEBSITE TITLE LINK */
+h5 {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+}
+
+a {
+    text-decoration: none;
+    margin: 0 5%;
+}
+
+p {
+    font-family: "Basier Square Regular";
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+}
+
+    #connector {
+        display: block;
+    }
+
+/* —————————————————————————————— //
+/////////////////////////
+BODY OUTLINE 1 — 700
+/////////////////////////
+// —————————————————————————————— */
 
 body {
-    background-color: #1C1C26;
-    color: #e0e0e0;
-    text-align: center;
+    background-color: #e0e0e0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-right: 0;
 }
 
-h1, h2 {
-    font-family: "Basier Square Semibold";
+aside {
+    background: url('images/ramen-bowl.jpg') no-repeat;
+    background-size: cover;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    flex-direction: flex-start;
 }
 
-h3, h5, h6 {
-    font-family: "Basier Square Regular";
-}
-
-h1 {
-    font-size: 2.75rem;
-    line-height: 3.75rem;
-    text-align: left;
-    margin: 30px 30px;
-}
-
-h2 {
-    font-size: 2.90rem;
-    line-height: 4rem;
-}
-
-h3 {
-    color: rgba(255, 255, 255, 0.452);
-    font-size: 2.25rem;
-    line-height: 3rem;
-    margin: 0 10px;
-}
-
-h5 {
-    font-size: 2rem;
-    line-height: 1.75rem;
-}
-
-h6 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-    text-transform: uppercase;
-    color: #000000;
-}
-
-p {
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* ///// ————— ///// ————— ///// —————  HEADER ————— ///// ————— ///// —————///// //
-// ///////////////////////////////////////////////////////////////////////////// */
-
-header {
-    width: 100%;
-    background-color: #0a0a0d;
-    height: 80px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-    #header-primary {
-        color: #d97904;
-    }
-
-    #header-secondary {
-        display: inline;
-        color: #e0e0e0;
-    }
-
-    #highlight {
+    #title-highlight {
         color: #d9a404;
     }
 
-    header > h5 {
-        line-height: 0;
-        margin-top: 40px;
-    }
-
-/* ///// ————— ///// ————— ///// —————  NECK ————— ///// ————— ///// —————///// //
-// ///////////////////////////////////////////////////////////////////////////// */
-
-    .neck {
+    header {
         width: 100%;
-        height: 699px;
-        background: url('images/ramen-bowl.jpg') no-repeat;
-        background-size: cover;
-        overflow: hidden;
-        text-align: left;
-    }
-
-        .neck > h2 {
-            margin-left: 20px;
-        }
-
-        .neck > a {
-            margin-left: 20px;
-        }
-
-/* ///// ————— ///// ————— ///// —————  MAIN ————— ///// ————— ///// —————///// //
-// ///////////////////////////////////////////////////////////////////////////// */
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 20px 0 30px 0;
-    height: 450px;
-}
-
-    .main-xl {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: 20px 0 30px 0;
-    }
-
-    #main-start {
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .main-start-buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-/* ///// ————— ///// ————— ///// —————  FORM ————— ///// ————— ///// —————///// //
-// ///////////////////////////////////////////////////////////////////////////// */
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-input[type="text"], input[type="password"], input[type="url"], textarea {
-    margin: 20px 0;
-    width: 100%;
-    height: 75px;
-    border: none;
-    border-bottom: 2px solid #ffffff;
-    outline: 0;
-    background-color: rgb(0, 0, 0, 0.0);
-    font-family: "Basier Square Regular";
-    font-size: 2rem;
-    line-height: 1rem;
-    text-align: left;
-    color: #ffffff;
-}
-
-textarea {
-    resize: none;
-    height: 500px;
-    line-height: 3rem;
-    border: 2px solid white;
-}
-
-    ::placeholder {
-        font-family: "Basier Square Regular";
-        font-size: 1.75rem;
-        letter-spacing: -1px;
-        color: rgba(255, 255, 255, 0.521);
-    }
-
-/* Code for disappearing placeholder
-retrieved from Stanhub:
-https://stanhub.com/how-to-remove-the-placeholder-on-focus-css-only/ */
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-/* End code retrieval */
-
-/* ///// ————— ///// ————— ///// —————  CARDS ————— ///// ————— ///// —————///// //
-// ///////////////////////////////////////////////////////////////////////////// */
-
-    .recipe-card {
-        background-color: rgb(243, 243, 243);
-        border: 1px solid #292929;
-        border-radius: 3px;
-        margin: 20px;
-        width: 90%;
-        height: 300px;
+        height: 8%;
+        margin: 0 auto;
+        background-color: #0a0a0d;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 
-    .recipe-card > img {
-        width: 200px;
-    }
-
-        .recipe-card > h5 {
-            color: #000000;
-            text-transform: uppercase;
-        }
-
-    .recipe-card-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin: 0 10px;
-        width: 100%;
-    }
-
-        .recipe-card-info > p {
-            color: #000000;
-            font-size: 1rem;
-        }
-
-    .recipe-card-info > .button-first {
-        margin: 5px auto;
-    }
-
-
-
-
-footer {
-    width: 100%;
-    left: 0;
-    text-align: center;
-    font-family: "Basier Square Regular";
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #b3b3b3;
-    background-color: #0e0e13;
-    padding: 20px 10px;
-}
-
-#footer-break {
-    display: block;
-}
-
-/* // BUTTONS // ————— // BUTTONS // ————— // BUTTONS // —————  // BUTTONS // ————— // BUTTONS // //
-// ///////////////////////////////////////////////////////////////////////////////////////////// */
-
-.button-first {
-    background-color: #2C9116;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 20px 50px;
-    margin: 20px 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    text-align: center;
-}
-
-.button-second {
-    color: #47475f;
-    border: 2px solid #47475f;
-    background-color: #1C1C26;
-    border-radius: 5px;
-    padding: 20px 50px;
-    margin: 20px 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    text-align: center;
-}
-
-.button-third {
-    background-color: #d97904;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 20px 50px;
-    margin: 20px 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    text-align: center;
-}
-
-.mini {
-    padding: 15px 20px;
-    margin: 20px 10px;
-    font-family: "Basier Square Regular";
-    font-size: 1.10rem;
-    text-align: center;
-}
-
-.button-second-short {
-    color: #47475f;
-    border: 2px solid #47475f;
-    background-color: #1C1C26;
-    border-radius: 5px;
-    padding: 20px 73px;
-    margin: 20px 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    text-align: center;
-}
-
-.button-third-short {
-    background-color: #d97904;
-    color: #ffffff;
-    border: 0;
-    border-radius: 5px;
-    padding: 20px 73px;
-    margin: 20px 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    text-align: center;
-}
-
-form > .button-second {
-    margin: 50px 0 0 20px;
-    width: 40%;
-    padding: 20px 20px;
-    background-color: #00000000;
-    cursor: pointer;
-}
-
-form > .button-third {
-    margin: 50px 0 0 20px;
-    width: 40%;
-    padding: 20px 20px;
-    cursor: pointer;
-}
-
-@media screen and (min-width: 1300px) {
-
-    .neck {
-        background: none;
-    }
-
-    body {
-    background-color: #cccccc;
-    background: url('images/ramen-bowl.jpg') no-repeat 0% fixed / contain;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-h1, h2 {
-    font-family: "Basier Square Semibold";
-}
-
-h3, h5, h6 {
-    font-family: "Basier Square Regular";
-}
-
-h1 {
-    font-size: 2.75rem;
-    line-height: 3.75rem;
-    text-align: left;
-    margin: 30px 30px;
-}
-
-h2 {
-    font-size: 2.90rem;
-    line-height: 4rem;
-}
-
-h3 {
-    color: rgba(255, 255, 255, 0.452);
-    font-size: 2.25rem;
-    line-height: 3rem;
-    margin: 0 10px;
-}
-
-h5 {
-    font-size: 6rem;
-    line-height: 6rem;
-}
-
-h6 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-    text-transform: uppercase;
-    color: #000000;
-}
-
-p {
-    font-family: "Basier Square Regular";
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-}
-
-a {
-    text-decoration: none;
-}
-/* ///// ————— ///// ————— ///// —————  NAV ————— ///// ————— ///// —————///// //
-// /////////////////////////////////////////////////////////////////////////// */
-
-header {
-    width: 50%;
-    background-color: #0a0a0d00;
-    height: 200px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-    #header-primary {
-        color: #d97904;
-    }
-
-    #header-secondary {
-        display: block;
-        color: #e0e0e0;
-    }
-
-    #highlight {
-        color: #d9a404;
-    }
-
-    header > h5 {
-        line-height: 0;
-        margin-top: 40px;
-    }
-
-header {
-    margin-left: 20px;
-}
-    
-        .welcome-jp {
+        #highlight {
             color: #d97904;
         }
 
-        .standard-text {
-            display: block;
-            color: #e0e0e0;
+        #header-connector {
+            display: inline;
+            color: #ffffff;
         }
 
-        .page-description {
-            width: 50%;
-        }
-
-/* /////////////////////////////////////////////////////////////////////////// */
-    .main {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-        .main-within {
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .main-within-buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-        }
-
-            .strong-button, .weak-button {
-                border-radius: 5px;
-                font-family: "Basier Square Regular";
-                font-size: 1.25rem;
-                text-decoration: none;
-                margin-right: 30px;
-                padding: 10px 50px;
-                white-space: no-wrap;
-            }
-
-            .strong-button {
-                background-color: #2C9116;
-                color: #ffffff;
-            }
-
-            .weak-button {
-                border: 2px solid #d97904;
-                color: #d97904;
-            }
-
-            .mixed-button {
-                background-color: #d97904;
-                color: #ffffff;
-            }
-
-form {
-    width: 70%;
+main {
+    background-color: #0a0a0d;
+    border-top: 5px solid #d97904;
+    padding: 75px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
-input {
-    width: 70%;
-    margin: 20px 0;
-    height: 75px;
-    border: none;
-    border-bottom: 5px solid #000000;
-    outline: 0;
-    background-color: rgb(0, 0, 0, 0.0);
-    font-family: "Basier Square Regular";
-    font-size: 2rem;
-    line-height: 1rem;
-    text-align: left;
-    color: #000000;
-}
-
-input[type="submit"] {
-    border: none;
-}
-
-    ::placeholder {
-        font-family: "Basier Square Regular";
-        font-size: 2rem;
-        letter-spacing: -1px;
-        color: rgb(0, 0, 0, 0.4);
+    main > h3 {
+        text-align: center;
+        color: #444444;
     }
 
-input[type="submit"] {
-    width: 50px;
-}
-
-/* Code for disappearing placeholder
-retrieved fromm Stanhub:
-https://stanhub.com/how-to-remove-the-placeholder-on-focus-css-only/ */
-/* input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } */
-/* End code retrieval */
-
 footer {
-    display: none;
     width: 100%;
     left: 0;
-    bottom: 0;
     text-align: center;
     font-family: "Basier Square Regular";
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #b3b3b3;
-    background-color: #0e0e13;
+    color: #ffffff;
+    background-color: #040405;
     padding: 20px 10px;
 }
 
-#footer-break {
-    display: inline;
+/* —————————————————————————————— //
+/////////////////////////
+BUTTON DEFINITIONS 1 — 700
+/////////////////////////
+// —————————————————————————————— */
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
+    .text-button {
+        width: 250px;
+        height: 75px;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-family: "Basier Square Regular";
+        font-size: 1.25rem;
+    }
+
+        .first {
+            background-color: #2c9116;
+            border: 1px solid #000000;
+            color: #ffffff;
+            border: none;
+        }
+
+        .second {
+            background-color: #d97904;
+            color: #ffffff;
+            border: none;
+        }
+
+        .third {
+            background-color: #00000000;
+            border: 2px solid #ffffff3a;
+            color: #ffffff;
+        }
+
+        #danger {
+            margin-top: 100px;
+        }
+
+    .icon-button {
+        width: 50px;
+        height: 50px;
+        margin: 15px 0;
+        border-radius: 50%;
+        border: 3px solid rgb(19, 19, 19);
+    }
+    
+        .icon-button > img {
+            width: 35px;
+            height: 35px;
+        }
+
+/* —————————————————————————————— //
+/////////////////////////
+FIELDS & INPUTS 1 — 700
+/////////////////////////
+// —————————————————————————————— */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+input {
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    border: none;
+    border-bottom: 3px solid #ffffffd0;
+    width: 320px;
+    height: 75px;
+    margin: 20px 0;
+    outline: 0;
+    font-family: "Basier Square Regular";
+    font-size: 1.5rem;
+}
+
+    ::placeholder {
+        font-family: "Basier Square Regular";
+        font-size: 1.5rem;
+        color: #ffffff63;
+    }
+
+    input:focus::-webkit-input-placeholder { color:transparent; }
+    input:focus:-moz-placeholder { color:transparent; }
+
+/* —————————————————————————————— //
+/////////////////////////
+RECIPE CARDS 1 — 700
+/////////////////////////
+// —————————————————————————————— */
+
+    .recipe-card {
+        width: 400px;
+        margin: 15px auto;
+        border-radius: 4px;
+        box-shadow: 1px 0px 10px 0.5px #000000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        /* border: 2px solid #000000d5; */
+    }
+
+        #info-cover {
+            background-color: #1d1d1de0;
+            height: 100%;
+        }
+
+        #info-cover > p {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .tool-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* align-items: center; */
+    }

@@ -4,25 +4,30 @@
     <% include ../partials/head.ejs %>
 </head>
 
-    <body>
+<body>
+    <aside>
         <header>
-            <% include ../partials/header.ejs %>
+            <h5><a href="/">
+            <span id="highlight">ラーメン</span>
+            <span id="header-connector">instantRahmen</span>
+            </a></h5>
         </header>
 
-        <div class="neck">
-            <h1>Create code snippets and save them as recipes.</h1>
-        </div>
+        <h3>Log in below or click this button to sign up.</h3>
+        <a href="/users/new">
+            <button type="button" name="sign-up" class="text-button first">Sign up</button></a>
+    </aside>
 
-        <main>
-        <div class="main-start">
-          <h2>Log in</h2>
+    <main>
+        <h2>Log in</h2>
             <form action="/sessions" method="POST">
                 <input type="text" class="validate" name="username" placeholder="username" required>
                 <input type="password" class="validate" name="password" placeholder="password" required>
-                <input type="submit" class="button-first" name="action" value="Log in">
+                    <button type="submit" name="log-in-go" class="icon-button">
+                        <img src="../images/buttons/go.png" />
+                    </button>
             </form>
-        </div>
-      </main>
+     </main>
 
       <footer><% include ../partials/footer.ejs %></footer>
 </body>
