@@ -1,4 +1,4 @@
-# instantrahmen
+# instantRahmen
 
 https://instantrahmen.herokuapp.com/
 
