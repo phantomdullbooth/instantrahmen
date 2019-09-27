@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ./partials/head.ejs %>
 </head>
 
 <body>
-    <aside>
-        <header>
-            <h5><a href="/">
-            <span id="highlight">ラーメン</span>
-            <span id="header-connector">instantRahmen</span>
-            </a></h5>
-        </header>
-    
-    <% if (currentUser) { %>
-        <h3>Welcome, Chef<br />
-        @<%= currentUser.username %>!</h3>
+    <!-- HEADER : JAPANESE & SITE TITLE -->
+    <header>
+        <% include ./partials/header.ejs %>
+    </header>
 
-        <a href="/app">
-            <button type="button" name="go-to-recipes" class="text-button first">Go to Recipes</button></a>
-    <% } else { %>
-        <h3>Create code snippets and save them as recipe cards.</h3>
-    <% } %>
-    </aside>
+    <div class="flex-container">
+        <!-- ASIDE: PAGE DESCRIPTION  -->
+        <aside>
+            <!-- PAGE DESCRIPTION : TEXT & RELEVANT BUTTON -->
+            <% if (currentUser) { %>
+            <h3>Welcome, Chef<br />
+                @<%= currentUser.username %>!</h3>
 
-    <main>
-        <% if (currentUser) { %>
-        <h3>No one's forcing you to stay, per se.
-        But why would you want to leave?</h3>
+            <a href="/app">
+                <button type="button" name="go-to-recipes" class="text-button primary">Go to Recipes</button></a>
+            <% } else { %>
+            <h3>Save your favorite code snippets as recipe cards.</h3>
+            <% } %>
+        </aside>
 
-        <form action="/sessions/app?_method=DELETE" method="POST">
-            <button type="submit" name="log-out" class="text-button third">Log out</button>
-        </form>
-    <% } else { %>
-        <h2>Get cooking</h2>
+        <!-- MAIN : LOG OUT BUTTON -->
+        <main>
+            <% if (currentUser) { %>
+            <h3>No one's forcing you to stay, per se.
+                But why would you want to leave?</h3>
 
-        <a href="/sessions/new">
-            <button type="button" name="log-in" class="text-button first">Log in</button></a>
-        <a href="/users/new">
-            <button type="button" name="sign-up" class="text-button second">Sign up</button></a>
-    <% } %>
-    </main>
+            <form action="/sessions/app?_method=DELETE" method="POST">
+                <button type="submit" name="log-out" class="text-button tertiary">Log out</button>
+            </form>
+            <% } else { %>
+            <h2>Get cooking</h2>
+
+            <a href="/sessions/new">
+                <button type="button" name="log-in" class="text-button primary">Log in</button></a>
+            <a href="/users/new">
+                <button type="button" name="sign-up" class="text-button secondary">Sign up</button></a>
+            <% } %>
+        </main>
+    </div>  
 
     <footer><% include ./partials/footer.ejs %></footer>
 </body>

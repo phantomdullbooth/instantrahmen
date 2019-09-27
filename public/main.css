@@ -1,125 +1,53 @@
-/* * {
-    border: 0.5px solid gold;
-} */
+/* ================ UNIVERSALS ================ */
+/* ================ UNIVERSALS ================ */
 
-/* —————————————————————————————— //
-/////////////////////////
-UNIVERSAL FONT DEFINITIONS
-/////////////////////////
-// —————————————————————————————— */
+/* IMPORT GOTHIC A1 & IBM PLEX SERIF */
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,600,800|IBM+Plex+Serif:500,700&display=swap');
 
-/* BASIER SQUARE REGULAR */
-@font-face {
-    font-family: 'Basier Square Regular';
-    src: url('fonts/basier-square-regular.eot');
-    src: url('fonts/basier-square-regular.eot?#iefix') format('embedded-opentype'),
-         url('fonts/basier-square-regular.woff2') format('woff2'),
-         url('fonts/basier-square-regular.woff') format('woff'),
-         url('fonts/basier-square-regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-/* BASIER SQUARE MEDIUM */
-@font-face {
-    font-family: 'Basier Square Medium';
-    src: url('fonts/basier-square-medium.eot');
-    src: url('fonts/basier-square-medium.eot?#iefix') format('embedded-opentype'),
-         url('fonts/basier-square-medium.woff2') format('woff2'),
-         url('fonts/basier-square-medium.woff') format('woff'),
-         url('fonts/basier-square-medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-/* BASIER SQUARE SEMIBOLD */
-@font-face {
-    font-family: 'Basier Square Semibold';
-    src: url('fonts/basier-square-semibold.eot');
-    src: url('fonts/basier-square-semibold.eot?#iefix') format('embedded-opentype'),
-         url('fonts/basier-square-semibold.woff2') format('woff2'),
-         url('fonts/basier-square-semibold.woff') format('woff'),
-         url('fonts/basier-square-semibold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-/* BASIER SQUARE BOLD */
-@font-face {
-    font-family: 'Basier Square Bold';
-    src: url('fonts/basier-square-bold.eot');
-    src: url('fonts/basier-square-bold.eot?#iefix') format('embedded-opentype'),
-         url('fonts/basier-square-bold.woff2') format('woff2'),
-         url('fonts/basier-square-bold.woff') format('woff'),
-         url('fonts/basier-square-bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+/* COLORS */
+:root {
+    --brightseaweed: #54AE15;
+    --eggyolk: #D97904;
+    --poachedegg: #D9A404;
+    --squidink: #1C1C26;
+    --tonkotsu: #0A0A0D;
 }
 
-/* —————————————————————————————— //
-/////////////////////////
-TEXT DEFINITIONS 1 — 700
-/////////////////////////
-// —————————————————————————————— */
-
-/* MAIN SECTION TITLE */
-h2 {
-    color: #ffffff;
-    font-family: "IBM Plex Serif", serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: -2px;
-    margin: 0 0 30px 0;
+.text-poachedegg {
+    color: var(--poachedegg);
 }
 
-/* ASIDE MAIN TEXT */
-h3 {
-    color: #ffffff;
-    margin: 5%;
-    font-family: "Basier Square Semibold", sans-serif;
-    font-size: 2.75rem;
-    line-height: 3.5rem;
+#connector {
+    display: block;
 }
 
-h4 {
-    color: #ffffff;
-    font-family: "IBM Plex Serif", serif;
-    font-size: 2.5rem;
-    line-height: 1rem;
-    text-align: center;
-    margin-top: 0;
-    padding: 40px 0;
-}
-
-/* WEBSITE TITLE LINK */
-h5 {
-    font-family: "IBM Plex Serif", serif;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.75rem;
-}
-
-a {
-    text-decoration: none;
-    margin: 0 5%;
-}
-
-p {
-    font-family: "Basier Square Regular";
-    color: #ffffff;
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-}
-
+@media screen and (min-width: 1000px) {
     #connector {
-        display: block;
+        display: inline;
     }
+}
 
-/* —————————————————————————————— //
-/////////////////////////
-BODY OUTLINE 1 — 700
-/////////////////////////
-// —————————————————————————————— */
+/* ================ BODY ================ */
+/* ================ BODY ================ */
 
 body {
-    background-color: #e0e0e0;
+    background-color: var(--squidink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* : WEBSITE LOGO */
+header, footer {
+    background-color: var(--tonkotsu);
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -128,68 +56,108 @@ body {
 aside {
     background: url('images/ramen-bowl.jpg') no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 60vh;
     display: flex;
     flex-direction: column;
-    flex-direction: flex-start;
+    justify-content: flex-start;
 }
 
-    #title-highlight {
-        color: #d9a404;
-    }
-
-    header {
-        width: 100%;
-        height: 8%;
-        margin: 0 auto;
-        background-color: #0a0a0d;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-        #highlight {
-            color: #d97904;
-        }
-
-        #header-connector {
-            display: inline;
-            color: #ffffff;
-        }
-
 main {
-    background-color: #0a0a0d;
-    border-top: 5px solid #d97904;
-    padding: 75px 0;
+    padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-    main > h3 {
-        text-align: center;
-        color: #444444;
+@media screen and (min-width: 725px) {
+    
+    aside {
+        background: url('images/ramen-bowl.jpg') no-repeat;
+        background-size: cover;
+        background-position-y: 50%;
     }
-
-footer {
-    width: 100%;
-    left: 0;
-    text-align: center;
-    font-family: "Basier Square Regular";
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #ffffff;
-    background-color: #040405;
-    padding: 20px 10px;
 }
 
-/* —————————————————————————————— //
-/////////////////////////
-BUTTON DEFINITIONS 1 — 700
-/////////////////////////
-// —————————————————————————————— */
+@media screen and (min-width: 1250px) {
+    
+    .flex-container {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    aside {
+        width: 1000px;
+        height: auto;
+    }
+
+    main {
+        width: 100%;
+        height: 80vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* ================ TEXT ================ */
+/* ================ TEXT ================ */
+
+/* MAIN SECTION TITLE */
+h2 {
+    color: #f8f8ff;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+    margin: 0 0 30px 0;
+}
+
+/* ASIDE MAIN TEXT */
+h3 {
+    color: #f8f8ff;
+    margin: 5%;
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 800;
+    font-size: 2.75rem;
+    line-height: 3.75rem;
+}
+
+aside > h3 {
+    max-width: 600px;
+}
+
+/* JAPANESE & DENGLISH TITLES */
+h5 {
+    color: #f8f8ff;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+a {
+    color: #f8f8ff;
+    text-decoration: none;
+}
+
+p {
+    color: #f8f8ff;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media screen and (min-width: 725px) {
+    aside > h3 {
+        max-width: 400px;
+    }
+}
+
+/* ================ BUTTONS ================ */
+/* ================ BUTTONS ================ */
 
 button {
     display: flex;
@@ -198,37 +166,74 @@ button {
     cursor: pointer;
 }
 
-    .text-button {
-        width: 250px;
-        height: 75px;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-family: "Basier Square Regular";
+aside .text-button {
+    margin-left: 25px;
+}
+
+.text-button {
+    border-radius: 5px;
+    width: 250px;
+    height: 75px;
+    margin: 10px 0;
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.primary {
+    background-color: var(--brightseaweed);
+    color: #f8f8ff;
+    border: 1px solid #479211;
+    border-bottom: 3px solid #38750d;
+}
+
+.secondary {
+    background-color: var(--eggyolk);
+    color: #f8f8ff;
+    border: 1px solid #D97904;
+    border-bottom: 3px solid #a35a00;
+}
+
+.tertiary {
+    background-color: #00000000;
+    color: #f8f8ff;
+    border: 2px solid #f8f8ff;
+}
+
+/* ================ FORMS & INPUTS ================ */
+/* ================ FORMS & INPUTS ================ */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+input {
+    background-color: #ffffff00;
+    color: #ffffff;
+    border: none;
+    border-bottom: 3px solid #f8f8ff70;
+    width: 320px;
+    height: 75px;
+    margin: 20px 0;
+    padding: 0 20px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.25rem;
+}
+    ::placeholder {
+        color: #f8f8ff70;
+        font-family: "Gothic A1", sans-serif;
         font-size: 1.25rem;
     }
 
-        .first {
-            background-color: #2c9116;
-            border: 1px solid #000000;
-            color: #ffffff;
-            border: none;
-        }
+    input:focus::-webkit-input-placeholder { color:transparent; }
+    input:focus:-moz-placeholder { color:transparent; }
 
-        .second {
-            background-color: #d97904;
-            color: #ffffff;
-            border: none;
-        }
 
-        .third {
-            background-color: #00000000;
-            border: 2px solid #ffffff3a;
-            color: #ffffff;
-        }
 
-        #danger {
-            margin-top: 100px;
-        }
+
 
     .icon-button {
         width: 50px;
@@ -243,40 +248,33 @@ button {
             height: 35px;
         }
 
-/* —————————————————————————————— //
-/////////////////////////
-FIELDS & INPUTS 1 — 700
-/////////////////////////
-// —————————————————————————————— */
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
 
-input {
-    background-color: rgba(255, 255, 255, 0);
+
+
+h4 {
     color: #ffffff;
-    border: none;
-    border-bottom: 3px solid #ffffffd0;
-    width: 320px;
-    height: 75px;
-    margin: 20px 0;
-    outline: 0;
-    font-family: "Basier Square Regular";
-    font-size: 1.5rem;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 2.5rem;
+    line-height: 1rem;
+    text-align: center;
+    margin-top: 0;
+    padding: 40px 0;
 }
 
-    ::placeholder {
-        font-family: "Basier Square Regular";
-        font-size: 1.5rem;
-        color: #ffffff63;
-    }
 
-    input:focus::-webkit-input-placeholder { color:transparent; }
-    input:focus:-moz-placeholder { color:transparent; }
+
+
+
+
+
+
+
+
+    main > h3 {
+        text-align: center;
+        color: #444444;
+    }
 
 /* —————————————————————————————— //
 /////////////////////////
@@ -292,8 +290,6 @@ RECIPE CARDS 1 — 700
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        
-        /* border: 2px solid #000000d5; */
     }
 
         #info-cover {

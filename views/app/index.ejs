@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head.ejs %>
 </head>
 
 <body>
-    <aside>
-        <header>
-            <h5><a href="/">
-            <span id="highlight">ラーメン</span>
-            <span id="header-connector">instantRahmen</span>
-            </a></h5>
-        </header>
+    <!-- HEADER : JAPANESE & SITE TITLE -->
+    <header>
+        <% include ../partials/header.ejs %>
+    </header>
 
-        <h3>Your recipes are down below. Hungry for more?</h3>
+    <div class="flex-container">
+    <aside>
+        <h3>You can find your recipes here. Hungry for more?</h3>
         <a href="/app">
-            <button type="button" name="add-recipe" class="text-button second">Add recipe</button></a>
+            <button type="button" name="add-recipe" class="text-button secondary">Add recipe</button></a>
     </aside>
 
     <main>
@@ -49,7 +49,7 @@
         <% } %>
 
             <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="button" name="log-out" class="text-button third" id="danger">Log out</button>
+                <button type="button" name="log-out" class="text-button tertiary">Log out</button>
             </form>
 
     </main>
