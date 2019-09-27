@@ -15,9 +15,9 @@ const db = mongoose.connection;
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
 
-//___________________
-//Database
-//___________________
+// ———————————————————————————————— //
+// DATABASE /////
+// ———————————————————————————————— //
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -50,6 +50,7 @@ app.use(session({
     saveUninitialized: false
   }))
 
+
 // ———————————————————————————————— //
 // ROUTES ///// LOCALHOST:3000
 // ———————————————————————————————— //
@@ -63,7 +64,7 @@ app.use('/users', userController);
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController);
 
-//___________________
-//Listener
-//___________________
+// ———————————————————————————————— //
+// LISTENER /////
+// ———————————————————————————————— //
 app.listen(PORT, () => console.log( 'we went to the year', PORT));

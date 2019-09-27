@@ -6,11 +6,8 @@
     
     <body>
 
-      <header>
-            <h5><a href="/app">
-                <span id="header-primary">ラーメン</span>
-                <span id="header-secondary">instantRahmen</span>
-            </a></h5>
+        <header>
+            <% include ../partials/header.ejs %>
         </header>
 
       <div class="main-xl">
@@ -24,7 +21,7 @@
             <input type="text" name="line_4" value="<%=recipe.line_4%>" placeholder="line 4" /><br/>
             <input type="text" name="line_5" value="<%=recipe.line_5%>" placeholder="line 5" /><br/>
             <input type="text" name="line_6" value="<%=recipe.line_6%>" placeholder="line 6" /><br/>
-                <input type="submit" class="button-first" value="Edit Recipe" />
+                <input type="submit" class="text-button primary" value="Edit Recipe" />
         </form>
 
         <form action="/<%=recipe.id%>">

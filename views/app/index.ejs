@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head.ejs %>
 </head>
 
-    <body>
-        <header>
-            <% include ../partials/header.ejs %>
-        </header>
+<body>
+    <!-- HEADER : JAPANESE & SITE TITLE -->
+    <header>
+        <% include ../partials/header.ejs %>
+    </header>
 
-        <div class="neck">
-            <h1>Your recipes are down below. Hungry for more?</h1>
+    <div class="flex-container">
+    <aside>
+        <h3>You can find your recipes here. Hungry for more?</h3>
+        <a href="/app">
+            <button type="button" name="add-recipe" class="text-button secondary">Add recipe</button></a>
+    </aside>
 
-            <a href="/app/add-recipe" class="button-third">Add Recipe</a>
-        </div>
-
-        <div class="main-xl">
-          <% for (let i = 0; i < recipes.length; i++) { %>
+    <main>
+        <% for (let i = 0; i < recipes.length; i++) { %>
             <div class="recipe-card">
-                <img src="<%=recipes[i].image%>" />
-
-                <div class="recipe-card-info">
-                    <h6><%=recipes[i].title%></h6>
+                <style>
+                    .recipe-card {
+                    background: url('<%=recipes[i].image%>') no-repeat;
+                    background-size: cover;
+                    background-position-x: 50%;
+                    background-position-y: 30%;
+                    }
+                </style>
+                <div id="info-cover">
+                    <h4><%=recipes[i].title%></h4>
                     <p><%=recipes[i].description%></p>
+                
+                    <div class="tool-buttons">
+                    <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
+                            <img src="../images/buttons/view.png" />
+                        </button></a>
 
-                    <a href="/<%=recipes[i].id%>" class="button-first mini">See Recipe</a>
+                    <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
+                        <button type="submit" name="delete-recipe" class="icon-button">
+                            <img src="../images/buttons/delete.png" />
+                        </button>
+                    </form>
+                </div>
                 </div>
             </div>
-          <% } %>
-        </div>
+        <% } %>
 
-        <main>
-          <h3>You don't actually have to log out. You can just leave. And come right back.</h3>
             <form action="/sessions/app?_method=DELETE" method="POST">
-                <input type="submit" class="button-second-short" name="action" value="Log Out">
+                <button type="button" name="log-out" class="text-button tertiary">Log out</button>
             </form>
-        </main>
 
-      <footer><% include ../partials/footer.ejs %></footer>
+    </main>
+
+    <footer><% include ../partials/footer.ejs %></footer>
 </body>
-</html>
