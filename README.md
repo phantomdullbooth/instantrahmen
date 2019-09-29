@@ -10,7 +10,6 @@ I learned a couple of things doing this project.
 2. I used <span> tags in this project, in contract to the first project.
 
 ### Improvements that could be made
-...DON'T expand the screen more than 1000px. Thanks. :)
 
 ....Also, I want to not do the lines option, instead have a <textarea> that parses the data into an array.
 
