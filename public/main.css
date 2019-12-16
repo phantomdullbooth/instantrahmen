@@ -35,9 +35,14 @@
 :root {
 --primary: #000000;
 --secondary: #f8f8ff;
---tertiary: #191919;
+--tertiary: #4b4b4b;
 --accentone: #c70000;
 --accenttwo: #54AE15;
+--accentthree: #ffc400;
+}
+
+.text-tertiary {
+    color: var(--tertiary);
 }
 
 /* ====== BODY PARTS ====== */
@@ -55,42 +60,114 @@ aside {
     width: 65%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
 }
 
-.dim {
+header, footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    height: 90px;
+}
+
+footer {
+    height: 60px;
+}
+
+
+/* ====== TEXT ====== */
+/* ====== TEXT ====== */
+
+h1 {
+    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 5.5rem;
+    margin: 5%;
+    color: var(--secondary);
+}
+
+h2 {
+    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 3.9rem;
+    color: #484848;
+    padding-bottom: 10px;
+    border-bottom: 10px solid var(--primary);
+}
+
+h2:hover {
+    color: var(--secondary);
+    border-bottom: 10px solid var(--accenttwo);
+}
+
+h5 {
+    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 30px;
+    color: var(--secondary);
+}
+
+h6 {
+    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--tertiary);
+}
+
+
+/* ====== IMAGES ====== */
+/* ====== IMAGES ====== */
+
+.rounded, .dimmer {
+    position: absolute;
     width: 500px;
     height: 500px;
-    position: absolute;
-    z-index: -222;
     top: 20%;
     left: 40%;
+    border-radius: 100%;
+}
+
+.rounded {
+    z-index: -101;
+}
+
+.dimmer {
+    z-index: -100;
     background-color: #0000006e;
-    border-radius: 100%;
 }
 
-.feature {
-    border-radius: 100%;
-    position: absolute;
-    z-index: -2222;
-    top: 20%;
-    left: 40%;
-    width: 500px;
 
+/* ====== HEADER ====== */
+/* ====== HEADER ====== */
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-/* * {
-    border: 1px solid #191919;
-} */
+.logo-and {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
-
-
-
-.bg {
+.bg-title {
     position: absolute;
-    top: 5px;
     z-index: -1111;
+    top: 25px;
     font-family: 'Gothic A1';
     font-weight: 800;
     font-size: 3rem;
@@ -98,44 +175,45 @@ aside {
     color: #191919;
 }
 
-.bg-text-top {
-    position: absolute;
-    z-index: -999;
-    font-family: 'Basier Square Regular';
-    font-weight: 800;
-    font-size: 3rem;
-    letter-spacing: -0.5rem;
+.fg-title {
+    position: relative;
+    top: 7px;
+    left: 45px;
 }
 
-.text-tertiary {
-    color: var(--tertiary);
-}
+/* ====== ASIDE ====== */
+/* ====== ASIDE ====== */
 
-
-
-/* ================ BODY ================ */
-/* ================ BODY ================ */
-
-
-/* : WEBSITE LOGO */
-header {
-    height: 60px;
+#start {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 500px;
+    margin-left: 50px;
 }
 
-.logo-nav, footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.bold {
+    color: var(--accenttwo);
 }
 
-footer {
-    height: 60px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== BODY ====== */
+/* ====== BODY ====== */
 
 
 .flex-container {
@@ -145,8 +223,6 @@ footer {
 }
 
 aside {
-    /* background: url('images/ramen-bowl.jpg') no-repeat; */
-    /* background-size: cover; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -159,47 +235,9 @@ main {
     align-items: center;
 }
 
-@media screen and (min-width: 725px) {
-    
-    aside {
-        /* background: url('images/ramen-bowl.jpg') no-repeat; */
-        background-size: cover;
-        background-position-y: 50%;
-    }
-}
 
-@media screen and (min-width: 1250px) {
-    
-    .flex-container {
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
-    aside {
-        /* width: 1300px; */
-        height: auto;
-    }
-
-    main {
-        /* width: 100%; */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-/* ================ TEXT ================ */
-/* ================ TEXT ================ */
-
-/* MAIN SECTION TITLE */
-h2 {
-    color: #f8f8ff;
-    font-family: "IBM Plex Serif", serif;
-    font-weight: 600;
-    font-size: 3.5rem;
-    letter-spacing: -2px;
-    margin: 0 0 30px 0;
-}
+/* ====== TEXT ====== */
+/* ====== TEXT ====== */
 
 /* ASIDE MAIN TEXT */
 h3 {
@@ -221,11 +259,43 @@ h5 {
     margin: 0 30px;
 }
 
-.offset {
-    position: relative;
-    left: 45px;
-    top: 7px;
+
+
+/* ====== FORMS & INPUT ====== */
+/* ====== FORMS & INPUT ====== */
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+input {
+    border: none;
+    border-radius: 7px;
+    background-color: #131313;
+    color: #ffffff;
+    width: 250px;
+    height: 50px;
+    margin: 15px 0;
+    margin-right: 20px;
+    padding: 0 15px;
+    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+::placeholder {
+    color: #ffffff54;
+    /* font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif; */
+    font-size: 0.95rem;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+
+
+
 
 a {
     color: #f8f8ff;
@@ -260,22 +330,13 @@ aside .text-button {
     margin-left: 25px;
 }
 
-.text-button {
-    border-radius: 5px;
-    width: 250px;
-    height: 75px;
-    margin: 10px 0;
-    font-family: "Gothic A1", sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-}
 
-.primary {
-    background-color: #191919;
+/* .primary {
+    background-color: var(--accentone);
     color: #f8f8ff;
     border: 1px solid #479211;
     border-bottom: 3px solid #38750d;
-}
+} */
 
 .secondary {
     background-color: var(--eggyolk);
@@ -293,33 +354,9 @@ aside .text-button {
 /* ================ FORMS & INPUTS ================ */
 /* ================ FORMS & INPUTS ================ */
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
 
-input {
-    background-color: #ffffff00;
-    color: #ffffff;
-    border: none;
-    border-bottom: 3px solid #f8f8ff70;
-    width: 320px;
-    height: 75px;
-    margin: 20px 0;
-    padding: 0 20px;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 1.25rem;
-}
-    ::placeholder {
-        color: #f8f8ff70;
-        font-family: "Gothic A1", sans-serif;
-        font-size: 1.25rem;
-    }
 
-    input:focus::-webkit-input-placeholder { color:transparent; }
-    input:focus:-moz-placeholder { color:transparent; }
+
 
 
 
@@ -400,12 +437,6 @@ RECIPE CARDS 1 — 700
     }
 
     #connector {
-        display: block;
-    }
-    
-    @media screen and (min-width: 1000px) {
-        #connector {
-            display: inline;
-        }
+        display: inline;
     }
 

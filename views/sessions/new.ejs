@@ -13,20 +13,33 @@
 
     <div class="flex-container">
     <aside>
-        <h3>If you don't have an account, click here to sign up.</h3>
-        <a href="/users/new">
-            <button type="button" name="sign-up" class="text-button primary">Sign up</button></a>
+            <h1>Next, preheat oven to... 5000?!</h1>
+
+                <div id="start">
+                    <form action="/sessions" method="POST" id="registration">
+                        <input type="text" name="username" placeholder="username" required>
+                        <input type="password" name="password" minlength="8"
+                            placeholder="password (8+ characters)" required>
+                            <button type="submit" name="log-in-go" class="icon-button">
+                                <img src="../images/buttons/go.png" />
+                            </button>
+                    </form>
+                </div>
     </aside>
 
+    <img src="../images/ramen-square.jpg" class="rounded" />
+        <div class="dimmer"></div>
+
+
     <main>
-        <h2>Log in</h2>
+        <!-- <h2>Log in</h2>
             <form action="/sessions" method="POST">
                 <input type="text" class="validate" name="username" placeholder="username" required>
                 <input type="password" class="validate" name="password" placeholder="password" required>
                     <button type="submit" name="log-in-go" class="icon-button">
                         <img src="../images/buttons/go.png" />
                     </button>
-            </form>
+            </form> -->
      </main>
     </div>
 
