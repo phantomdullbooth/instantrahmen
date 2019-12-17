@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <% include ../partials/head.ejs %>
-</head>
+<head> <% include ../partials/head.ejs %> </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
-    <header>
-        <% include ../partials/header.ejs %>
-    </header>
+    <header> <% include ../partials/header.ejs %> </header>
 
-    <div class="flex-container">
-    <aside>
-        <h3>If you don't have an account, click here to sign up.</h3>
-        <a href="/users/new">
-            <button type="button" name="sign-up" class="text-button primary">Sign up</button></a>
-    </aside>
+    <div class="viewscreen">
+        <main>
+            <h1>Log in & preheat oven to... 5000?!</h1>
 
-    <main>
-        <h2>Log in</h2>
-            <form action="/sessions" method="POST">
-                <input type="text" class="validate" name="username" placeholder="username" required>
-                <input type="password" class="validate" name="password" placeholder="password" required>
-                    <button type="submit" name="log-in-go" class="icon-button">
-                        <img src="../images/buttons/go.png" />
-                    </button>
-            </form>
-     </main>
+            <div id="start">
+                <form action="/sessions" method="POST" id="registration">
+                    <input type="text" name="username" placeholder="username" required>
+                    <input type="password" name="password" minlength="8"
+                        placeholder="password (8+ characters)" required>
+                        <button type="submit" name="sign-up-go" class="btn-std fill-orange">Go</button>
+                </form>
+            </div>
+
+            <h6 class="space"><a href="../users/new"  class="users">Whoa, I missed a step.</a></h6>
+        </main>
+
+        <img src="../images/ramen-square.jpg" class="featured" />
+        <div class="overlay-dim"></div>
     </div>
 
-      <footer><% include ../partials/footer.ejs %></footer>
+    <footer> <% include ../partials/footer.ejs %> </footer>
 </body>
-</html>
+<html>

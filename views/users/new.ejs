@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <% include ../partials/head.ejs %>
-</head>
+<head> <% include ../partials/head.ejs %> </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
-    <header>
-        <% include ../partials/header.ejs %>
-    </header>
+    <header> <% include ../partials/header.ejs %> </header>
 
-    <div class="flex-container">
-    <aside>
-        <h3>If you already have an account, click here to log in.</h3>
-        <a href="/sessions/new">
-            <button type="button" name="sign-up" class="text-button primary">Log in</button></a>
-    </aside>
+    <div class="viewscreen">
+        <main>
+            <h1>Step one. Sign up. Like right now.</h1>
 
-    <main>
-          <h2>Sign up</h2>
-            <form action="/users" method="POST">
-                <input type="text" class="validate" name="username" placeholder="username" required>
-                <input type="password" class="validate" name="password" minlength="8" placeholder="password (8+ characters)" required>
-                <button type="submit" name="log-in-go" class="icon-button">
-                        <img src="../images/buttons/go.png" />
-                </button>
-            </form>
-      </main>
-      </div>
+            <div id="start">
+                <form action="/users" method="POST">
+                    <input type="text" name="username" placeholder="username" required>
+                    <input type="password" name="password" minlength="8" placeholder="password (8+ characters)"
+                        required>
+                    <button type="submit" name="log-in-go" class="btn-std fill-orange">Go</button>
+                </form>
+            </div>
 
-      <footer><% include ../partials/footer.ejs %></footer>
+            <h6 class="space"><a href="../sessions/new" class="users">I already have an account.</a></h6>
+        </main>
+
+        <img src="../images/ramen-square.jpg" class="featured" />
+        <div class="overlay-dim"></div>
+    </div>
+
+    <footer> <% include ../partials/footer.ejs %> </footer>
 </body>
-</html>
+<html>

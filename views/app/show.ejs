@@ -6,12 +6,12 @@
 </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
+    <!-- HEADER [ TITLE, QUOTE]  -->
     <header>
         <% include ../partials/header.ejs %>
     </header>
 
-    <div class="flex-container">
+    <div class="viewscreen">
     <aside>
 
         <h3>Ahh, the <span id="title-highlight"><%=recipe.title%></span>.<br />
@@ -40,9 +40,9 @@
                     </form>
                 </div>
 
-                <form action="/sessions?_method=DELETE" method="POST">
-                <button type="button" name="log-out" class="text-button tertiary" id="danger">Log out</button>
-            </form>
+                <form action="/sessions/app?_method=DELETE" method="POST">
+                    <button type="button" name="log-out" class="btn-less">Log out</button>
+                </form>
             
     </main>
     </div>
