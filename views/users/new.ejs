@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <% include ../partials/head.ejs %>
-</head>
+<head> <% include ../partials/head.ejs %> </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
-    <header>
-        <% include ../partials/header.ejs %>
-    </header>
+    <header> <% include ../partials/header.ejs %> </header>
 
-    <div class="flex-container">
-        <aside>
+    <div class="viewscreen">
+        <main>
             <h1>Step one. Sign up. Like right now.</h1>
 
-                <div id="start">
-                    <form action="/users" method="POST" id="registration">
-                        <input type="text" name="username" placeholder="username" required>
-                        <input type="password" name="password" minlength="8"
-                            placeholder="password (8+ characters)" required>
-                            <button type="submit" name="log-in-go" class="icon-button">
-                                <img src="../images/buttons/go.png" />
-                            </button>
-                    </form>
-                </div>
-        </aside>
+            <div id="start">
+                <form action="/users" method="POST">
+                    <input type="text" name="username" placeholder="username" required>
+                    <input type="password" name="password" minlength="8" placeholder="password (8+ characters)"
+                        required>
+                    <button type="submit" name="log-in-go" class="text-button fill-accentthree">Go</button>
+                </form>
+            </div>
+
+            <h6 class="space"><a href="../sessions/new" class="users">I already have an account.</a></h6>
+        </main>
 
         <img src="../images/ramen-square.jpg" class="rounded" />
         <div class="dimmer"></div>
-
-        <main>
-            <!-- <h2>Sign up</h2> -->
-            <!-- <form action="/users" method="POST">
-                <input type="text" class="validate" name="username" placeholder="username" required>
-                <input type="password" class="validate" name="password" minlength="8"
-                    placeholder="password (8+ characters)" required>
-                <button type="submit" name="log-in-go" class="icon-button">
-                    <img src="../images/buttons/go.png" />
-                </button>
-            </form> -->
-        </main>
     </div>
 
-    <footer><% include ../partials/footer.ejs %></footer>
+    <footer> <% include ../partials/footer.ejs %> </footer>
 </body>
-
-</html>
+<html>

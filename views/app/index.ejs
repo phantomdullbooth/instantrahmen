@@ -6,17 +6,19 @@
 </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
+    <!-- HEADER [ TITLE, QUOTE]  -->
     <header>
         <% include ../partials/header.ejs %>
     </header>
 
-    <div class="flex-container">
+    <div class="viewscreen">
     <aside>
-        <h3>You can find your recipes here. Hungry for more?</h3>
-        <a href="/app/add-recipe">
-            <button type="button" name="add-recipe" class="text-button secondary">Add recipe</button></a>
+        <h1>Guten Appetit. Hungry for more?</h1>
+        <a href="/app/add-recipe"><h2 class="bold">Try something new.</h2></a>
     </aside>
+
+    <img src="images/mush-square.jpg" class="rounded" />
+        <div class="dimmest"></div>
 
     <main>
         <% for (let i = 0; i < recipes.length; i++) { %>

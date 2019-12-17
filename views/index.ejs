@@ -1,63 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <% include ./partials/head.ejs %>
-</head>
+<head> <% include ./partials/head.ejs %> </head>
 
 <body>
-    <!-- HEADER : JAPANESE & SITE TITLE -->
-    <header>
-        <% include ./partials/header.ejs %>
-    </header>
+    <header> <% include ./partials/header.ejs %> </header>
 
-    <div class="flex-container">
-        <!-- ASIDE: PAGE DESCRIPTION  -->
-        <aside>
-            
-            <!-- PAGE DESCRIPTION : TEXT & RELEVANT BUTTON -->
-            <% if (currentUser) { %>
-            <h3>Welcome, Chef<br />
-                @<%= currentUser.username %>!</h3>
+    <div class="viewscreen">
+        <main>
+            <% if (!currentUser) { %>
+                <h1>Save your favorite code snippets as recipe cards.</h1>
 
-            <a href="/app">
-                <button type="button" name="go-to-recipes" class="text-button primary">Go to Recipes</button></a>
+                <div id="start" class="spacers">
+                    <a href="/sessions/new"><h2 class="bold-link">Log in</h2>
+                    <a href="/users/new"><h2>Sign up</h2>
+                </div>
+
             <% } else { %>
-                
-            <h1>Save your favorite code snippets as recipe cards.</h1>
+                <h1>Let's get cooking, shall we?</h1>
 
-            <div id="start">
-                <a href="/sessions/new"><h2 class="bold">Log in</h2>
-                <a href="/users/new"><h2>Sign up</h2>
-            </div>
+                <a href="/app"><h2 class="bold-link">Go to recipes.</h2>
+                <a href="/app/add-recipe"><h2 class="bold-link">Try something new.</h2></a>
             <% } %>
-        </aside>
+        </main>
 
         <img src="images/ramen-square.jpg" class="rounded" />
         <div class="dimmer"></div>
 
-        <!-- MAIN : LOG OUT BUTTON -->
-        <main>
-            <% if (currentUser) { %>
-            <h3>No one's forcing you to stay, per se.
-                But why would you want to leave?</h3>
+        <% if (currentUser) { %>
+            <aside>
+                <h4>Welcome, Chef @<%= currentUser.username %>!</h4>
+                <h6 class="space"><a href="../sessions/new"  class="users">Log out</a></h6>
 
-            <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="submit" name="log-out" class="text-button tertiary">Log out</button>
-            </form>
-            <% } else { %>
+                <form action="/sessions/app?_method=DELETE" method="POST">
+                    <button type="submit" name="log-out" class="users">Log out</button>
+                </form>
+            </aside>
+        <% } %>
+    </div>
 
-                
-            <!-- <h2>Get cooking</h2>
-
-            <a href="/sessions/new">
-                <button type="button" name="log-in" class="text-button primary">Log in</button></a>
-            <a href="/users/new">
-                <button type="button" name="sign-up" class="text-button secondary">Sign up</button></a> -->
-            <% } %>
-        </main>
-    </div>  
-
-    <footer><% include ./partials/footer.ejs %></footer>
+    <footer> <% include ./partials/footer.ejs %> </footer>
 </body>
 <html>

@@ -19,7 +19,8 @@ users.post('/', (req, res) => {
       console.log(err)
     } else {
       console.log(createdUser)
-      res.redirect('/')
+        req.session.currentUser = createdUser
+        res.redirect('/')
     }
   })
 })
