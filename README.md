@@ -3,7 +3,7 @@ https://instantrahmen.herokuapp.com
 
 I originally completed this project as part of my General Assembly Software Engineering course in August 2019. While the site was fully functional, there was a lot to be desired in terms of the design and features of the app. So, in December 2019, I decided to redesign the app with improved features and a completely new design. I expect to be done with everything in January 2020.
 
-![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-new/02%20signup.png "New sign-up page")
+![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-new/06%20recipes-add.png "New add recipes page")
 
 #### User Stories
 1. Users should be able to sign up for an account and log in to add code snippets.
@@ -11,7 +11,7 @@ I originally completed this project as part of my General Assembly Software Engi
 3. Users should be able to log out from sessions.
 4. NEW — Users should be able to delete their own accounts.
 
-![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-old/02%20signup.png "New sign-up page")
+![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-old/06%20recipes-add.png Old add recipes page")
 
 #### Improvements
 * New design language featuring bold lettering and a darkened theme.
