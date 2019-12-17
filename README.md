@@ -11,7 +11,7 @@ I originally completed this project as part of my General Assembly Software Engi
 3. Users should be able to log out from sessions.
 4. NEW — Users should be able to delete their own accounts.
 
-![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-old/06%20recipes-add.png Old add recipes page")
+![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-old/06%20recipes-add.png "Old add recipes page")
 
 #### Improvements
 * New design language featuring bold lettering and a darkened theme.
