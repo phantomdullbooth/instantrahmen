@@ -7,7 +7,7 @@
 /* fonts: gothic a1, ibm plex serif; google fonts */
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,600,800|IBM+Plex+Serif:500,700&display=swap');
 
-/* BASIER SQUARE REGULAR */
+/* local font, basier square regular */
 @font-face {
     font-family: 'Basier Square Regular';
     src: url('fonts/basier-square/basier-square-regular.eot');
@@ -19,7 +19,7 @@
     font-style: normal;
 }
 
-/* BASIER SQUARE MEDIUM */
+/* local font, basier square medium */
 @font-face {
     font-family: 'Basier Square Medium';
     src: url('fonts/basier-square/basier-square-medium.eot');
@@ -33,27 +33,28 @@
 
 /* colors */
 :root {
---primary: #000000;
---secondary: #f8f8ff;
---tertiary: #4b4b4b;
---accentone: #c70000;
---accenttwo: #54AE15;
---accentthree: #ff9900;
+--absoluteblack: #000000;
+--ghostwhite: #f8f8ff;
+--green: #54AE15;
+--mediumgrey: #6b6b6b;
+--orange: #ff9900;
+--red: #c70000;
 }
 
-.text-tertiary {
-    color: var(--tertiary);
+.text-grey {
+    color: var(--mediumgrey);
 }
 
 /* ====== BODY PARTS ====== */
 /* ====== BODY PARTS ====== */
 
 body {
-    background-color: var(--primary);
+    background-color: var(--absoluteblack);
+    color: var(--ghostwhite);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
+    justify-content: space-between;
 }
 
 header, footer {
@@ -100,65 +101,67 @@ aside {
 /* ====== TEXT ====== */
 /* ====== TEXT ====== */
 
-h1 {
+h1, h2, h6, .btn-less {
     font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
     font-weight: 700;
+}
+
+h5, .btn-std, input {
+    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
+}
+
+h1 {
     font-size: 6rem;
     line-height: 5.5rem;
-    color: var(--secondary);
 }
 
 h2 {
-    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
-    font-weight: 700;
+    border-bottom: 10px solid var(--absoluteblack);
     font-size: 4rem;
     line-height: 3.9rem;
-    color: #484848;
     margin: 10px 0;
     padding-bottom: 10px;
-    border-bottom: 10px solid var(--primary);
 }
 
 h2:hover {
-    color: var(--secondary);
-    border-bottom: 10px solid var(--accenttwo);
+    border-bottom: 10px solid var(--green);
+    color: var(--ghostwhite);
 }
 
 h4 {
-    color: #ffffff;
+    color: var(--ghostwhite);
     font-family: "IBM Plex Serif", serif;
-    font-weight: 500;
     font-size: 2rem;
+    font-weight: 500;
+    margin: 0;    
     text-align: center;
-    margin: 0;
 }
 
 h5 {
-    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0 30px;
-    color: var(--secondary);
+    color: var(--ghostwhite);
 }
 
 h6 {
     margin: 0;
-    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
-    color: var(--tertiary);
+    color: var(--mediumgrey);
 }
 
 .users {
-    color: var(--tertiary);
+    color: var(--mediumgrey);
     padding-bottom: 3px;
-    border-bottom: 3px solid var(--tertiary);
+    border-bottom: 3px solid var(--mediumgrey);
 }
 
 .users:hover {
-    color: var(--accenttwo);
-    border-bottom: 3px solid var(--secondary);
+    color: var(--green);
+    border-bottom: 3px solid var(--ghostwhite);
 }
+
 
 .space {
     margin: 40px 0;
@@ -167,7 +170,7 @@ h6 {
 /* ====== IMAGES ====== */
 /* ====== IMAGES ====== */
 
-.rounded, .dimmer, .dimmest {
+.featured, .overlay-dim, .overlay-dimmer {
     position: absolute;
     width: 500px;
     height: 500px;
@@ -176,16 +179,16 @@ h6 {
     border-radius: 100%;
 }
 
-.rounded {
+.featured {
     z-index: -101;
 }
 
-.dimmer {
+.overlay-dim {
     z-index: -100;
     background-color: #0000006e;
 }
 
-.dimmest {
+.overlay-dimmer {
     z-index: -100;
     background-color: #000000af;
 }
@@ -210,14 +213,12 @@ input {
     margin: 15px 0;
     margin-right: 20px;
     padding: 0 15px;
-    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
     font-size: 0.95rem;
     outline: none;
 }
 
 ::placeholder {
     color: #ffffff54;
-    /* font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif; */
     font-size: 0.95rem;
 }
 
@@ -231,17 +232,31 @@ button {
     cursor: pointer;
 }
 
-.text-button {
+.btn-less {
+    margin: 10px 0;
+    background-color: #00000000;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--mediumgrey);
+}
+
+.btn-less:hover {
+    color: var(--orange);
+}
+
+.btn-std {
     border: none;
     border-radius: 7px;
     width: 100px;
     height: 50px;
-    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
     font-size: 1.25rem;
 }
 
-.fill-accentthree {
-    background-color: var(--accenttwo);
+.fill-orange {
+    background-color: var(--green);
 }
 
 
@@ -272,12 +287,12 @@ button {
     font-weight: 800;
     font-size: 3rem;
     letter-spacing: -0.5rem;
-    color: #191919;
+    color: var(--mediumgrey);
 }
 
 .fg-title {
     position: relative;
-    top: 7px;
+    top: 15px;
     left: 45px;
 }
 
@@ -292,11 +307,15 @@ button {
 }
 
 .bold-link {
-    color: var(--accenttwo);
+    color: var(--green);
+}
+
+.bold-link-two {
+    color: salmon;
 }
 
 .medium {
-    color: var(--secondary);
+    color: var(--ghostwhite);
 }
 
 /* * {
@@ -351,7 +370,7 @@ p {
 footer p {
     font-family: "Basier Square Regular", sans-serif;
     font-size: 0.85rem;
-    color: var(--tertiary);
+    color: var(--mediumgrey);
 }
 
 
@@ -363,21 +382,21 @@ footer p {
 
 
 
-/* .primary {
-    background-color: var(--accentone);
+/* .absoluteblack {
+    background-color: var(--red);
     color: #f8f8ff;
     border: 1px solid #479211;
     border-bottom: 3px solid #38750d;
 } */
 
-.secondary {
+.ghostwhite {
     background-color: var(--eggyolk);
     color: #f8f8ff;
     border: 1px solid #D97904;
     border-bottom: 3px solid #a35a00;
 }
 
-.tertiary {
+.mediumgrey {
     background-color: #00000000;
     color: #f8f8ff;
     border: 2px solid #f8f8ff;

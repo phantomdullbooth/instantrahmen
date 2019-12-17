@@ -1,62 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <% include ../partials/head.ejs %>
-</head>
+<head> <% include ../partials/head.ejs %> </head>
 
 <body>
-    <!-- HEADER [ TITLE, QUOTE]  -->
-    <header>
-        <% include ../partials/header.ejs %>
-    </header>
+    <header> <% include ../partials/header.ejs %> </header>
 
     <div class="viewscreen">
-    <aside>
-        <h1>Guten Appetit. Hungry for more?</h1>
-        <a href="/app/add-recipe"><h2 class="bold">Try something new.</h2></a>
-    </aside>
+        <main>
+            <h1>Guten Appetit. Hungry for more?</h1>
+        <a href="/app/add-recipe"><h2 class="bold-link-two">Try something new.</h2></a>
+        </main>
 
-    <img src="images/mush-square.jpg" class="rounded" />
-        <div class="dimmest"></div>
+        <img src="images/red-square.jpg" class="featured" />
+        <div class="overlay-dimmer"></div>
 
-    <main>
-        <% for (let i = 0; i < recipes.length; i++) { %>
-            <div class="recipe-card">
-                <style>
-                    .recipe-card {
-                    background: url('<%=recipes[i].image%>') no-repeat;
-                    background-size: cover;
-                    background-position-x: 50%;
-                    background-position-y: 30%;
-                    }
-                </style>
-                <div id="info-cover">
-                    <h4><%=recipes[i].title%></h4>
-                    <p><%=recipes[i].description%></p>
-                
-                    <div class="tool-buttons">
-                    <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
-                            <img src="../images/buttons/view.png" />
-                        </button></a>
-
-                    <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
-                        <button type="submit" name="delete-recipe" class="icon-button">
-                            <img src="../images/buttons/delete.png" />
-                        </button>
-                    </form>
-                </div>
-                </div>
-            </div>
+        <% if (currentUser) { %>
+            <aside>
+                <% for (let i = 0; i < recipes.length; i++) { %>
+                    <div class="recipe-card">
+                        <style>
+                            .recipe-card {
+                            background: url('<%=recipes[i].image%>') no-repeat;
+                            background-size: cover;
+                            background-position-x: 50%;
+                            background-position-y: 30%;
+                            }
+                        </style>
+                        <div id="info-cover">
+                            <h4><%=recipes[i].title%></h4>
+                            <p><%=recipes[i].description%></p>
+                        
+                            <div class="tool-buttons">
+                            <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
+                                    <img src="../images/buttons/view.png" />
+                                </button></a>
+        
+                            <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
+                                <button type="submit" name="delete-recipe" class="icon-button">
+                                    <img src="../images/buttons/delete.png" />
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                <% } %>
+        
+                <form action="/sessions/app?_method=DELETE" method="POST">
+                    <button type="button" name="log-out" class="btn-less">Log out</button>
+                </form>
+            </aside>
         <% } %>
-
-            <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="button" name="log-out" class="text-button tertiary">Log out</button>
-            </form>
-
-    </main>
     </div>
 
-    <footer><% include ../partials/footer.ejs %></footer>
-
+    <footer> <% include ../partials/footer.ejs %> </footer>
 </body>
+<html>

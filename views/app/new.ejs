@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head.ejs %>
 </head>
 
-    <body>
-        <header>
-            <% include ../partials/header.ejs %>
-        </header>
+<body>
+    <header>
+        <% include ../partials/header.ejs %>
+    </header>
 
-        <div class="viewscreen">
-            <aside>
-                <h3>This is where you add a new recipe. Gonna spice it up this time, hm?</h3>
-            </aside>
-
+    <div class="viewscreen">
         <main>
+            <h1>Maybe spice it up this time, hm?</h1>
+        </main>
+
+
+        <aside>
             <form action="/app" method="POST">
-                <input type="text" name="title" placeholder="title" /><br />
+                <!-- <input type="text" name="title" placeholder="title" /><br />
                 <input type="text" name="description" placeholder="description" /><br />
                 <input type="url" name="image" placeholder="image link" /><br />
                 <input type="text" name="line_1" placeholder="step 1 (required)" /><br />
@@ -25,12 +27,13 @@
                 <input type="text" name="line_4" placeholder="step 4" /><br />
                 <input type="text" name="line_5" placeholder="step 5" /><br />
                 <input type="text" name="line_6" placeholder="step 6" /><br />
-                <input type="submit" class="text-button primary" value="Add Recipe" />
+                <input type="submit" class="btn-std" value="Add Recipe" /> -->
             </form>
-        </main>
-        </div>
+        </aside>
+    </div>
 
-        <footer><% include ../partials/footer.ejs %></footer>
+    <footer><% include ../partials/footer.ejs %></footer>
 
 </body>
+
 </html>

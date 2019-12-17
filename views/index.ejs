@@ -24,16 +24,15 @@
             <% } %>
         </main>
 
-        <img src="images/ramen-square.jpg" class="rounded" />
-        <div class="dimmer"></div>
+        <img src="images/ramen-square.jpg" class="featured" />
+        <div class="overlay-dim"></div>
 
         <% if (currentUser) { %>
             <aside>
                 <h4>Welcome, Chef @<%= currentUser.username %>!</h4>
-                <h6 class="space"><a href="../sessions/new"  class="users">Log out</a></h6>
 
                 <form action="/sessions/app?_method=DELETE" method="POST">
-                    <button type="submit" name="log-out" class="users">Log out</button>
+                    <button type="button" name="log-out" class="btn-less">Log out</button>
                 </form>
             </aside>
         <% } %>
