@@ -6,8 +6,8 @@
 <body>
     <header> <% include ../partials/header.ejs %> </header>
 
-    <div class="viewscreen">
-        <main>
+    <main>
+        <div class="box-left">
             <h1>Log in & preheat oven to... 5000?!</h1>
 
             <div id="start">
@@ -15,16 +15,16 @@
                     <input type="text" name="username" placeholder="username" required>
                     <input type="password" name="password" minlength="8"
                         placeholder="password (8+ characters)" required>
-                        <button type="submit" name="sign-up-go" class="btn-std fill-orange">Go</button>
+                        <button type="submit" name="sign-up-go" class="btn-std bg-green">Go</button>
                 </form>
             </div>
 
-            <h6 class="space"><a href="../users/new"  class="users">Whoa, I missed a step.</a></h6>
-        </main>
+            <h6><a href="../users/new"  class="hint">Whoa, I missed a step.</a></h6>
+        </div>
 
         <img src="../images/ramen-square.jpg" class="featured" />
         <div class="overlay-dim"></div>
-    </div>
+    </main>
 
     <footer> <% include ../partials/footer.ejs %> </footer>
 </body>

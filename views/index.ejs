@@ -6,37 +6,42 @@
 <body>
     <header> <% include ./partials/header.ejs %> </header>
 
-    <div class="viewscreen">
-        <main>
+    <main>
+        <div class="box-left">
+
+            <!-- IF USER IS NOT LOGGED IN -->
+
             <% if (!currentUser) { %>
                 <h1>Save your favorite code snippets as recipe cards.</h1>
 
-                <div id="start" class="spacers">
-                    <a href="/sessions/new"><h2 class="bold-link">Log in</h2>
-                    <a href="/users/new"><h2>Sign up</h2>
+                <div id="registration" class="row-flex">
+                    <a href="/sessions/new"><h2 class="bold-link">Log in</h2></a>
+                    <a href="/users/new"><h2 class="bold-link">Sign up</h2></a>
                 </div>
+
+            <!-- IF USER IS LOGGED IN -->
 
             <% } else { %>
                 <h1>Let's get cooking, shall we?</h1>
 
-                <a href="/app"><h2 class="bold-link">Go to recipes.</h2>
+                <a href="/app"><h2 class="bold-link">Go to recipes.</h2></a>
                 <a href="/app/add-recipe"><h2 class="bold-link">Try something new.</h2></a>
             <% } %>
-        </main>
+        </div>
 
-        <img src="images/ramen-square.jpg" class="featured" />
-        <div class="overlay-dim"></div>
+        <div class="box-right">
+            <div class="img-dim"></div>
+            <img src="../images/ramen-square.jpg" class="img-circle" />
 
-        <% if (currentUser) { %>
-            <aside>
+            <% if (currentUser) { %>
                 <h4>Welcome, Chef @<%= currentUser.username %>!</h4>
 
                 <form action="/sessions/app?_method=DELETE" method="POST">
                     <button type="button" name="log-out" class="btn-less">Log out</button>
                 </form>
-            </aside>
-        <% } %>
-    </div>
+            <% } %>
+        </div>
+    </main>
 
     <footer> <% include ./partials/footer.ejs %> </footer>
 </body>

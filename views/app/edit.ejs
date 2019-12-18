@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <% include ../partials/head.ejs %>
-    </head>
-    
-    <body>
 
-        <header>
-            <% include ../partials/header.ejs %>
-        </header>
+<head>
+    <% include ../partials/head.ejs %>
+</head>
 
-      <div class="main-xl">
-        <form action="/<%=recipe.id%>?_method=PUT" method="POST">
-            <input type="text" name="title" value="<%=recipe.title%>" placeholder="title" /><br/>
-            <input type="text" name="description" value="<%=recipe.description%>" placeholder="description" /><br/>
-            <input type="url" name="image" value="<%=recipe.image%>" placeholder="image link" /><br/>
-            <input type="text" name="line_1" value="<%=recipe.line_1%>" placeholder="step 1" /><br/>
-            <input type="text" name="line_2" value="<%=recipe.line_2%>" placeholder="step 2" /><br/>
-            <input type="text" name="line_3" value="<%=recipe.line_3%>" placeholder="step 3" /><br/>
-            <input type="text" name="line_4" value="<%=recipe.line_4%>" placeholder="step 4" /><br/>
-            <input type="text" name="line_5" value="<%=recipe.line_5%>" placeholder="step 5" /><br/>
-            <input type="text" name="line_6" value="<%=recipe.line_6%>" placeholder="step 6" /><br/>
-                <input type="submit" class="btn-std" value="Edit Recipe" />
-        </form>
+<body>
+    <header>
+        <% include ../partials/header.ejs %>
+    </header>
 
-        <form action="/<%=recipe.id%>">
-            <input type="submit" class="btn-std" value="Cancel Edit" />
-        </form>
-    <div>
+    <main>
+        <div class="box-left">
+            <h3 class="tx-gold">Think it needs something, hm?</h3>
+
+            <form action="/<%=recipe.id%>?_method=PUT" method="POST" id="recipe-form">
+                <div class="side-by">
+                    <input type="text" name="title" value="<%=recipe.title%>" placeholder="Recipe title" />
+                    <input type="url" name="image" value="<%=recipe.image%>" placeholder="Image link" />
+                </div>
+
+                <input type="text" name="description" value="<%=recipe.description%>" placeholder="Brief description" />
+                <textarea form="recipe-form" name="recipe" value="<%=recipe.recipe%>" rows=20
+                    placeholder="This isn't your grandmother's recipe... unless she was a coder. Then maybe it was."
+                    required></textarea>
+
+                <div class="row-flex">
+                    <input type="submit" class="series1 bg-green" value="Edit Recipe" />
+                    <a href="/<%=recipe.id%>">
+                        <h6 class="hint">Cancel edit</h6>
+                    </a>
+                </div>
+            </form>
+            
+        </div>
+
+        <div class="box-right">
+            <div class="img-dim"></div>
+            <img src="../images/ramen-square.jpg" class="img-circle" />
+        </div>
+    </main>
+
+    <footer><% include ../partials/footer.ejs %></footer>
 
 </body>
 </html>
