@@ -1,22 +1,25 @@
-const express = require('express'); // requires express
-const router = express.Router(); // defines router
-const session = require('express-session')
-const Recipes = require('../models/recipes.js'); // requires gifts file
+// ========== CONSTANTS ========== //
+// ========== CONSTANTS ========== //
 
-// —————————— NEW /ADD-RECIPE –––––––––– //
+const express = require('express');
+const router = express.Router();
+const session = require('express-session')
+const Recipes = require('../models/recipes.js');
+
+// RENDER ADD RECIPE PAGE
 router.get('/app/add-recipe', (req, res) => {
     res.render('app/new.ejs');
 });
-// ——————————–––––––––– //
 
-// —————————— DELETE /:ID –––––––––– //
+
+// DELETE RECIPE
 router.delete('/:id', (req, res) => {
     Recipes.findByIdAndRemove(req.params.id, (err, deletedRecipe) => {
-        res.redirect('/')
+        res.redirect('/app')
     })
 });
 
-// —————————— EDIT /:ID/ADJUST-RECIPE –––––––––– //
+// EDIT RECIPE
 router.get('/:id/edit-recipe', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
         res.render(
@@ -33,9 +36,9 @@ router.put('/:id', (req, res) => {
         res.redirect('/app');
     })
 });
-// ——————————–––––––––– //
 
-// —————————— INDEX / –––––––––– //
+
+// INDEX
 router.get('/', (req, res) => {
     res.render('index.ejs', {
         currentUser: req.session.currentUser
@@ -55,7 +58,7 @@ router.get('/app', (req, res) => {
     }
 })
 
-// —————————— SHOW /:ID –––––––––– //
+// SHOW RECIPE
 router.get('/:id', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
         res.render('app/show.ejs', {
@@ -63,15 +66,17 @@ router.get('/:id', (req, res) => {
         });
     });
 });
-// ——————————–––––––––– //
 
 
-// ********** CREATE RECIPE ********** //
+// CREATE RECIPE
 router.post('/app', (req, res) => {
     Recipes.create(req.body, (err, createdRecipe) => {
-        res.redirect('/');
+        res.redirect('/app');
     });
 });
-// ******************** //
+
+
+// ========== EXPORT ========== //
+// ========== EXPORT ========== //
 
 module.exports = router;

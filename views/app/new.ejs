@@ -10,27 +10,37 @@
         <% include ../partials/header.ejs %>
     </header>
 
-    <div class="viewscreen">
-        <main>
-            <h1>Maybe spice it up this time, hm?</h1>
-        </main>
+    <main>
+        <div class="box-left">
+            <h3 class="tx-gold">Maybe spice it up this time, hm?</h3>
 
+            <form action="/app" method="POST" id="recipe-form">
 
-        <aside>
-            <form action="/app" method="POST">
-                <!-- <input type="text" name="title" placeholder="title" /><br />
-                <input type="text" name="description" placeholder="description" /><br />
-                <input type="url" name="image" placeholder="image link" /><br />
-                <input type="text" name="line_1" placeholder="step 1 (required)" /><br />
-                <input type="text" name="line_2" placeholder="step 2" /><br />
-                <input type="text" name="line_3" placeholder="step 3" /><br />
-                <input type="text" name="line_4" placeholder="step 4" /><br />
-                <input type="text" name="line_5" placeholder="step 5" /><br />
-                <input type="text" name="line_6" placeholder="step 6" /><br />
-                <input type="submit" class="btn-std" value="Add Recipe" /> -->
+                <div class="side-by">
+                    <input type="text" name="title" placeholder="Recipe title" />
+                    <input type="url" name="image" placeholder="Image link" />
+                </div>
+
+                <input type="text" name="description" placeholder="Brief description" />
+                <textarea form="recipe-form" name="recipe" rows=20
+                    placeholder="This isn't your grandmother's recipe... unless she was a coder. Then maybe it was."
+                    required></textarea>
+
+                <div class="row-flex">
+                    <input type="submit" class="series1 bg-green" value="Add Recipe" />
+                    <a href="/app">
+                        <h6 class="hint">Cancel add</h6>
+                    </a>
+                </div>
             </form>
-        </aside>
-    </div>
+            
+        </div>
+
+        <div class="box-right">
+            <div class="img-dim"></div>
+            <img src="../images/ramen-square.jpg" class="img-circle" />
+        </div>
+    </main>
 
     <footer><% include ../partials/footer.ejs %></footer>
 

@@ -11,42 +11,36 @@
         <% include ../partials/header.ejs %>
     </header>
 
-    <div class="viewscreen">
-    <aside>
-
-        <h3>Ahh, the <span id="title-highlight"><%=recipe.title%></span>.<br />
-        <%=recipe.description%>.</h3>
-    </aside>
-
     <main>
-        <h2><%=recipe.title%></h2>
-                    <p><%=recipe.line_1%></p>
-                    <p><%=recipe.line_2%></p>
-                    <p><%=recipe.line_3%></p>
-                    <p><%=recipe.line_4%></p>
-                    <p><%=recipe.line_5%></p>
-                    <p><%=recipe.line_6%></p>
+        <div class="box-left">
+            <h3>Ahh, the <span class="tx-green"><%=recipe.title%></span>.<br />Excellent choice.</h3>
 
-
-                <div class="tool-buttons">
-                    <a href="/<%=recipe.id%>/edit-recipe"><button type="button" name="edit-recipe" class="icon-button">
-                        <img src="../images/buttons/edit.png" />
-                    </button></a>
-
-                    <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                        <button type="submit" name="delete-recipe" class="icon-button">
-                            <img src="../images/buttons/delete.png" />
-                        </button>
-                    </form>
-                </div>
-
-                <form action="/sessions/app?_method=DELETE" method="POST">
-                    <button type="button" name="log-out" class="btn-less">Log out</button>
+            <div class="row-flex distance">
+                <a href="/<%=recipe.id%>/edit-recipe"><h6 class="nextup">Edit this recipe.</h6></a>
+                <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
+                    <button type="submit" name="delete-recipe" class="btn-less">
+                       <h6 class="hint ">Delete this recipe.</h6>
+                    </button>
                 </form>
-            
-    </main>
-    </div>
+            </div>
 
-      <footer><% include ../partials/footer.ejs %></footer>
+            <h5>About this recipe: <%=recipe.description%> </h5>
+            <h5 class="unstack"><%=recipe.recipe%></h5>
+        </div>
+
+        <div class="box-right">
+            <div class="img-dim"></div>
+            <img src="<%=recipe.image%>" class="img-circle" />
+
+
+            <form action="/sessions/app?_method=DELETE" method="POST">
+                <button type="button" name="log-out" class="btn-less"><h6 class="hint">Log out</h6></button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer><% include ../partials/footer.ejs %></footer>
 </body>
+
 </html>
