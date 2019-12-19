@@ -26,10 +26,8 @@
                     required></textarea>
 
                 <div class="row-flex">
-                    <input type="submit" class="series1 bg-green" value="Edit Recipe" />
-                    <a href="/<%=recipe.id%>">
-                        <h6 class="hint">Cancel edit</h6>
-                    </a>
+                    <button type="submit" class="series-one bg-green">Edit Recipe</button>
+                    <h6><a href="/<%=recipe.id%>" class="hint">Cancel edit</a></h6>
                 </div>
             </form>
             
@@ -38,6 +36,8 @@
         <div class="box-right">
             <div class="img-dim"></div>
             <img src="../images/ramen-square.jpg" class="img-circle" />
+
+            <% include ../partials/logout.ejs %>
         </div>
     </main>
 

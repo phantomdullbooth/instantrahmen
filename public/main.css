@@ -33,7 +33,7 @@
 
 /* colors */
 :root {
-    --darkramen: #0d0d11;
+    --darkramen: #191920;
     --darkramendim: #08080A;
     --darkramenfade: #1B1B20;
     --carrotorange: #D07C23;
@@ -93,8 +93,8 @@ h1, h2, h3, h6, .btn-less {
     font-weight: 700;
 }
 
-h5, .btn-std, input, textarea, a {
-    font-family: 'SF Pro Display', 'Basier Square Regular', sans-serif;
+h5, button, input, textarea, a {
+    font-family: "SF Pro Display", "Basier Square Regular", sans-serif;
 }
 
 h1 {
@@ -153,8 +153,24 @@ p {
     line-height: 1.5rem;
 }
 
+    .bold-link {
+        padding-bottom: 10px;
+        border-bottom: 10px solid #0d0d1100;
+    }
+
+    .up-z {
+        position: relative;
+        z-index: 10;
+        width: 900px;
+    }
+
     .distance {
         width: 350px;
+    }
+
+    .distancer {
+        width: 100%;
+        margin: 40px 0;
     }
 
     .unstack {
@@ -166,6 +182,17 @@ p {
         color: var(--white);
         margin: 25px 0;
         padding-bottom: 3px;
+    }
+
+    .choices {
+        color: var(--white);
+        margin: 0 40px 0 0;
+    }
+
+    .choices:hover {
+        color: var(--corngold);
+        border-bottom: 10px solid var(--corngold);
+    color: var(--ghostwhite);
     }
 
     .hint {
@@ -267,6 +294,7 @@ footer {
 
 #registration {
     width: 500px;
+    margin: 30px 0;
 }
 
 /* ============ CARDS */
@@ -280,6 +308,7 @@ footer {
     flex-wrap: wrap;
     overflow-y: scroll;
     width: 100%;
+    height: 500px;
 }
 
 .card {
@@ -331,6 +360,15 @@ form {
     width: 95%;
 }
 
+#reg-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 50px 0;
+    width: 100%;
+}
+
 .side-by {
     display: flex;
     flex-direction: row;
@@ -341,15 +379,21 @@ form {
 }
 
 input, textarea {
+    background-color: var(--darkramendim);
     border: none;
     border-radius: 5px;
-    background-color: var(--darkramendim);
     color: #ffffff;
+    font-size: 0.95rem;
     width: 250px;
     height: 50px;
-    padding: 0 15px;
-    font-size: 0.95rem;
     outline: none;
+    padding: 0 15px;
+}
+
+#reg-form input, #reg-form textarea {
+    width: 230px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 input[name="description"] {
@@ -357,7 +401,7 @@ input[name="description"] {
     margin-bottom: 25px;
 }
 
-textarea {
+#recipe-form textarea {
     margin-bottom: 40px;
     padding: 15px;
     width: 95%;
@@ -376,40 +420,31 @@ input:focus:-moz-placeholder { color:transparent; }
 /* ============ BUTTONS ============ */
 /* ============ BUTTONS ============ */
 
-/*  */
 button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*  */
-.series1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    outline: 0;
+}
+
+.series-one {
     font-size: 1.1rem;
     font-weight: 500;
-    height: 50px;
+    height: 48px;
     margin-right: 20px;
     width: 125px;
 }
 
-.btn-less {
-    margin: 10px 0;
-    background-color: #00000000;
-    border: none;
-    outline: none;
-    font-weight: 600;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    color: var(--mediumgrey);
+.series-one:hover {
+    background-color: var(--white);
+    color: var(--darkramen);
 }
 
-.btn-less:hover {
-    color: var(--orange);
+.series-two {
+    background-color: #11111100;
+    width: auto;
+    height: auto;
 }
-
 
 .bg-green {
     background-color: var(--greenonion);
@@ -429,11 +464,7 @@ button {
 
 
 
-.bold-link {
-    color: var(--greenonion);
-    padding-bottom: 10px;
-    border-bottom: 10px solid #0d0d1100;
-}
+
 
 
 
