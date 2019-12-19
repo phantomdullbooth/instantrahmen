@@ -8,22 +8,25 @@
 
     <main>
         <div class="box-left">
-            <h1>Log in & preheat oven to... 5000?!</h1>
+            <h1 class="up-z">Log in & preheat oven to... 5000?!</h1>
 
             <div id="start">
-                <form action="/sessions" method="POST" id="registration">
+                <form action="/sessions" method="POST" id="reg-form" class="row-flex">
                     <input type="text" name="username" placeholder="username" required>
                     <input type="password" name="password" minlength="8"
-                        placeholder="password (8+ characters)" required>
-                        <button type="submit" name="sign-up-go" class="btn-std bg-green">Go</button>
+                        placeholder="password" required>
+                        <button type="submit" name="sign-up-go" class="series-one bg-green">Go</button>
                 </form>
             </div>
 
             <h6><a href="../users/new"  class="hint">Whoa, I missed a step.</a></h6>
         </div>
 
-        <img src="../images/ramen-square.jpg" class="featured" />
-        <div class="overlay-dim"></div>
+        <div class="box-right">
+            <div class="img-dim"></div>
+            <img src="../images/ramen-square.jpg" class="img-circle" />
+        </div>
+        
     </main>
 
     <footer> <% include ../partials/footer.ejs %> </footer>

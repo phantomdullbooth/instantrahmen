@@ -16,21 +16,25 @@
 
             <form action="/app" method="POST" id="recipe-form">
 
+                <!-- ADD TITLE AND IMAGE -->
+
                 <div class="side-by">
                     <input type="text" name="title" placeholder="Recipe title" />
                     <input type="url" name="image" placeholder="Image link" />
                 </div>
+
+                <!-- ADD DESCRIPTION AND SNIPPET -->
 
                 <input type="text" name="description" placeholder="Brief description" />
                 <textarea form="recipe-form" name="recipe" rows=20
                     placeholder="This isn't your grandmother's recipe... unless she was a coder. Then maybe it was."
                     required></textarea>
 
+                <!-- BUTTONS [ ADD OR CANCEL ] -->
+
                 <div class="row-flex">
-                    <input type="submit" class="series1 bg-green" value="Add Recipe" />
-                    <a href="/app">
-                        <h6 class="hint">Cancel add</h6>
-                    </a>
+                    <button type="submit" class="series-one bg-green">Add Recipe</button>
+                    <h6><a href="/app" class="hint">Cancel add</a></h6>
                 </div>
             </form>
             
@@ -39,6 +43,8 @@
         <div class="box-right">
             <div class="img-dim"></div>
             <img src="../images/ramen-square.jpg" class="img-circle" />
+
+            <% include ../partials/logout.ejs %>
         </div>
     </main>
 

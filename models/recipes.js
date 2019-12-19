@@ -2,8 +2,8 @@ const mongoose = require('mongoose'); // require mongoose package
 
 const recipeSchema = new mongoose.Schema({
   title: String,
-  description: String,
   image: String,
+  description: String,
   recipe: { type: String, required: true},
   user: String,
 })

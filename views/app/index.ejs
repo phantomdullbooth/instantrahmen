@@ -27,6 +27,7 @@
                     <div id="cover">
                         <h4><%=recipes[i].title%></h4>
                         <p><%=recipes[i].description%></p>
+                        
 
                         <div class="tool-buttons">
                             <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
@@ -49,11 +50,7 @@
             <div class="img-dim"></div>
             <img src="../images/ramen-square.jpg" class="img-circle" />
 
-            <% if (currentUser) { %>
-            <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="button" name="log-out" class="btn-less">Log out</button>
-            </form>
-            <% } %>
+            <% include ../partials/logout.ejs %>
         </div>
 
     </main>

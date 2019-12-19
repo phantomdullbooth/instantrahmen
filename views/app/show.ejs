@@ -18,9 +18,7 @@
             <div class="row-flex distance">
                 <a href="/<%=recipe.id%>/edit-recipe"><h6 class="nextup">Edit this recipe.</h6></a>
                 <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                    <button type="submit" name="delete-recipe" class="btn-less">
-                       <h6 class="hint ">Delete this recipe.</h6>
-                    </button>
+                    <button type="submit" name="delete-recipe" class="series-two"><h6 class="hint">Delete this recipe.</h6></button>
                 </form>
             </div>
 
@@ -33,9 +31,7 @@
             <img src="<%=recipe.image%>" class="img-circle" />
 
 
-            <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="button" name="log-out" class="btn-less"><h6 class="hint">Log out</h6></button>
-            </form>
+            <% include ../partials/logout.ejs %>
         </div>
     </main>
 
