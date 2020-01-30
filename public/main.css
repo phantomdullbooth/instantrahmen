@@ -89,12 +89,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h6, .btn-less {
-    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
     font-weight: 700;
 }
 
 h5, button, input, textarea, a {
-    font-family: "SF Pro Display", "Basier Square Regular", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
 }
 
 h1 {
@@ -116,7 +116,7 @@ h2:hover {
 }
 
 h3 {
-    font-family: 'SF Pro Display', 'Basier Square Medium' sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
     font-size: 5rem;
     font-weight: 700;
     line-height: 4.75rem;
@@ -238,7 +238,7 @@ p {
 /* ============ BODY PARTS ============ */
 
 body {
-    background-color: var(--darkramen);
+    background-color: #000000;
     color: var(--white);
     display: flex;
     flex-direction: column;
