@@ -1,13 +1,23 @@
-;/* ====== IMPORTS — UNIVERSALS ====== */
-/* ====== IMPORTS — UNIVERSALS ====== */
+/* =================================== IMPORTS */
+/* =================================== IMPORTS */
 
-/* normalize.css; local */
 @import url('normalize.css');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:500,700&display=swap');
 
-/* fonts: gothic a1, ibm plex serif; google fonts */
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,600,800|IBM+Plex+Serif:500,700&display=swap');
+:root {
+    --tonkotsu: #141422;
 
-/* local font, basier square regular */
+
+
+    --darkramen: #191920;
+    --darkramendim: #08080A;
+    --darkramenfade: #1B1B20;
+    --carrotorange: #D07C23;
+    --corngold: #E1AA00;
+    --greenonion: #7EBA54;
+    --white: #ffffff;
+}
+
 @font-face {
     font-family: 'Basier Square Regular';
     src: url('fonts/basier-square/basier-square-regular.eot');
@@ -19,7 +29,6 @@
     font-style: normal;
 }
 
-/* local font, basier square medium */
 @font-face {
     font-family: 'Basier Square Medium';
     src: url('fonts/basier-square/basier-square-medium.eot');
@@ -31,18 +40,201 @@
     font-style: normal;
 }
 
-/* colors */
-:root {
-    --darkramen: #191920;
-    --darkramendim: #08080A;
-    --darkramenfade: #1B1B20;
-    --carrotorange: #D07C23;
-    --corngold: #E1AA00;
-    --greenonion: #3a7e09;
-    --white: #ffffff;
+@font-face {
+    font-family: 'Basier Square Semibold';
+    src: url('fonts/basier-square/basier-square-semibold.eot');
+    src: url('fonts/basier-square/basier-square-semibold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square/basier-square-semibold.woff2') format('woff2'),
+         url('fonts/basier-square/basier-square-semibold.woff') format('woff'),
+         url('fonts/basier-square/basier-square-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-button, footer, header, #header, .logo-and, .tool-buttons {
+@font-face {
+    font-family: 'Basier Square Bold';
+    src: url('fonts/basier-square/basier-square-bold.eot');
+    src: url('fonts/basier-square/basier-square-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/basier-square/basier-square-bold.woff2') format('woff2'),
+         url('fonts/basier-square/basier-square-bold.woff') format('woff'),
+         url('fonts/basier-square/basier-square-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =================================== BODY PARTS */
+/* =================================== BODY PARTS */
+
+body {
+    align-items: flex-start;
+    background-color: var(--tonkotsu);
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
+    height: 99vh;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 90%;
+}
+
+aside {
+    height: 200px;
+    width: 100%;
+}
+
+footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+footer a {
+    color: var(--white);
+    font-size: 0.7rem;
+}
+
+/* =================================== HERO */
+/* =================================== HERO */
+
+
+#hero {
+    background-image: url('images/ramen-square.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+.dimmer {
+    align-items: center;
+    background-color: #151523af;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero h2 {
+    color: var(--corngold);
+    position: relative;
+    text-align: center;
+    width: 85%;
+    z-index: 2;
+}
+
+
+/* =================================== PREVIEW */
+/* =================================== PREVIEW */
+
+.preview {
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.preview h4 {
+    text-align: center;
+}
+
+.recipe-carousel {
+    width: 100%;
+}
+
+/* =================================== REGISTRATION */
+
+.registration {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.link-info {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.registration h1 {
+    color: var(--greenonion);
+}
+
+
+
+
+/* =================================== TEXT */
+/* =================================== TEXT */
+
+h1 {
+    font-size: 2.35rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    line-height: 2rem;
+}
+
+h4 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+p {
+    color: #828282;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+    margin: 0;
+    margin-top: 5px;
+}
+
+
+
+
+
+/* ///////////////////////////////////////// */
+
+
+
+
+
+/* * {
+    border: 1px solid springgreen;
+}
+ */
+
+
+
+
+
+button, header, .logo-and, .tool-buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,7 +255,7 @@ button, footer, header, #header, .logo-and, .tool-buttons {
 /* ============ IMAGE ============ */
 /* ============ IMAGE ============ */
 
-.img-circle, .img-dim {
+/* .img-circle, .img-dim {
     align-self: flex-start;
     border-radius: 100%;
     height: 500px;
@@ -78,42 +270,27 @@ button, footer, header, #header, .logo-and, .tool-buttons {
 .img-dim {
     background-color: #0000006e;
     z-index: -5;
-}
+} */
 
 
 /* ============ TEXT ============ */
 /* ============ TEXT ============ */
 
-h1, h2, h3, h4, h5, h6 {
+h3, h6 {
     margin: 0;
 }
 
-h1, h2, h3, h6, .btn-less {
+h3, h6, .btn-less {
     font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
-    font-weight: 700;
 }
 
-h5, button, input, textarea, a {
+button, input, textarea, a {
     font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
 }
 
-h1 {
-    font-size: 6rem;
-    line-height: 5.5rem;
-}
 
-h2 {
-    border-bottom: 10px solid var(--darkramen);
-    font-size: 4rem;
-    line-height: 3.9rem;
-    margin: 10px 0;
-    padding-bottom: 10px;
-}
 
-h2:hover {
-    border-bottom: 10px solid var(--greenonion);
-    color: var(--ghostwhite);
-}
+
 
 h3 {
     font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
@@ -123,18 +300,6 @@ h3 {
     margin: 0;
 }
 
-h4 {
-    font-family: "IBM Plex Serif", serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    margin: 0;    
-    text-align: center;
-}
-
-h5 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
 
 h6 {
     font-size: 1rem;
@@ -147,31 +312,27 @@ a {
     text-decoration: none;
 }
 
-p {
-    font-family: 'SF Pro Display', 'Basier Square Medium', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
+
 
     .bold-link {
         padding-bottom: 10px;
         border-bottom: 10px solid #0d0d1100;
     }
 
-    .up-z {
+    /* .up-z {
         position: relative;
         z-index: 10;
-        width: 900px;
-    }
+        /* width: 900px; */
+    
 
-    .distance {
+    /* .distance {
         width: 350px;
-    }
+    } */
 
-    .distancer {
-        width: 100%;
-        margin: 40px 0;
-    }
+    /* .distancer { */
+        /* width: 100%; */
+        /* margin: 40px 0; */
+    /* } */
 
     .unstack {
         margin: 25px 0;
@@ -237,39 +398,20 @@ p {
 /* ============ BODY PARTS ============ */
 /* ============ BODY PARTS ============ */
 
-body {
-    background-color: #000000;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-}
 
-header {
-    height: 60px;
-}
+
+
+
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin: 20px auto;
     width: 90%;
 }
 
-footer {
-    background: var(--darkramenfade);
-    height: 50px;
-}
 
-/* ============ HEADER ============ */
-/* ============ HEADER ============ */
-
-#header {
-    width: 90%;
-    margin: 0 auto;
-}
 
 /* ============ MAIN ============ */
 /* ============ MAIN ============ */
@@ -292,10 +434,6 @@ footer {
     width: 48%;
 }
 
-#registration {
-    width: 500px;
-    margin: 30px 0;
-}
 
 /* ============ CARDS */
 /* ============ CARDS */
@@ -332,13 +470,6 @@ footer {
     text-align: center;
 }
 
-/* ============ FOOTER ============ */
-/* ============ FOOTER ============ */
-
-#footer > a {
-    color: var(--white);
-    font-size: 0.9rem;
-}
 
 /* ====== FORMS & INPUT ====== */
 /* ====== FORMS & INPUT ====== */
@@ -454,15 +585,6 @@ button {
 .bg-gold {
     background-color: var(--corngold);
 }
-
-
-
-
-
-/* ====== ASIDE ====== */
-/* ====== ASIDE ====== */
-
-
 
 
 

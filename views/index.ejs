@@ -4,46 +4,95 @@
 <head> <% include ./partials/head.ejs %> </head>
 
 <body>
-    <header> <% include ./partials/header.ejs %> </header>
+    <% include ./partials/header.ejs %>
 
-    <main>
-        <div class="box-left">
-
-            <!-- IF USER IS NOT LOGGED IN -->
+    <aside id="hero">
+        <div class="dimmer">
 
             <% if (!currentUser) { %>
-                <h1 class="up-z">Save your favorite code snippets as recipe cards.</h1>
+            <h2>Turn your favorite code snippets into recipe cards.</h2>
 
-                <div id="registration" class="row-flex">
-                    <a href="/sessions/new"><h2 class="bold-link tx-green">Log in</h2></a>
-                    <a href="/users/new"><h2 class="bold-link">Sign up</h2></a>
+            <% } else { %>
+            <h2>Welcome, Chef @<%= currentUser.username %>!</h2>
+            <% } %>
+
+        </div>
+    </aside>
+
+    <main>
+        <div class="preview">
+            <h4>Check out these recipes created by chefs like you.</h4>
+
+            <div class="recipe-carousel">
+                <div class="card-box">
+                    <% for (let i = 0; i < recipes.length; i++) { %>
+                    <div class="card">
+                        <style>
+                            .card {
+                                background: url('<%=recipes[i].image%>') no-repeat;
+                                background-size: cover;
+                                background-position-x: 50%;
+                                background-position-y: 30%;
+                            }
+                        </style>
+                        <div id="cover">
+                            <h4><%=recipes[i].title%></h4>
+                            <p><%=recipes[i].description%></p>
+                            
+    
+                            <div class="tool-buttons">
+                                <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
+                                        <img src="../images/buttons/view.png" />
+                                    </button></a>
+    
+                                <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
+                                    <button type="submit" name="delete-recipe" class="icon-button">
+                                        <img src="../images/buttons/delete.png" />
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
                 </div>
 
-            <!-- IF USER IS LOGGED IN -->
+            </div>
+        </div>
+
+        <div class="registration">
+
+            <% if (!currentUser) { %>
+            <div class="link-info">
+                <a href="/sessions/new">
+                    <h1>Log in</h1>
+                </a>
+                <p>if you already <br />have an account.</p>
+            </div>
+
+            <div class="link-info">
+                <a href="/users/new">
+                    <h1>Sign up</h1>
+                </a>
+                <p>if you want an account. You do.</p>
+            </div>
 
             <% } else { %>
                 <h1 class="up-z tx-green">Let's get cooking, shall we?</h1 class="up-z">
-
-                    <div class="row-flex distancer">
-                        <a href="/app"><h2 class="choices">Go to recipes.</h2></a>
-                        <a href="/app/add-recipe"><h2 class="choices">Add a new recipe.</h2></a>
-                    </div>
-
-            <% } %>
+    
+                <div class="row-flex distancer">
+                    <a href="/app">
+                        <h2 class="choices">Go to recipes.</h2>
+                    </a>
+                    <a href="/app/add-recipe">
+                        <h2 class="choices">Add a new recipe.</h2>
+                    </a>
+                </div>
+    
+                <% } %>
         </div>
 
-        <div class="box-right">
-            <div class="img-dim"></div>
-            <img src="../images/ramen-square.jpg" class="img-circle" />
-
-            <% if (currentUser) { %>
-                <h4>Welcome, Chef @<%= currentUser.username %>!</h4>
-
-                <% include ./partials/logout.ejs %>
-            <% } %>
-        </div>
     </main>
 
-    <footer> <% include ./partials/footer.ejs %> </footer>
+    <% include ./partials/footer.ejs %>
 </body>
 <html>

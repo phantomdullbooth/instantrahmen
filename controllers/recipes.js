@@ -40,10 +40,14 @@ router.put('/:id', (req, res) => {
 
 // INDEX
 router.get('/', (req, res) => {
-    res.render('index.ejs', {
-        currentUser: req.session.currentUser
+    Recipes.find({}, (err, allRecipes) => {
+        res.render('index.ejs', {
+            recipes: allRecipes,
+            currentUser: req.session.currentUser
+        })
     })
 })
+
 
 router.get('/app', (req, res) => {
     if (req.session.currentUser) {
