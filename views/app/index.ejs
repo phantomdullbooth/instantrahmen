@@ -27,18 +27,20 @@
                     <div id="cover">
                         <h4><%=recipes[i].title%></h4>
                         <p><%=recipes[i].description%></p>
-                        
+
 
                         <div class="tool-buttons">
                             <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
                                     <img src="../images/buttons/view.png" />
                                 </button></a>
 
+                            <% if (recipes[i].user === "me") { %>
                             <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
                                 <button type="submit" name="delete-recipe" class="icon-button">
                                     <img src="../images/buttons/delete.png" />
                                 </button>
                             </form>
+                            <% } %>
                         </div>
                     </div>
                 </div>

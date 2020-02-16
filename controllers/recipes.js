@@ -8,7 +8,9 @@ const Recipes = require('../models/recipes.js');
 
 // RENDER ADD RECIPE PAGE
 router.get('/app/add-recipe', (req, res) => {
-    res.render('app/new.ejs');
+    res.render('app/new.ejs', {
+        currentUser: req.session.currentUser
+    });
 });
 
 

@@ -139,17 +139,100 @@ footer a {
 /* =================================== PREVIEW */
 
 .preview {
-    padding-bottom: 50px;
     width: 100%;
 }
 
-.preview h4 {
+.preview h3 {
     text-align: center;
 }
 
 .recipe-carousel {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
 }
+.card-box {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.nav {
+    background-color: var(--tonkotsu);
+    border: 3px solid var(--carrotorange);
+    border-radius: 50%;
+    height: 50px;
+    position: relative;
+    /* top: 100px; */
+    width: 50px;
+    z-index: 2;
+}
+
+.nav-left {
+    left: 10px;
+}
+
+.nav-right {
+    right: 10px;
+}
+
+.card:first-of-type {
+    display: flex;
+}
+
+
+.card {
+    border: none;
+    border-radius: 7px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 150px;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+}
+
+.card-cover {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #151523af;
+    height: 100%;
+}
+
+.cover-info {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.card-cover h6 {
+    border-bottom: 3px solid var(--corngold);
+    margin-top: 25px;
+    padding-bottom: 3px;
+}
+
+.card-cover p {
+    color: white;
+    font-size: 0.8rem;
+}
+
+.card-cover a {
+    color: white;
+}
+
+
 
 /* =================================== REGISTRATION */
 
@@ -158,7 +241,7 @@ footer a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 30px 0;
+    margin: 60px 0;
     width: 100%;
 }
 
@@ -174,7 +257,9 @@ footer a {
     color: var(--greenonion);
 }
 
-
+.registration p {
+    color: #828282;
+}
 
 
 /* =================================== TEXT */
@@ -191,12 +276,21 @@ h2 {
     line-height: 2rem;
 }
 
-h4 {
+h3 {
     color: white;
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: -0.02rem;
     line-height: 1.5rem;
+    margin: 0;
+}
+
+h4 {
+    color: white;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.1rem;
     margin: 0;
 }
 
@@ -206,8 +300,13 @@ h5 {
     margin: 0;
 }
 
+h6 {
+    font-size: 0.6rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
 p {
-    color: #828282;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.2rem;
@@ -224,8 +323,8 @@ p {
 
 
 
-
-/* * {
+/* 
+* {
     border: 1px solid springgreen;
 }
  */
@@ -276,11 +375,8 @@ button, header, .logo-and, .tool-buttons {
 /* ============ TEXT ============ */
 /* ============ TEXT ============ */
 
-h3, h6 {
-    margin: 0;
-}
 
-h3, h6, .btn-less {
+.btn-less {
     font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
 }
 
@@ -292,20 +388,9 @@ button, input, textarea, a {
 
 
 
-h3 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    line-height: 4.75rem;
-    margin: 0;
-}
 
 
-h6 {
-    font-size: 1rem;
-    margin: 0;
-    text-transform: uppercase;
-}
+
 
 a {
     color: #f8f8ff;
@@ -316,7 +401,7 @@ a {
 
     .bold-link {
         padding-bottom: 10px;
-        border-bottom: 10px solid #0d0d1100;
+        border-bottom: 10px solid #0d0d33;
     }
 
     /* .up-z {
@@ -356,12 +441,7 @@ a {
     color: var(--ghostwhite);
     }
 
-    .hint {
-        border-bottom: 3px solid var(--darkramenfade);
-        color: var(--darkramenfade);
-        margin: 25px 0;
-        padding-bottom: 3px;
-    }
+
 
     .nextup:hover, .hint:hover {
         border-bottom: 3px solid var(--white);
@@ -438,37 +518,6 @@ main {
 /* ============ CARDS */
 /* ============ CARDS */
 
-.card-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    width: 100%;
-    height: 500px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 2px solid var(--darkramendim);
-    border-radius: 7px;
-    box-shadow: 10px 10px 2px -5px #0000003a;
-    margin: 15px 0;
-    width: 48%;
-}
-
-#cover {
-    background-color: #000000bd;
-    height: 100%;
-}
-
-#cover > p {
-    font-size: 1.5rem;
-    text-align: center;
-}
 
 
 /* ====== FORMS & INPUT ====== */

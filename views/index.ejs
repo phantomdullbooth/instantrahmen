@@ -20,11 +20,15 @@
     </aside>
 
     <main>
+        <% if (!currentUser) { %>
         <div class="preview">
-            <h4>Check out these recipes created by chefs like you.</h4>
+            <h3>Check out these recipes created by chefs like you.</h3>
 
             <div class="recipe-carousel">
+
                 <div class="card-box">
+                    <div class="nav nav-left">
+                    </div>
                     <% for (let i = 0; i < recipes.length; i++) { %>
                     <div class="card">
                         <style>
@@ -35,29 +39,22 @@
                                 background-position-y: 30%;
                             }
                         </style>
-                        <div id="cover">
-                            <h4><%=recipes[i].title%></h4>
-                            <p><%=recipes[i].description%></p>
-                            
-    
-                            <div class="tool-buttons">
-                                <a href="/<%=recipes[i].id%>"><button type="button" name="view-recipe" class="icon-button">
-                                        <img src="../images/buttons/view.png" />
-                                    </button></a>
-    
-                                <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
-                                    <button type="submit" name="delete-recipe" class="icon-button">
-                                        <img src="../images/buttons/delete.png" />
-                                    </button>
-                                </form>
+                        <div class="card-cover">
+                            <div class="cover-info">
+                                <h4><%=recipes[i].title%></h4>
+                                <p><%=recipes[i].description%></p>
+                                <h6><a href="/<%=recipes[i].id%>">View recipe.</a></h6>
                             </div>
                         </div>
                     </div>
                     <% } %>
+                    <div class="nav nav-right">
+                    </div>
                 </div>
 
             </div>
         </div>
+        <% } %>
 
         <div class="registration">
 
@@ -77,18 +74,18 @@
             </div>
 
             <% } else { %>
-                <h1 class="up-z tx-green">Let's get cooking, shall we?</h1 class="up-z">
-    
-                <div class="row-flex distancer">
-                    <a href="/app">
-                        <h2 class="choices">Go to recipes.</h2>
-                    </a>
-                    <a href="/app/add-recipe">
-                        <h2 class="choices">Add a new recipe.</h2>
-                    </a>
-                </div>
-    
-                <% } %>
+            <h1 class="up-z tx-green">Let's get cooking, shall we?</h1 class="up-z">
+
+            <div class="row-flex distancer">
+                <a href="/app">
+                    <h2 class="choices">Go to recipes.</h2>
+                </a>
+                <a href="/app/add-recipe">
+                    <h2 class="choices">Add a new recipe.</h2>
+                </a>
+            </div>
+
+            <% } %>
         </div>
 
     </main>
