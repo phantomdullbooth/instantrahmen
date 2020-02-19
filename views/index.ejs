@@ -22,18 +22,16 @@
     <main>
         <% if (!currentUser) { %>
         <div class="preview">
-            <h3>Check out these recipes created by chefs like you.</h3>
+            <h3>Check out this example of a '<%=recipes[0].title%>' recipe card.</h3>
 
             <div class="recipe-carousel">
 
                 <div class="card-box">
-                    <div class="nav nav-left">
-                    </div>
                     <% for (let i = 0; i < recipes.length; i++) { %>
                     <div class="card">
                         <style>
                             .card {
-                                background: url('<%=recipes[i].image%>') no-repeat;
+                                background: url('<%=recipes[0].image%>') no-repeat;
                                 background-size: cover;
                                 background-position-x: 50%;
                                 background-position-y: 30%;
@@ -41,15 +39,13 @@
                         </style>
                         <div class="card-cover">
                             <div class="cover-info">
-                                <h4><%=recipes[i].title%></h4>
-                                <p><%=recipes[i].description%></p>
-                                <h6><a href="/<%=recipes[i].id%>">View recipe.</a></h6>
+                                <h4><%=recipes[0].title%></h4>
+                                <p><%=recipes[0].description%></p>
+                                <h6><a href="/<%=recipes[0].id%>">View recipe</a></h6>
                             </div>
                         </div>
                     </div>
                     <% } %>
-                    <div class="nav nav-right">
-                    </div>
                 </div>
 
             </div>
