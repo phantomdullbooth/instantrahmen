@@ -8,9 +8,14 @@
 <body>
     <% include ../partials/header.ejs %>
 
+    <aside class="chopsticks">
+        <div>
+            <h2>Maybe spice it up this time, hm?</h2>
+        </div>
+    </aside>
+
     <main>
         <div class="box-left">
-            <h3 class="tx-gold">Maybe spice it up this time, hm?</h3>
 
             <form action="/app" method="POST" id="recipe-form">
 
@@ -32,19 +37,13 @@
                 <!-- BUTTONS [ ADD OR CANCEL ] -->
 
                 <div class="row-flex">
-                    <button type="submit" class="series-one bg-green">Add Recipe</button>
+                    <button type="submit" id="recipe-form" class="series-one bg-green">Add Recipe</button>
                     <h6><a href="/app" class="hint">Cancel add</a></h6>
                 </div>
             </form>
-            
+    
         </div>
 
-        <div class="box-right">
-            <div class="img-dim"></div>
-            <img src="../images/ramen-square.jpg" class="img-circle" />
-
-            <% include ../partials/logout.ejs %>
-        </div>
     </main>
 
     <footer><% include ../partials/footer.ejs %></footer>

@@ -68,7 +68,8 @@ router.get('/app', (req, res) => {
 router.get('/:id', (req, res) => {
     Recipes.findById(req.params.id, (err, foundRecipe) => {
         res.render('app/show.ejs', {
-            recipe: foundRecipe
+            recipe: foundRecipe,
+            currentUser: req.session.currentUser
         });
     });
 });

@@ -14,6 +14,7 @@
 
             <% } else { %>
             <h2>Welcome, Chef @<%= currentUser.username %>!</h2>
+            <% include ./partials/logout.ejs %>
             <% } %>
 
         </div>
@@ -52,9 +53,10 @@
         </div>
         <% } %>
 
+        <% if (!currentUser) { %>
         <div class="registration">
 
-            <% if (!currentUser) { %>
+            
             <div class="link-info">
                 <a href="/sessions/new">
                     <h1>Log in</h1>
@@ -70,15 +72,20 @@
             </div>
 
             <% } else { %>
-            <h1 class="up-z tx-green">Let's get cooking, shall we?</h1 class="up-z">
+                <h3>Let's get cooking, shall we?</h3>
 
             <div class="row-flex distancer">
-                <a href="/app">
-                    <h2 class="choices">Go to recipes.</h2>
-                </a>
-                <a href="/app/add-recipe">
-                    <h2 class="choices">Add a new recipe.</h2>
-                </a>
+                <div class="link-info">
+                    <a href="/app">
+                        <h1>Go to recipes</h1>
+                    </a>
+                </div>
+
+                <div class="link-info">
+                    <a href="/app/add-recipe">
+                        <h1>Add a new recipe.</h1>
+                    </a>
+                </div>
             </div>
 
             <% } %>

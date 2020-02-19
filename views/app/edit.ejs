@@ -8,9 +8,24 @@
 <body>
     <% include ../partials/header.ejs %>
 
+    <aside id="hero-show-recipe">
+        <style>
+            #hero-show-recipe {
+                background: url('<%=recipe.image%>') no-repeat;
+                background-size: cover;
+                background-position-x: 50%;
+                background-position-y: 30%;
+            }
+        </style>
+        <div class="dimmer">
+
+            <h2>Think it needs something, hm?</h2>
+
+        </div>
+    </aside>
+
     <main>
         <div class="box-left">
-            <h3 class="tx-gold">Think it needs something, hm?</h3>
 
             <form action="/<%=recipe.id%>?_method=PUT" method="POST" id="recipe-form">
                 <div class="side-by">
@@ -25,7 +40,7 @@
 
                 <div class="row-flex">
                     <button type="submit" class="series-one bg-green">Edit Recipe</button>
-                    <h6><a href="/<%=recipe.id%>" class="hint">Cancel edit</a></h6>
+                    <a href="/<%=recipe.id%>" class="minor faded-link">Cancel edit</a>
                 </div>
             </form>
             

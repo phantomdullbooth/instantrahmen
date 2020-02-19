@@ -4,30 +4,29 @@
 <head> <% include ../partials/head.ejs %> </head>
 
 <body>
-    <header> <% include ../partials/header.ejs %> </header>
+    <% include ../partials/header.ejs %>
+
+    <aside class="hero-login">
+        <div class="dimmer">
+            <h2>Step one. Sign up. Like right now.</h2>
+
+        </div>
+    </aside>
 
     <main>
-        <div class="box-left">
-            <h1 class="up-z">Step one. Sign up. Like right now.</h1>
-
-            <div id="start">
-                <form action="/users" method="POST" id="reg-form" class="row-flex">
-                    <input type="text" name="username" placeholder="username" required>
-                    <input type="password" name="password" minlength="8" placeholder="password (min. 8 char.)"
-                        required>
-                    <button type="submit" name="log-in-go" class="series-one bg-green">Go</button>
-                </form>
-            </div>
-
-            <h6><a href="../sessions/new" class="hint">I already have an account.</a></h6>
+        <div class="page-options">
+            <a href="../sessions/new" class="minor green-link">Already have an account? Click here to log in</a>
         </div>
 
-        <div class="box-right">
-            <div class="img-dim"></div>
-            <img src="../images/ramen-square.jpg" class="img-circle" />
-        </div>
+        <form action="/users" method="POST" id="reg-form" class="entrance">
+            <input type="text" name="username" placeholder="username" required>
+            <input type="password" name="password" minlength="8" placeholder="password (at least 8 characters)"
+                required>
+            <button type="submit" name="signup-go" class="btn-normal orange">Go</button>
+        </form>
     </main>
 
-    <footer> <% include ../partials/footer.ejs %> </footer>
+    <% include ../partials/footer.ejs %>
+
 </body>
 <html>

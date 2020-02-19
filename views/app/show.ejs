@@ -6,31 +6,48 @@
 </head>
 
 <body>
-    <!-- HEADER [ TITLE, QUOTE]  -->
     <% include ../partials/header.ejs %>
 
+    <aside id="hero-show-recipe">
+        <style>
+            #hero-show-recipe {
+                background: url('<%=recipe.image%>') no-repeat;
+                background-size: cover;
+                background-position-x: 50%;
+                background-position-y: 30%;
+            }
+        </style>
+        <div class="dimmer">
+
+            <h2>Ahh, the <span class="tx-gold"><%=recipe.title%></span>.<br />Excellent choice.</h2>
+
+        </div>
+    </aside>
+
     <main>
-        <div class="box-left">
-            <h3>Ahh, the <span class="tx-green"><%=recipe.title%></span>.<br />Excellent choice.</h3>
+        <div class="page-options">
+            <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit this recipe.
+            </a>
 
-            <div class="row-flex distance">
-                <a href="/<%=recipe.id%>/edit-recipe"><h6 class="nextup">Edit this recipe.</h6></a>
-                <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
-                    <button type="submit" name="delete-recipe" class="series-two"><h6 class="hint">Delete this recipe.</h6></button>
-                </form>
-            </div>
+            <form action="/<%=recipe.id%>?_method=DELETE" method="POST" class="space-out">
+                <button type="submit" name="delete-recipe" class="btn-flush">
+                    <h6 class="dangerous">Delete this recipe.</h6>
+                </button>
+            </form>
+        </div>
 
-            <h5>About this recipe: <%=recipe.description%> </h5>
+        <div class="card-information">
+            <h4>About this recipe:</h4>
+            <p><%=recipe.description%> </p>
             <h5 class="unstack"><%=recipe.recipe%></h5>
         </div>
 
-        <div class="box-right">
-            <div class="img-dim"></div>
-            <img src="<%=recipe.image%>" class="img-circle" />
 
 
-            <% include ../partials/logout.ejs %>
-        </div>
+
+        <% if (currentUser) { %>
+        <% include ../partials/logout.ejs %>
+        <% } %>
     </main>
 
 
