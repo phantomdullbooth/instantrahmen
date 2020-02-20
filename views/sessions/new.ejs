@@ -6,22 +6,21 @@
 <body>
     <% include ../partials/header.ejs %>
 
-    <aside class="hero-login">
-        <div class="dimmer">
+    <aside class="chopsticks">
+        <div>
             <h2>Log in & preheat oven to... 5000?!</h2>
-
         </div>
     </aside>
 
     <main>
-        <div class="page-options">
+        <div class="options opt-page">
             <a href="../users/new" class="minor green-link">Did you miss a step? Click here to sign up.</a>
         </div>
 
         <form action="/sessions" method="POST" id="login-form" class="entrance">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" minlength="8" placeholder="password" required>
-            <button type="submit" name="login-go" class="btn-normal orange">Go</button>
+            <button type="submit" name="login-go" class="form-button orange">Get started</button>
         </form>
 
     </main>

@@ -6,17 +6,14 @@
 <body>
     <% include ./partials/header.ejs %>
 
-    <aside id="hero">
-        <div class="dimmer">
-
+    <aside class="chopsticks">
+        <div>
             <% if (!currentUser) { %>
-            <h2>Turn your favorite code snippets into recipe cards.</h2>
-
-            <% } else { %>
-            <h2>Welcome, Chef @<%= currentUser.username %>!</h2>
-            <% include ./partials/logout.ejs %>
-            <% } %>
-
+                <h2>Turn your favorite code snippets into recipe cards.</h2>
+    
+                <% } else { %>
+                <h2>Welcome, Chef @<span class="text-white"><%= currentUser.username %></span>!</h2>
+                <% } %>
         </div>
     </aside>
 
@@ -28,7 +25,6 @@
             <div class="recipe-carousel">
 
                 <div class="card-box">
-                    <% for (let i = 0; i < recipes.length; i++) { %>
                     <div class="card">
                         <style>
                             .card {
@@ -42,11 +38,10 @@
                             <div class="cover-info">
                                 <h4><%=recipes[0].title%></h4>
                                 <p><%=recipes[0].description%></p>
-                                <h6><a href="/<%=recipes[0].id%>">View recipe</a></h6>
+                                <a href="/<%=recipes[0].id%>" class="minor gold-link solo">View recipe</a>
                             </div>
                         </div>
                     </div>
-                    <% } %>
                 </div>
 
             </div>
@@ -72,21 +67,16 @@
             </div>
 
             <% } else { %>
-                <h3>Let's get cooking, shall we?</h3>
+                <h3>Main menu</h3>
 
-            <div class="row-flex distancer">
-                <div class="link-info">
-                    <a href="/app">
-                        <h1>Go to recipes</h1>
-                    </a>
-                </div>
+                <div id="menu-links">
+                    <a href="/app" class="menu-link">View all recipes.</a>
+                    <a href="/app/add-recipe" class="menu-link">New recipe.</a>
 
-                <div class="link-info">
-                    <a href="/app/add-recipe">
-                        <h1>Add a new recipe.</h1>
-                    </a>
+                    <form action="/sessions/app?_method=DELETE" method="POST" class="removed">
+                        <button type="submit" name="log-out" class="btn-flush"><h6 class="faded-link">Log out</h6></button>
+                  </form>
                 </div>
-            </div>
 
             <% } %>
         </div>

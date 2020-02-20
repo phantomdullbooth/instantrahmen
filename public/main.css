@@ -5,19 +5,11 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:500,700&display=swap');
 
 :root {
-    --dimmer: #151523af;
-    --lighter: #15152357;
-    --tonkotsu: #141422;
-
-
-
-    --darkramen: #191920;
-    --darkramendim: #08080A;
-    --darkramenfade: #1B1B20;
     --carrot: #D07C23;
     --corn: #E1AA00;
+    --dimmer: #151523af;
     --greenonion: #7EBA54;
-    --white: #ffffff;
+    --tonkotsu: #141422;
 }
 
 @font-face {
@@ -97,12 +89,13 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0;
     width: 100%;
 }
 
 footer a {
-    color: var(--white);
-    font-size: 0.7rem;
+    color: #ffffff44;
+    font-size: 0.5rem;
 }
 
 /* =================================== HERO */
@@ -150,21 +143,12 @@ main {
     width: 90%;
 }
 
-.page-options {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0 auto 20px auto;
-    width: 90%;
-}
-
 .content {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 30px 0;
+    margin: 0 0 40px;
     width: 90%;
 }
 
@@ -237,7 +221,16 @@ a {
 }
 
 .orange-link:hover {
-    color: var(--carrot);
+
+    border-bottom: 3px solid white;
+}
+
+.red-link {
+    border-bottom: 3px solid red;
+}
+
+.red-link:hover {
+    color: red;
     border-bottom: 3px solid white;
 }
 
@@ -253,13 +246,9 @@ a {
 }
 
 
-
-
-
-
-
-
-
+.text-white {
+    color: white;
+}
 
 
 
@@ -368,6 +357,7 @@ a {
     justify-content: space-evenly;
     height: 150px;
     position: relative;
+    margin: 0 auto;
     width: 80%;
     z-index: 1;
 }
@@ -393,12 +383,6 @@ a {
 .card-cover h4 {
     color: var(--corn);
     margin-bottom: 7px;
-}
-
-.card-cover h6 {
-    border-bottom: 3px solid var(--corn);
-    margin-top: 25px;
-    padding-bottom: 3px;
 }
 
 .card-cover p {
@@ -439,28 +423,12 @@ a {
     color: #828282;
 }
 
-/* =================================== CARD OPTIONS ON VIEW */
 
-.card-options {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 15px auto 60px auto;
-    width: 90%;
-}
 
-.space-out {
-    /* margin: 0 10px; */
-    padding: 0;
-}
 
-.card-options h6 {
-    padding-bottom: 3px;
-    border-bottom: 3px solid var(--corn);
-    margin-top: 25px;
-    padding-bottom: 3px;
-}
+
+
+
 
 .card-information h4 {
     color: white;
@@ -549,12 +517,6 @@ p {
     width: 90%;
 }
 
-.entrance input {
-    height: 45px;
-    margin-bottom: 10px;
-    width: 85%;
-}
-
 .account-options {
     align-items: flex-start;
     display: flex;
@@ -583,6 +545,11 @@ button {
     border: none;
     cursor: pointer;
     outline: 0;
+}
+
+button h6 {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .btn-normal {
@@ -670,189 +637,182 @@ button, input, textarea, a {
 
 
 
-
-
-
-
-
-    .bold-link {
-        padding-bottom: 10px;
-        border-bottom: 10px solid #0d0d33;
-    }
-
-    /* .up-z {
-        position: relative;
-        z-index: 10;
-        /* width: 900px; */
-    
-
-    /* .distance {
-        width: 350px;
-    } */
-
-    /* .distancer { */
-        /* width: 100%; */
-        /* margin: 40px 0; */
-    /* } */
-
-    .unstack {
-        margin: 25px 0;
-    }
-
-    .nextup {
-        border-bottom: 3px solid var(--greenonion);
-        color: var(--white);
-        margin: 5px 0;
-        padding-bottom: 3px;
-    }
-
-    
-
-    .choices {
-        color: var(--white);
-        margin: 0 40px 0 0;
-    }
-
-    .choices:hover {
-        color: var(--corn);
-        border-bottom: 10px solid var(--corn);
-    color: var(--ghostwhite);
-    }
-
-
-
-    .nextup:hover, .hint:hover {
-        border-bottom: 3px solid var(--white);
-        color: var(--greenonion);
-    }
-    
-    .row-flex .hint:hover {
-        border-bottom: 3px solid #ff0000;
-        color: var(--white);
-    }
-
-    .tx-orange {
-        color: var(--carrot);
-    }
-
-    .tx-gold {
-        color: var(--corn);
-    }
-    
-    .tx-green {
-        color: var(--greenonion);
-    }
-    
-    .tx-fade {
-        color: var(--darkramenfade);
-    }
-    
-    .bg-green {
-        background-color: var(--greenonion);
-        color: var(--darkramen);
-    }
-
-
-/* ============ BODY PARTS ============ */
-/* ============ BODY PARTS ============ */
-
-
-
-
-
-
-
-
-
-/* ============ MAIN ============ */
-/* ============ MAIN ============ */
-
-.box-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.split {
     align-items: flex-start;
-    margin-right: 1%;
-    width: 45%;
-}
-
-.box-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    margin-left: 1%;
-    width: 45%;
-}
-
-
-/* ============ CARDS */
-/* ============ CARDS */
-
-
-
-/* ====== FORMS & INPUT ====== */
-/* ====== FORMS & INPUT ====== */
-
-form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-}
-
-#recipe-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    height: 100%;
-    margin-top: 50px;
-    width: 95%;
-}
-
-
-
-.side-by {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 25px;
     width: 100%;
 }
 
-input, textarea {
-    background-color: var(--darkramendim);
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 0.95rem;
-    width: 250px;
-    height: 45px;
-    outline: none;
-    padding: 0 15px;
+.split > input {
+    width: 40%;
 }
 
 
-
-input[name="description"] {
-    width: 95%;
-    margin-bottom: 25px;
+.text-orange { 
+    color: var(--carrot);
 }
 
-#recipe-form textarea {
-    margin-bottom: 40px;
-    padding: 15px;
-    width: 95%;
-    height: 150px;
-    resize: none;
+.text-gold {
+    color: var(--corn);
 }
+
+
+/* =================================== INPUTS */
+/* =================================== INPUTS */
 
 ::placeholder {
     color: #ffffff54;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+}
+
+input {
+    background-color: #ffffff0a;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff54;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    outline: none;
+    padding: 5px 10px;
+    height: 35px;
+    width: 100%;
+}
+
+.entrance input {
+    width: 85%;
 }
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
+
+textarea {
+    background-color: #ffffff0a;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff54;
+    font-size: 0.8rem;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.entries {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.input-bundle {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-bundle input {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.input-bundle h6 {
+    margin-right: 20px;
+    padding-bottom: 0;
+}
+
+
+
+
+
+
+/* =================================== OPTIONS */
+/* =================================== OPTIONS */
+
+.options {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.opt-page {
+    margin: 0 auto 40px;
+    width: 80%;
+}
+
+
+
+
+
+
+/* =================================== CARDS */
+/* =================================== CARDS */
+
+.card-options {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 0;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.form-options {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.form-button {
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 15px;
+    padding: 10px 20px;
+}
+
+.green {
+    background-color: var(--greenonion);
+    color: var(--tonkotsu);
+}
+
+.entries {
+    margin-bottom: 50px;
+}
+
+#menu-links {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px 0 40px 0;
+}
+
+.menu-link {
+    color: var(--greenonion);
+    font-size: 2.35rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.menu-link:hover {
+    color: var(--corn);
+}
+
+.removed {
+    margin-top: 50px;
+}
+
+.solo {
+    margin-top: 20px;
+}

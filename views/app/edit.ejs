@@ -8,53 +8,59 @@
 <body>
     <% include ../partials/header.ejs %>
 
-    <aside id="hero-show-recipe">
+    <aside>
         <style>
-            #hero-show-recipe {
+            aside {
                 background: url('<%=recipe.image%>') no-repeat;
                 background-size: cover;
                 background-position-x: 50%;
                 background-position-y: 30%;
             }
         </style>
-        <div class="dimmer">
-
-            <h2>Think it needs something, hm?</h2>
-
+        <div>
+            <h2>Maybe it needs more salt?</h2>
         </div>
     </aside>
 
     <main>
-        <div class="box-left">
+        <div class="content">
+            <h2>Editing <span class="text-orange"><%=recipe.title%></span>.</h2>
 
-            <form action="/<%=recipe.id%>?_method=PUT" method="POST" id="recipe-form">
-                <div class="side-by">
-                    <input type="text" name="title" value="<%=recipe.title%>" placeholder="Recipe title" />
-                    <input type="url" name="image" value="<%=recipe.image%>" placeholder="Image link" />
+            <form action="/<%=recipe.id%>?_method=PUT" method="POST" id="recipe-form" class="entries">
+                <input type="hidden" name="user" value="<%= recipe.user %>" />
+
+                <div class="input-bundle">
+                    <h6>Title</h6>
+                    <input type="text" name="title" value="<%=recipe.title%>" required />
                 </div>
 
-                <input type="text" name="description" value="<%=recipe.description%>" placeholder="Brief description" />
-                <textarea form="recipe-form" name="recipe" value="<%=recipe.recipe%>" rows=20
-                    placeholder="This isn't your grandmother's recipe... unless she was a coder. Then maybe it was."
-                    required></textarea>
+                <div class="input-bundle">
+                    <h6>Image</h6>
+                    <input type="url" name="image" value="<%=recipe.image%>" required />
+                </div>
 
-                <div class="row-flex">
-                    <button type="submit" class="series-one bg-green">Edit Recipe</button>
-                    <a href="/<%=recipe.id%>" class="minor faded-link">Cancel edit</a>
+                <div class="input-bundle">
+                    <h6>Description</h6>
+                    <input type="text" name="description" value="<%=recipe.description%>" required />
+                </div>
+
+                <div class="input-bundle">
+                    <h6>Recipe</h6>
+                    <textarea form="recipe-form" name="recipe" value="<%=recipe.recipe%>" rows=20
+                        placeholder="This is where your snippet goes."
+                        required></textarea>
+                </div>
+
+                <div class="form-options">
+                    <button type="submit" id="recipe-form" class="form-button green">Edit Recipe</button>
+                    <a href="/<%=recipe.id%>" class="minor faded-link">Never mind.</a>
                 </div>
             </form>
-            
-        </div>
-
-        <div class="box-right">
-            <div class="img-dim"></div>
-            <img src="../images/ramen-square.jpg" class="img-circle" />
-
-            <% include ../partials/logout.ejs %>
         </div>
     </main>
 
-    <footer><% include ../partials/footer.ejs %></footer>
+    <% include ../partials/footer.ejs %>
 
 </body>
+
 </html>

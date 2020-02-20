@@ -19,21 +19,26 @@
         </style>
         <div class="dimmer">
 
-            <h2>Ahh, the <span class="tx-gold"><%=recipe.title%></span>.<br />Excellent choice.</h2>
+            <h2>Ahh, the <span class="text-gold"><%=recipe.title%></span>.<br />Excellent choice.</h2>
 
         </div>
     </aside>
 
     <main>
-        <div class="page-options">
-            <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit this recipe.
-            </a>
+        <div class="options opt-page">
+            <a href="/app" class="minor green-link">All recipes</a>
+            <a href="/app/add-recipe" class="minor gold-link">New recipe</a>
+           
 
-            <form action="/<%=recipe.id%>?_method=DELETE" method="POST" class="space-out">
+            <% if (recipe.user === currentUser.username) { %>
+                <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit</a>
+
+            <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
                 <button type="submit" name="delete-recipe" class="btn-flush">
-                    <h6 class="dangerous">Delete this recipe.</h6>
+                    <h6 class="red-link">Delete</h6>
                 </button>
             </form>
+            <% } %>
         </div>
 
         <div class="card-information">
