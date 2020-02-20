@@ -8,6 +8,6 @@ const recipeSchema = new mongoose.Schema({
   user: String,
 })
 
-const Recipes = mongoose.model('Recipes', recipeSchema) // will be stored in 'plants' collection
+const Recipes = mongoose.model('Recipes', recipeSchema) // will be stored in 'recipes' collection
 
 module.exports = Recipes;

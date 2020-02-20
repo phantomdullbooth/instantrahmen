@@ -17,35 +17,24 @@
         <div class="options opt-page">
             <a href="/" class="minor green-link">Main menu</a>
             <a href="/app/add-recipe" class="minor orange-link">New recipe</a>
-
-            <form action="/sessions/app?_method=DELETE" method="POST">
-                <button type="submit" name="logout" class="btn-flush">
-                    <h6 class="faded-link">Log out</h6>
-                </button>
-            </form>
         </div>
 
-        <!-- RECIPE CARDS -->
-        <div class="content">
+        <div class="main-content2">
             <h2>All recipes</h2>
 
-            <div class="rolodex">
+            <div class="cookbook">
+
                 <% for (let i = 0; i < recipes.length; i++) { %>
-                <div class="card">
-                    <style>
-                        .card {
-                            background: url('<%=recipes[i].image%>') no-repeat;
-                            background-size: cover;
-                            background-position-x: 50%;
-                            background-position-y: 30%;
-                        }
-                    </style>
+                <div class="card" style="background: url(<%=recipes[i].image%>) no-repeat;
+                    background-size: cover;
+                    background-position-x: 50%;
+                    background-position-y: 30%;">
                     <div class="card-cover">
                         <div class="cover-info">
                             <h4><%=recipes[i].title%></h4>
                             <p><%=recipes[i].description%></p>
 
-                            <div class="card-options">
+                            <div class="options opt-card">
                                 <a href="/<%=recipes[i].id%>" class="minor gold-link">View recipe</a>
 
                                 <% if (recipes[i].user === currentUser.username) { %>
@@ -56,12 +45,12 @@
                                     </button>
                                 </form>
                                 <% } %>
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <% } %>
+                
             </div>
         </div>
     </main>

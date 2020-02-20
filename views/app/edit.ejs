@@ -23,8 +23,8 @@
     </aside>
 
     <main>
-        <div class="content">
-            <h2>Editing <span class="text-orange"><%=recipe.title%></span>.</h2>
+        <div class="main-content">
+            <h2>Editing <span class="orange-text"><%=recipe.title%></span>.</h2>
 
             <form action="/<%=recipe.id%>?_method=PUT" method="POST" id="recipe-form" class="entries">
                 <input type="hidden" name="user" value="<%= recipe.user %>" />
@@ -36,7 +36,7 @@
 
                 <div class="input-bundle">
                     <h6>Image</h6>
-                    <input type="url" name="image" value="<%=recipe.image%>" required />
+                    <input type="text" name="image" value="<%=recipe.image%>" required />
                 </div>
 
                 <div class="input-bundle">
@@ -51,8 +51,8 @@
                         required></textarea>
                 </div>
 
-                <div class="form-options">
-                    <button type="submit" id="recipe-form" class="form-button green">Edit Recipe</button>
+                <div class="options opt-form">
+                    <button type="submit" id="recipe-form" class="btn-standard green-fill">Edit Recipe</button>
                     <a href="/<%=recipe.id%>" class="minor faded-link">Never mind.</a>
                 </div>
             </form>

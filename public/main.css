@@ -56,79 +56,9 @@
     font-style: normal;
 }
 
-/* =================================== BODY PARTS */
-/* =================================== BODY PARTS */
 
-body {
-    align-items: flex-start;
-    background-color: var(--tonkotsu);
-    display: flex;
-    flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
-    height: 99vh;
-    justify-content: flex-start;
-    width: 100%;
-}
 
-header {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 15px 0;
-    width: 90%;
-}
 
-header a {
-    color: white;
-}
-
-footer {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #ffffff44;
-    font-size: 0.5rem;
-}
-
-/* =================================== HERO */
-/* =================================== HERO */
-
-aside {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-aside > div {
-    align-items: center;
-    background-color: var(--dimmer);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-.chopsticks {
-    background-image: url('images/r-chopsticks-square.jpg');
-}
-
-aside h2 {
-    color: var(--corn);
-    text-align: center;
-    width: 85%;
-}
 
 
 /* =================================== MAIN */
@@ -139,16 +69,26 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 30px auto;
+    margin: 20px auto;
     width: 90%;
 }
 
-.content {
-    align-items: flex-start;
+
+.main-content {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 0 0 40px;
+    width: 90%;
+}
+
+.main-content2 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto 40px;
     width: 90%;
 }
 
@@ -159,144 +99,32 @@ main h2 {
 
 /* SHOW ALL RECIPES ====================== */
 
-.rolodex {
+.cookbook {
     align-items: flex-start;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    margin: 0 auto;
     width: 100%;
 }
 
-.rolodex > .card {
+.cookbook > .card {
     border: none;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 150px;
+    /* margin: 0 auto 30px; */
     margin-bottom: 30px;
-    width: 90%;
-}
-
-
-
-/* =================================== LINKS */
-/* =================================== LINKS */
-
-a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.minor {
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 600;
-    margin: 0;
-    padding-bottom: 3px;
-    text-transform: uppercase;
-}
-
-.gold-link {
-    border-bottom: 3px solid var(--corn);
-}
-
-.gold-link:hover {
-    color: var(--corn);
-    border-bottom: 3px solid white;
-}
-
-.green-link {
-    border-bottom: 3px solid var(--greenonion);
-}
-
-.green-link:hover {
-    color: var(--greenonion);
-    border-bottom: 3px solid white;
-}
-
-.orange-link {
-    border-bottom: 3px solid var(--carrot);
-}
-
-.orange-link:hover {
-
-    border-bottom: 3px solid white;
-}
-
-.red-link {
-    border-bottom: 3px solid red;
-}
-
-.red-link:hover {
-    color: red;
-    border-bottom: 3px solid white;
-}
-
-.faded-link {
-    color: #ffffff44;
-    border-bottom: 3px solid #ffffff44;
-    margin: 0;
-}
-
-.faded-link:hover {
-    color: #ff0000;
-    border-bottom: 3px solid white;
-}
-
-
-.text-white {
-    color: white;
+    width: 100%;                     
 }
 
 
 
 
 
-
-
-
-
-
-#hero, #hero-login {
-    background-image: url('images/ramen-square.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;    
-}
-
-.hero-login {
-    background-image: url('images/ramen-square.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;    
-}
-
-
-#hero h2 {
-    color: var(--corn);
-    position: relative;
-    text-align: center;
-    width: 85%;
-    z-index: 2;
-}
-
-#hero-show-recipe h2 {
-    color: white;
-}
-
-.hero-login h2 {
-    color: var(--greenonion);
-    position: relative;
-    text-align: center;
-    width: 85%;
-    z-index: 2;
-}
-
-.hero {
-
-}
 
 
 /* =================================== PREVIEW */
@@ -356,10 +184,8 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     height: 150px;
-    position: relative;
     margin: 0 auto;
     width: 80%;
-    z-index: 1;
 }
 
 .card-cover {
@@ -441,6 +267,89 @@ a {
     text-align: center;
 }
 
+.card-information h5 {
+    color: white;
+    margin-top: 40px;
+}
+
+
+
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* =================================== BODY PARTS */
+/* =================================== BODY PARTS */
+
+body {
+    align-items: flex-start;
+    background-color: var(--tonkotsu);
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
+    height: 99vh;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 90%;
+}
+
+header a {
+    color: white;
+}
+
+footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffffff44;
+    font-size: 0.5rem;
+}
+
+/* =================================== HERO */
+/* =================================== HERO */
+
+aside {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+
+aside > div {
+    align-items: center;
+    background-color: var(--dimmer);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.chopsticks {
+    background-image: url('images/r-chopsticks-square.jpg');
+}
+
+aside h2 {
+    color: var(--corn);
+    text-align: center;
+    width: 85%;
+}
+
 
 /* =================================== TEXT */
 /* =================================== TEXT */
@@ -498,169 +407,85 @@ p {
     margin-top: 5px;
 }
 
-
-
-
-
-/* ///////////////////////////////////////// */
-
-
-/* =================================== PRE-CURRENT USER FORMS */
-/* =================================== PRE-CURRENT USER FORMS */
-
-.entrance {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 20px auto 50px auto;
-    width: 90%;
-}
-
-.account-options {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 15px auto 30px auto;
-    width: 90%;
-}
-
-.account-options h6 {
-    padding-bottom: 3px;
-    font-size: 0.6rem;
-    margin: 0;
-    text-transform: uppercase;
-    padding-bottom: 3px;
-    border-bottom: 3px solid var(--corn);
-    margin-top: 25px;
-    padding-bottom: 3px;
-}
-
-/* =================================== BUTTONS */
-/* =================================== BUTTONS */
-
-
-button {
-    border: none;
-    cursor: pointer;
-    outline: 0;
-}
-
-button h6 {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.btn-normal {
-    border-radius: 3px;
-    font-size: 1rem;
-    padding: 7px 25px;
-}
-
-.btn-flush {
-    background-color: unset;
-    font-size: 0.6rem;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    width: auto;
-}
-
-.orange {
-    background-color: var(--carrot);
-    color: var(--white);
-}
-
-
-
-
-
-
-
-
-
-
-header, .logo-and, .tool-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.row-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#connector {
-    display: inline;
-}
-
-/* ============ IMAGE ============ */
-/* ============ IMAGE ============ */
-
-/* .img-circle, .img-dim {
-    align-self: flex-start;
-    border-radius: 100%;
-    height: 500px;
-    position: absolute;
-    width: 500px;
-}
-
-.img-circle {
-    z-index: -10;
-}
-
-.img-dim {
-    background-color: #0000006e;
-    z-index: -5;
-} */
-
-
-/* ============ TEXT ============ */
-/* ============ TEXT ============ */
-
-
-.btn-less {
-    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
-}
-
-button, input, textarea, a {
-    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
-}
-
-
-
-
-
-
-.split {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.split > input {
-    width: 40%;
-}
-
-
-.text-orange { 
-    color: var(--carrot);
-}
-
-.text-gold {
+.gold-text {
     color: var(--corn);
 }
 
+.orange-text { 
+    color: var(--carrot);
+}
 
-/* =================================== INPUTS */
-/* =================================== INPUTS */
+.white-text {
+    color: white;
+}
+
+/* ================= LINKS */
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.minor {
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.gold-link {
+    border-bottom: 3px solid var(--corn);
+}
+
+.gold-link:hover {
+    color: var(--corn);
+    border-bottom: 3px solid white;
+}
+
+.green-link {
+    border-bottom: 3px solid var(--greenonion);
+}
+
+.green-link:hover {
+    color: var(--greenonion);
+    border-bottom: 3px solid white;
+}
+
+.orange-link {
+    border-bottom: 3px solid var(--carrot);
+}
+
+.orange-link:hover {
+
+    border-bottom: 3px solid white;
+}
+
+.red-link {
+    border-bottom: 3px solid red;
+}
+
+.red-link:hover {
+    color: red;
+    border-bottom: 3px solid white;
+}
+
+.faded-link {
+    color: #ffffff44;
+    border-bottom: 3px solid #ffffff44;
+    margin: 0;
+}
+
+.faded-link:hover {
+    color: #ff0000;
+    border-bottom: 3px solid white;
+}
+
+
+
+/* =================================== FORMS, INPUTS */
+/* =================================== FORMS, INPUTS */
 
 ::placeholder {
     color: #ffffff54;
@@ -700,11 +525,21 @@ textarea {
     resize: none;
 }
 
-.entries {
-    align-items: flex-start;
+.entrance, .entries {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.entrance {
+    align-items: center;
+    margin: 20px auto 50px auto;
+    width: 90%;
+}
+
+.entries {
+    align-items: flex-start;
+    margin-bottom: 50px;
     width: 100%;
 }
 
@@ -728,52 +563,25 @@ textarea {
 }
 
 
+/* =================================== BUTTONS */
+/* =================================== BUTTONS */
 
-
-
-
-/* =================================== OPTIONS */
-/* =================================== OPTIONS */
-
-.options {
-    align-items: baseline;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+button {
+    border: none;
+    cursor: pointer;
+    outline: 0;
 }
 
-.opt-page {
-    margin: 0 auto 40px;
-    width: 80%;
+.btn-flush {
+    background-color: unset;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: auto;
 }
 
-
-
-
-
-
-/* =================================== CARDS */
-/* =================================== CARDS */
-
-.card-options {
-    align-items: baseline;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 5px 0;
-    margin-top: 20px;
-    width: 80%;
-}
-
-.form-options {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-.form-button {
+.btn-standard {
     border-radius: 3px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -781,14 +589,52 @@ textarea {
     padding: 10px 20px;
 }
 
-.green {
+    .entrance .btn-standard {
+        margin-right: 0;
+    }
+
+.green-fill {
     background-color: var(--greenonion);
     color: var(--tonkotsu);
 }
 
-.entries {
-    margin-bottom: 50px;
+.gold-fill {
+    background-color: var(--corn);
+    color: var(--tonkotsu);
 }
+
+
+/* =================================== OPTIONS */
+/* =================================== OPTIONS */
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.opt-card {
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 20px 0 0;
+    width: 70%;
+}
+
+.opt-form {
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    width: 70%;
+}
+
+.opt-page {
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin: 0 auto 40px;
+    width: 80%;
+}
+
+/* =================================== MAIN MENU */
+/* =================================== MAIN MENU */
 
 #menu-links {
     align-items: flex-start;
@@ -809,10 +655,6 @@ textarea {
     color: var(--corn);
 }
 
-.removed {
-    margin-top: 50px;
-}
-
-.solo {
-    margin-top: 20px;
+#menu-links {
+    margin-top: 40px;
 }

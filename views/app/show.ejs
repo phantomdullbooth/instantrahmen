@@ -8,30 +8,35 @@
 <body>
     <% include ../partials/header.ejs %>
 
-    <aside id="hero-show-recipe">
+    <aside>
         <style>
-            #hero-show-recipe {
+            aside {
                 background: url('<%=recipe.image%>') no-repeat;
                 background-size: cover;
                 background-position-x: 50%;
                 background-position-y: 30%;
             }
         </style>
-        <div class="dimmer">
-
-            <h2>Ahh, the <span class="text-gold"><%=recipe.title%></span>.<br />Excellent choice.</h2>
-
+        <div>
+            <h2>Ahh, the <span class="white-text"><%=recipe.title%></span>.<br />Excellent choice.</h2>
         </div>
     </aside>
 
     <main>
+        <% if (!currentUser) { %>
+        <div class="options opt-page">
+            <a href="/" class="minor gold-link">Back home</a>
+            <a href="../sessions/new" class="minor green-link">Log in</a>
+            <a href="../users/new" class="minor green-link">Sign up</a>
+        </div>
+
+        <% } else if (currentUser) { %>
         <div class="options opt-page">
             <a href="/app" class="minor green-link">All recipes</a>
             <a href="/app/add-recipe" class="minor gold-link">New recipe</a>
-           
 
             <% if (recipe.user === currentUser.username) { %>
-                <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit</a>
+            <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit</a>
 
             <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
                 <button type="submit" name="delete-recipe" class="btn-flush">
@@ -40,23 +45,17 @@
             </form>
             <% } %>
         </div>
+        <% } %>
 
         <div class="card-information">
             <h4>About this recipe:</h4>
             <p><%=recipe.description%> </p>
-            <h5 class="unstack"><%=recipe.recipe%></h5>
+            <h5><%=recipe.recipe%></h5>
         </div>
-
-
-
-
-        <% if (currentUser) { %>
-        <% include ../partials/logout.ejs %>
-        <% } %>
     </main>
 
 
-    <footer><% include ../partials/footer.ejs %></footer>
+    <% include ../partials/footer.ejs %>
 </body>
 
 </html>

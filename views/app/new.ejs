@@ -15,7 +15,7 @@
     </aside>
 
     <main>
-        <div class="content">
+        <div class="main-content">
             <h2>New recipe.</h2>
 
             <form action="/app" method="POST" id="recipe-form" class="entries">
@@ -28,7 +28,7 @@
 
                 <div class="input-bundle">
                     <h6>Image</h6>
-                    <input type="url" name="image" required />
+                    <input type="text" name="image" required />
                 </div>
 
                 <div class="input-bundle">
@@ -43,8 +43,8 @@
                         required></textarea>
                 </div>
 
-                <div class="form-options">
-                    <button type="submit" id="recipe-form" class="form-button green">Add recipe</button>
+                <div class="options opt-form">
+                    <button type="submit" id="recipe-form" class="btn-standard green-fill">Add recipe</button>
                     <a href="/app" class="minor faded-link">Never mind</a>
                 </div>
             </form>

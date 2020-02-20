@@ -12,7 +12,7 @@
                 <h2>Turn your favorite code snippets into recipe cards.</h2>
     
                 <% } else { %>
-                <h2>Welcome, Chef @<span class="text-white"><%= currentUser.username %></span>!</h2>
+                <h2>Welcome, Chef @<span class="white-text"><%= currentUser.username %></span>!</h2>
                 <% } %>
         </div>
     </aside>
@@ -38,7 +38,9 @@
                             <div class="cover-info">
                                 <h4><%=recipes[0].title%></h4>
                                 <p><%=recipes[0].description%></p>
-                                <a href="/<%=recipes[0].id%>" class="minor gold-link solo">View recipe</a>
+                                <div class="options opt-card">
+                                <a href="/<%=recipes[0].id%>" class="minor gold-link">View recipe</a>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +75,7 @@
                     <a href="/app" class="menu-link">View all recipes.</a>
                     <a href="/app/add-recipe" class="menu-link">New recipe.</a>
 
-                    <form action="/sessions/app?_method=DELETE" method="POST" class="removed">
+                    <form action="/sessions/app?_method=DELETE" method="POST">
                         <button type="submit" name="log-out" class="btn-flush"><h6 class="faded-link">Log out</h6></button>
                   </form>
                 </div>
