@@ -26,7 +26,7 @@ users.post('/', (req, res) => {
         } else {
             console.log(createdUser)
             req.session.currentUser = createdUser
-            res.redirect('/')
+            res.redirect('/app')
         }
     })
 })

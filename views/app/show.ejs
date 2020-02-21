@@ -8,49 +8,44 @@
 <body>
     <% include ../partials/header.ejs %>
 
-    <aside>
-        <style>
-            aside {
-                background: url('<%=recipe.image%>') no-repeat;
-                background-size: cover;
-                background-position-x: 50%;
-                background-position-y: 30%;
-            }
-        </style>
+    <aside style="background: url('<%=recipe.image%>') no-repeat;
+        background-size: cover;
+        background-position-x: 50%;
+        background-position-y: 30%;">
         <div>
-            <h2>Ahh, the <span class="white-text"><%=recipe.title%></span>.<br />Excellent choice.</h2>
+            <h2 class="white-text smaller">Ahh, the <span class="gold-text"><%=recipe.title%></span>.<br />Excellent choice.</h2>
         </div>
     </aside>
 
     <main>
         <% if (!currentUser) { %>
-        <div class="options opt-page">
-            <a href="/" class="minor gold-link">Back home</a>
-            <a href="../sessions/new" class="minor green-link">Log in</a>
-            <a href="../users/new" class="minor green-link">Sign up</a>
+        <div class="options pages">
+            <a href="/" class="h6 gold">Back home</a>
+            <a href="../sessions/new" class="h6 green">Log in</a>
+            <a href="../users/new" class="h6 green">Sign up</a>
         </div>
 
         <% } else if (currentUser) { %>
-        <div class="options opt-page">
-            <a href="/app" class="minor green-link">All recipes</a>
-            <a href="/app/add-recipe" class="minor gold-link">New recipe</a>
+        <div class="options pages">
+            <a href="/app" class="h6 green">All recipes</a>
+            <a href="/app/add-recipe" class="h6 gold">New recipe</a>
 
             <% if (recipe.user === currentUser.username) { %>
-            <a href="/<%=recipe.id%>/edit-recipe" class="minor orange-link">Edit</a>
+            <a href="/<%=recipe.id%>/edit-recipe" class="h6 orange">Change it.</a>
 
             <form action="/<%=recipe.id%>?_method=DELETE" method="POST">
                 <button type="submit" name="delete-recipe" class="btn-flush">
-                    <h6 class="red-link">Delete</h6>
+                    <h6 class="red">Delete it.</h6>
                 </button>
             </form>
             <% } %>
         </div>
         <% } %>
 
-        <div class="card-information">
-            <h4>About this recipe:</h4>
+        <div class="recipe-info">
+            <h4 class="grey-text">About This Recipe</h4>
             <p><%=recipe.description%> </p>
-            <h5><%=recipe.recipe%></h5>
+            <p><%=recipe.recipe%></p>
         </div>
     </main>
 

@@ -1,5 +1,5 @@
-/* =================================== IMPORTS */
-/* =================================== IMPORTS */
+/* UNIVERSALS ====================== UNIVERSALS */
+/* UNIVERSALS ====================== UNIVERSALS */
 
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:500,700&display=swap');
@@ -8,6 +8,7 @@
     --dark: #141422;
     --gold: #e1aa00;
     --gradient: #151523af;
+    --grey: #828282;
     --green: #00c32b;
     --orange: #ff6600;
     --purple: #3c3C64;
@@ -58,13 +59,28 @@
     font-style: normal;
 }
 
+body {
+    background-color: var(--dark);
+    color: white;
+    width: 100%;
+}
 
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: center;
+    width: 100%;
+}
 
-
-
-
-/* =================================== MAIN */
-/* =================================== MAIN */
+aside {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+}
 
 main {
     align-items: flex-start;
@@ -75,6 +91,50 @@ main {
     width: 90%;
 }
 
+footer {
+    align-items: center;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 0.5rem;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+
+/* ============================= ASIDE */
+/* ============================= ASIDE */
+
+aside > div {
+    align-items: center;
+    background-color: var(--gradient);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.chopsticks {
+    background-image: url('images/r-chopsticks-square.jpg');
+}
+
+.mush {
+    background-image: url('images/r-mush-square.jpg');
+}
+
+
+/* MAIN ============================= MAIN */
+/* MAIN ============================= MAIN */
+
+
+.preview {
+    margin-top: 30px;
+    width: 100%;
+}
 
 .main-content {
     align-items: center;
@@ -82,94 +142,56 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     margin: 0 0 40px;
-    width: 90%;
+    width: 100%;
 }
 
-.main-content2 {
-    align-items: center;
+/* ============================= REGISTRATION */
+/* ============================= REGISTRATION */
+
+.registration {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 60px 0;
+    width: 100%;
+}
+
+.h1-link {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 auto 40px;
-    width: 90%;
+    width: 42%;
 }
 
-main h2 {
-    color: white;
-    margin-bottom: 30px;
-}
 
-/* SHOW ALL RECIPES ====================== */
+/* ============================= RECIPES */
+/* ============================= RECIPES */
 
-.cookbook {
+#recipes {
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+    justify-content: space-evenly;
+    margin: 30px auto 0;
     width: 100%;
 }
 
-.cookbook > .card {
+.recipe-card {
     border: none;
-    border-radius: 7px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 150px;
-    /* margin: 0 auto 30px; */
     margin-bottom: 30px;
-    width: 100%;                     
+    width: 250px;
 }
 
-
-
-
-
-
-
-/* =================================== PREVIEW */
-/* =================================== PREVIEW */
-
-.preview {
-    width: 100%;
-}
-
-.preview h3 {
-    text-align: center;
-}
-
-.recipe-carousel {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-
-
-
-.card-box {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 40px auto;
-    width: 100%;
-}
-
-
-.card {
-    border: none;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 150px;
-    margin: 0 auto;
-    width: 80%;
+.recipe-card:only-of-type {
+    margin: 30px auto;
 }
 
 .card-cover {
@@ -187,293 +209,49 @@ main h2 {
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    width: 80%;
-}
-
-.card-cover h4 {
-    color: var(--gold);
-    margin-bottom: 7px;
-}
-
-.card-cover p {
-    color: white;
-    font-size: 0.8rem;
-}
-
-.card-cover a {
-    color: white;
-}
-
-
-
-/* =================================== REGISTRATION */
-
-.registration {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 60px 0;
-    width: 100%;
-}
-
-.link-info {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 42%;
-}
-
-.registration h1 {
-    color: var(--green);
-}
-
-.registration p {
-    color: #828282;
-}
-
-
-
-
-
-
-
-
-.card-information h4 {
-    color: white;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.card-information p {
-    color: #828282;
-    text-align: center;
-}
-
-.card-information h5 {
-    color: white;
-    margin-top: 40px;
-}
-
-
-
-
-/* ////////////////////////////////////////////////// */
-/* ////////////////////////////////////////////////// */
-
-/* =================================== BODY PARTS */
-/* =================================== BODY PARTS */
-
-body {
-    align-items: flex-start;
-    background-color: var(--dark);
-    display: flex;
-    flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
-    height: 99vh;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-header {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 15px 0;
-    width: 90%;
-}
-
-header a {
-    color: white;
-}
-
-footer {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #ffffff44;
-    font-size: 0.5rem;
-}
-
-/* =================================== HERO */
-/* =================================== HERO */
-
-aside {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-aside > div {
-    align-items: center;
-    background-color: var(--gradient);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-}
-
-.chopsticks {
-    background-image: url('images/r-chopsticks-square.jpg');
-}
-
-aside h2 {
-    color: var(--gold);
-    text-align: center;
     width: 85%;
 }
 
-
-/* =================================== TEXT */
-/* =================================== TEXT */
-
-h1 {
-    font-size: 2.35rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-h2 {
-    font-size: 2.2rem;
-    letter-spacing: -0.02rem;
-    line-height: 2rem;
-    margin: 0;
-}
-
-h3 {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02rem;
-    line-height: 1.5rem;
-    margin: 0;
-}
-
-h4 {
-    font-family: "IBM Plex Serif", serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    line-height: 1.1rem;
-    margin: 0;
-}
-
-h5 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0;
-}
-
-h6 {
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 600;
-    margin: 0;
-    padding-bottom: 3px;
-    text-transform: uppercase;
-}
-
-h6 {
-    font-weight: 800;
-}
-
-p {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.2rem;
-    margin: 0;
-    margin-top: 5px;
-}
-
-.gold-text {
-    color: var(--gold);
-}
-
-.orange-text { 
-    color: var(--orange);
-}
-
-.white-text {
-    color: white;
-}
-
-/* ================= LINKS */
-
-a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.minor {
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 800;
-    margin: 0;
-    padding-bottom: 3px;
-    text-transform: uppercase;
-}
-
-.gold-link {
-    border-bottom: 3px solid var(--gold);
-}
-
-.gold-link:hover {
-    color: var(--gold);
-    border-bottom: 3px solid white;
-}
-
-.green-link {
-    border-bottom: 3px solid var(--green);
-}
-
-.green-link:hover {
-    color: var(--green);
-    border-bottom: 3px solid white;
-}
-
-.orange-link {
-    border-bottom: 3px solid var(--orange);
-}
-
-.orange-link:hover {
-
-    border-bottom: 3px solid white;
-}
-
-.red-link {
-    border-bottom: 3px solid red;
-}
-
-.red-link:hover {
-    color: red;
-    border-bottom: 3px solid white;
-}
-
-.faded-link {
-    color: #ffffff44;
-    border-bottom: 3px solid #ffffff44;
-    margin: 0;
-}
-
-.faded-link:hover {
-    color: #ff0000;
-    border-bottom: 3px solid white;
+.recipe-info {
+    margin: 0 auto;
+    width: 100%;
 }
 
 
+/* ============================= OPTIONS */
+/* ============================= OPTIONS */
 
-/* =================================== FORMS, INPUTS */
-/* =================================== FORMS, INPUTS */
+.options {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.cards {
+    justify-content: space-between;
+    margin: 20px 0 0;
+    width: 100%;
+}
+
+.forms {
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.pages {
+    justify-content: space-evenly;
+    margin: 0 auto 40px;
+    width: 95%;
+}
+
+/* ============================= FORMS, INPUTS */
+/* ============================= FORMS, INPUTS */
+
+form {
+    line-height: 0;
+}
 
 ::placeholder {
     color: #ffffff54;
@@ -485,7 +263,9 @@ input {
     border: none;
     border-radius: 3px;
     color: #ffffff54;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
     font-size: 0.8rem;
+    font-weight: 400;
     margin-bottom: 15px;
     outline: none;
     padding: 5px 10px;
@@ -545,11 +325,6 @@ textarea {
     width: 100%;
 }
 
-.input-bundle h6 {
-    margin-right: 20px;
-    padding-bottom: 0;
-}
-
 
 /* =================================== BUTTONS */
 /* =================================== BUTTONS */
@@ -557,6 +332,7 @@ textarea {
 button {
     border: none;
     cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
     outline: 0;
 }
 
@@ -577,9 +353,9 @@ button {
     padding: 10px 20px;
 }
 
-    .entrance .btn-standard {
-        margin-right: 0;
-    }
+.entrance .btn-standard {
+    margin-right: 0;
+}
 
 .green-fill {
     background-color: var(--green);
@@ -592,57 +368,175 @@ button {
 }
 
 
-/* =================================== OPTIONS */
-/* =================================== OPTIONS */
+/* ============================= TEXT */
+/* ============================= TEXT */
 
-.options {
-    display: flex;
-    flex-direction: row;
+/* .h1 + .h6 are anchor classes to simulate h1 + h6 */
+
+a, h2, h3, h4, h5, h6, p, .h1, .h6 {
+    margin: 0;
 }
 
-.opt-card {
-    align-items: baseline;
-    justify-content: space-between;
-    margin: 20px 0 0;
-    width: 70%;
+a {
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.opt-form {
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 15px;
-    width: 70%;
-}
-
-.opt-page {
-    align-items: baseline;
-    justify-content: space-evenly;
-    margin: 0 auto 40px;
-    width: 80%;
-}
-
-/* =================================== MAIN MENU */
-/* =================================== MAIN MENU */
-
-#menu-links {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 20px 0 40px 0;
-}
-
-.menu-link {
-    color: var(--green);
-    font-size: 2.35rem;
+.h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 2rem;
     font-weight: 700;
+}
+
+h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: -0.02rem;
+    line-height: 1.9rem;
+}
+
+aside h2 {
+    text-align: center;
+    width: 85%;
+}
+
+h2.smaller {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+h4 {
+    color: white;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.1rem;
+}
+
+.card-cover h4 {
     margin-bottom: 10px;
 }
 
-.menu-link:hover {
+.recipe-info h4 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* HEADER TITLE */
+h5 {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* LINKS & LABELS */
+h6, .h6 {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Medium', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+button h6, .h6 {
+    padding-bottom: 3px;
+}
+
+/* SPACE LABEL & INPUT */
+.input-bundle h6 {
+    margin-right: 20px;
+}
+
+p {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+}
+
+.recipe-info p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gold-text {
     color: var(--gold);
 }
 
-#menu-links {
-    margin-top: 40px;
+.green-text {
+    color: var(--green);
 }
+
+.grey-text {
+    color: var(--grey);
+}
+
+.orange-text { 
+    color: var(--orange);
+}
+
+.white-text {
+    color: white;
+}
+
+.h6:hover, .danger:hover {
+    border-bottom: 3px solid white;
+}
+
+.danger {
+    color: #ffffff80;
+    border-bottom: 3px solid var(--purple);
+}
+
+.danger:hover {
+    color: var(--red);
+}
+
+.gold {
+    border-bottom: 3px solid var(--gold);
+}
+
+.gold:hover {
+    color: var(--gold);
+}
+
+.green {
+    border-bottom: 3px solid var(--green);
+}
+
+.green:hover {
+    color: var(--green);
+}
+
+.orange {
+    border-bottom: 3px solid var(--orange);
+}
+
+.orange:hover {
+    color: var(--orange);
+}
+
+.red {
+    border-bottom: 3px solid var(--red);
+}
+
+.red:hover {
+    border-bottom: 3px solid white;
+    color: var(--red);
+}
+/* 
+
+* {
+    border: 1px solid springgreen;
+} */

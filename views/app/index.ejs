@@ -6,42 +6,46 @@
 <body>
     <% include ../partials/header.ejs %>
 
-    <aside class="chopsticks">
+    <aside class="mush">
         <div>
-            <h2>Check out the specials for today.</h2>
+            <h2 class="gold-text">Welcome, Chef @<span class="white-text"><%= currentUser.username %></span>!</h2>
         </div>
     </aside>
 
     <main>
         <!-- OPTIONS AT THE TOP OF THE PAGE -->
-        <div class="options opt-page">
-            <a href="/" class="minor green-link">Main menu</a>
-            <a href="/app/add-recipe" class="minor orange-link">New recipe</a>
+        <div class="options pages">
+            <a href="/app" class="h6 green">Refresh page</a>
+            <a href="/app/add-recipe" class="h6 gold">New recipe</a>
+
+            <form action="/sessions/app?_method=DELETE" method="POST">
+                <button type="submit" name="log-out" class="btn-flush"><h6 class="danger">Sign out</h6></button>
+          </form>
         </div>
 
-        <div class="main-content2">
-            <h2>All recipes</h2>
+        <div class="main-content">
+            <h2 class="white-text">All recipes</h2>
 
-            <div class="cookbook">
+            <div id="recipes">
 
                 <% for (let i = 0; i < recipes.length; i++) { %>
-                <div class="card" style="background: url(<%=recipes[i].image%>) no-repeat;
+                <div class="recipe-card" style="background: url(<%=recipes[i].image%>) no-repeat;
                     background-size: cover;
                     background-position-x: 50%;
                     background-position-y: 30%;">
                     <div class="card-cover">
                         <div class="cover-info">
-                            <h4><%=recipes[i].title%></h4>
+                            <h4 class="gold-text"><%=recipes[i].title%></h4>
                             <p><%=recipes[i].description%></p>
 
-                            <div class="options opt-card">
-                                <a href="/<%=recipes[i].id%>" class="minor gold-link">View recipe</a>
+                            <div class="options cards">
+                                <a href="/<%=recipes[i].id%>" class="h6 gold">View recipe</a>
 
                                 <% if (recipes[i].user === currentUser.username) { %>
-                                <a href="/<%=recipes[i].id%>/edit-recipe" class="minor orange-link">Edit</a>
+                                <a href="/<%=recipes[i].id%>/edit-recipe" class="h6 orange">Change it.</a>
                                 <form action="/<%=recipes[i].id%>?_method=DELETE" method="POST">
                                     <button type="submit" name="delete-recipe" class="btn-flush">
-                                        <h6 class="this red-link">Delete</h6>
+                                        <h6 class="this red">Delete it.</h6>
                                     </button>
                                 </form>
                                 <% } %>

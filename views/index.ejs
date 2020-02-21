@@ -8,81 +8,42 @@
 
     <aside class="chopsticks">
         <div>
-            <% if (!currentUser) { %>
-                <h2>Turn your favorite code snippets into recipe cards.</h2>
-    
-                <% } else { %>
-                <h2>Welcome, Chef @<span class="white-text"><%= currentUser.username %></span>!</h2>
-                <% } %>
+            <h2 class="gold-text">Turn your favorite code snippets into recipe cards.</h2>
         </div>
     </aside>
 
     <main>
-        <% if (!currentUser) { %>
         <div class="preview">
-            <h3>Check out this example of a '<%=recipes[0].title%>' recipe card.</h3>
+            <h3>Check out this recipe card for <span class="orange-text"><%=recipes[0].title%></span>.</h3>
 
-            <div class="recipe-carousel">
+            <div class="recipe-card" style="background: url('<%=recipes[0].image%>') no-repeat;
+                background-size: cover;
+                background-position-x: 50%;
+                background-position-y: 30%;">
 
-                <div class="card-box">
-                    <div class="card">
-                        <style>
-                            .card {
-                                background: url('<%=recipes[0].image%>') no-repeat;
-                                background-size: cover;
-                                background-position-x: 50%;
-                                background-position-y: 30%;
-                            }
-                        </style>
-                        <div class="card-cover">
-                            <div class="cover-info">
-                                <h4><%=recipes[0].title%></h4>
-                                <p><%=recipes[0].description%></p>
-                                <div class="options opt-card">
-                                <a href="/<%=recipes[0].id%>" class="minor gold-link">View recipe</a>
-                            </div>
-                            </div>
+                <div class="card-cover">
+                    <div class="cover-info">
+                        <h4 class="gold-text"><%=recipes[0].title%></h4>
+                        <p><%=recipes[0].description%></p>
+                        <div class="options cards">
+                            <a href="/<%=recipes[0].id%>" class="h6 gold">View recipe</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <% } %>
 
-        <% if (!currentUser) { %>
         <div class="registration">
-
-            
-            <div class="link-info">
-                <a href="/sessions/new">
-                    <h1>Log in</h1>
-                </a>
-                <p>if you already <br />have an account.</p>
+            <div class="h1-link">
+                <a href="/sessions/new" class="h1 green-text">Log in</a>
+                <p class="grey-text">if you already <br />have an account.</p>
             </div>
 
-            <div class="link-info">
-                <a href="/users/new">
-                    <h1>Sign up</h1>
-                </a>
-                <p>if you want an account. You do.</p>
+            <div class="h1-link">
+                <a href="/users/new" class="h1 green-text">Sign up</a>
+                <p class="grey-text">if you want an account. You do.</p>
             </div>
-
-            <% } else { %>
-                <h3>Main menu</h3>
-
-                <div id="menu-links">
-                    <a href="/app" class="menu-link">View all recipes.</a>
-                    <a href="/app/add-recipe" class="menu-link">New recipe.</a>
-
-                    <form action="/sessions/app?_method=DELETE" method="POST">
-                        <button type="submit" name="log-out" class="btn-flush"><h6 class="faded-link">Log out</h6></button>
-                  </form>
-                </div>
-
-            <% } %>
         </div>
-
     </main>
 
     <% include ./partials/footer.ejs %>
