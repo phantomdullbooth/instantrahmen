@@ -5,11 +5,13 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:500,700&display=swap');
 
 :root {
-    --carrot: #D07C23;
-    --corn: #E1AA00;
-    --dimmer: #151523af;
-    --greenonion: #7EBA54;
-    --tonkotsu: #141422;
+    --dark: #141422;
+    --gold: #e1aa00;
+    --gradient: #151523af;
+    --green: #00c32b;
+    --orange: #ff6600;
+    --purple: #3c3C64;
+    --red: #ff0000;
 }
 
 @font-face {
@@ -158,24 +160,6 @@ main h2 {
     width: 100%;
 }
 
-.nav {
-    background-color: var(--tonkotsu);
-    border: 3px solid var(--carrot);
-    border-radius: 50%;
-    height: 50px;
-    position: relative;
-    /* top: 100px; */
-    width: 50px;
-    z-index: 2;
-}
-
-.nav-left {
-    left: 10px;
-}
-
-.nav-right {
-    right: 10px;
-}
 
 .card {
     border: none;
@@ -207,7 +191,7 @@ main h2 {
 }
 
 .card-cover h4 {
-    color: var(--corn);
+    color: var(--gold);
     margin-bottom: 7px;
 }
 
@@ -242,7 +226,7 @@ main h2 {
 }
 
 .registration h1 {
-    color: var(--greenonion);
+    color: var(--green);
 }
 
 .registration p {
@@ -283,7 +267,7 @@ main h2 {
 
 body {
     align-items: flex-start;
-    background-color: var(--tonkotsu);
+    background-color: var(--dark);
     display: flex;
     flex-direction: column;
     font-family: -apple-system, BlinkMacSystemFont, 'Basier Square Regular', sans-serif;
@@ -333,7 +317,7 @@ aside {
 
 aside > div {
     align-items: center;
-    background-color: var(--dimmer);
+    background-color: var(--gradient);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -345,7 +329,7 @@ aside > div {
 }
 
 aside h2 {
-    color: var(--corn);
+    color: var(--gold);
     text-align: center;
     width: 85%;
 }
@@ -399,6 +383,10 @@ h6 {
     text-transform: uppercase;
 }
 
+h6 {
+    font-weight: 800;
+}
+
 p {
     font-size: 1rem;
     font-weight: 500;
@@ -408,11 +396,11 @@ p {
 }
 
 .gold-text {
-    color: var(--corn);
+    color: var(--gold);
 }
 
 .orange-text { 
-    color: var(--carrot);
+    color: var(--orange);
 }
 
 .white-text {
@@ -429,32 +417,32 @@ a {
 .minor {
     color: white;
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 800;
     margin: 0;
     padding-bottom: 3px;
     text-transform: uppercase;
 }
 
 .gold-link {
-    border-bottom: 3px solid var(--corn);
+    border-bottom: 3px solid var(--gold);
 }
 
 .gold-link:hover {
-    color: var(--corn);
+    color: var(--gold);
     border-bottom: 3px solid white;
 }
 
 .green-link {
-    border-bottom: 3px solid var(--greenonion);
+    border-bottom: 3px solid var(--green);
 }
 
 .green-link:hover {
-    color: var(--greenonion);
+    color: var(--green);
     border-bottom: 3px solid white;
 }
 
 .orange-link {
-    border-bottom: 3px solid var(--carrot);
+    border-bottom: 3px solid var(--orange);
 }
 
 .orange-link:hover {
@@ -594,13 +582,13 @@ button {
     }
 
 .green-fill {
-    background-color: var(--greenonion);
-    color: var(--tonkotsu);
+    background-color: var(--green);
+    color: var(--dark);
 }
 
 .gold-fill {
-    background-color: var(--corn);
-    color: var(--tonkotsu);
+    background-color: var(--gold);
+    color: var(--dark);
 }
 
 
@@ -645,14 +633,14 @@ button {
 }
 
 .menu-link {
-    color: var(--greenonion);
+    color: var(--green);
     font-size: 2.35rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .menu-link:hover {
-    color: var(--corn);
+    color: var(--gold);
 }
 
 #menu-links {
