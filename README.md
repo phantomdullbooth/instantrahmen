@@ -3,7 +3,7 @@ https://instantrahmen.herokuapp.com (updates in progress)
 
 Ramen (ラーメン), or "pulled noodles", is a Japanese dish that consists of Chinese wheat noodles served in a meat or (occasionally) fish-based broth, often flavored with soy sauce or miso, and uses toppings such as sliced pork, dried seaweed, egg, and scallions. But what does that have to do with code snippets? Absolutely nothing. The word 'ramen,' however, does sound like the German word 'Rahmen' which means context or framework.
 
-![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-new/05%recipes.png "New recipes page")
+![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-new/05%20recipes.png "New recipes page")
 
 Welcome to instantRahmen, an app that lets developers save their favorite code snippets. I originally completed this project as part of my General Assembly Software Engineering course in August 2019. While the site was fully functional, there was a lot to be desired in terms of the design and features of the app. So, in December 2019, I decided to redesign the app with improved features and a completely new design, which I expect to complete by January 2020.
 
