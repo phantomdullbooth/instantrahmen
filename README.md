@@ -7,10 +7,10 @@ Ramen (ラーメン), or "pulled noodles", is a Japanese dish that consists of C
 
 Welcome to instantRahmen, an app that lets developers save their favorite code snippets. I originally completed this project as part of my General Assembly Software Engineering course in August 2019. While the site was fully functional, there was a lot to be desired in terms of the design and features of the app. So, in December 2019, I decided to redesign the app with improved features and a completely new design, which I expect to complete by January 2020.
 
-#### User Stories
-1. Users should be able to sign up for an account and log in to add code snippets.
-2. Users should be able to edit their code snippets and delete them if necessary.
-3. Users should be able to log out from sessions.
+#### User Stories 
+1. Users should be able to sign up for an account and log in to add code snippets. ✅
+2. Users should be able to edit their code snippets and delete them if necessary. ✅
+3. Users should be able to log out from sessions. ✅
 4. NEW — Users should be able to delete their own accounts.
 
 ![alt text](https://github.com/winslowdev/instantrahmen/blob/master/images-old/05%20recipes.png "Old recipes page")
