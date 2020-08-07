@@ -31,6 +31,12 @@ users.post('/', (req, res) => {
     })
 })
 
+// DELETE RECIPE
+users.delete('/:id', (req, res) => {
+    Recipes.findByIdAndRemove(req.params.id, (err, deletedUser) => {
+        res.redirect('/')
+    })
+});
 
 // ========== EXPORT ========== //
 // ========== EXPORT ========== //
