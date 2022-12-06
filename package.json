@@ -26,7 +26,7 @@
     "bcrypt": "^3.0.6",
     "dotenv": "^8.2.0",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-session": "^1.16.2",
     "material-components-web": "^3.1.0",
     "method-override": "^3.0.0",
